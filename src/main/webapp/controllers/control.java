@@ -1,6 +1,6 @@
 package controllers;
 
-public class Control_Data {
+public class Control {
     
     public String get_data() {
     
