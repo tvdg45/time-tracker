@@ -22,6 +22,8 @@
             <%= request.getParameter("chemistry")%>
          </p></li>
       </ul>
-   
+      <div>
+         <% out.println("<h1>hello</h1>"); %>
+      </div>
    </body>
 </html>
