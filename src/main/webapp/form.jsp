@@ -1,4 +1,4 @@
-<%@ page import="controllers" %>
+<%@ include file="/controllers/control.java" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
