@@ -1,4 +1,4 @@
-<%@ page import="java.util.List" %>
+<%@ page import="controllers.Control_Data" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
