@@ -1,4 +1,4 @@
-<%@ page import="controllers.control.*" %>
+<%@ page import="controllers.Control.*" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
