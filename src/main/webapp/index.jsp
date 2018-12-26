@@ -48,6 +48,9 @@ if (cookies != null) {
  <div class="centered">
  <span class=""><a href="/_saml?RelayState=%2F" class="button center">Login</a></span>
  </div>
+ <div class="centered">
+ <span class=""><a href="/_saml?RelayState=%2F" class="button center">Logout</a></span>
+ </div>
 
 <% } %>
 
