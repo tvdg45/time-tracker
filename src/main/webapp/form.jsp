@@ -1,3 +1,4 @@
+<%@ page import="java.util.List" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
@@ -25,8 +26,6 @@
       </ul>
       <div>
          <%
-            import controllers*;
-            
             Control_Data new_control_data = new Control_Data();
             
             String text = "";
