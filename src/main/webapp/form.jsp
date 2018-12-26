@@ -9,6 +9,7 @@
          <input type = "checkbox" name = "maths" checked = "checked" /> Maths
          <input type = "checkbox" name = "physics"  /> Physics
          <input type = "checkbox" name = "chemistry" checked = "checked" /> Chemistry
+         <input type = "text" name = "text" />
          <input type = "submit" value = "Select Subject" />
       </form>      
       <ul>
@@ -23,7 +24,19 @@
          </p></li>
       </ul>
       <div>
-         <% out.println("<h1>hello</h1>"); %>
+         <% 
+            String text = "";
+            
+            text = request.getParameter("text");
+            
+            if (text == "") {
+               
+               out.println("<h1>hello</h1>");
+            } else {
+               
+               out.println(text);
+            }
+         %>
       </div>
    </body>
 </html>
