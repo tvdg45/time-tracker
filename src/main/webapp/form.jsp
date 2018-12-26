@@ -1,4 +1,4 @@
-<%@ page import="controllers.Control_Data" %>
+<%@ page import="controllers.Control" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
@@ -26,7 +26,7 @@
       </ul>
       <div>
          <%
-            Control_Data new_control_data = new Control_Data();
+            Control new_control = new Control();
             
             String text = "";
             
@@ -40,7 +40,7 @@
                out.println(text);
             }
             
-            out.println(new_control_data.get_data());
+            out.println(new_control.get_data());
          %>
       </div>
    </body>
