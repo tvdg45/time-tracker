@@ -29,7 +29,7 @@
             
             text = request.getParameter("text");
             
-            if (text == "") {
+            if (text == null) {
                
                out.println("<h1>hello</h1>");
             } else {
