@@ -5,7 +5,7 @@
    
    <body>
       <h1>Reading Checkbox Data</h1>
-      <form action = "form.jsp" method = "POST" target = "_blank">
+      <form action = "https://java-test-9.herokuapp.com/form.jsp" method = "POST">
          <input type = "checkbox" name = "maths" checked = "checked" /> Maths
          <input type = "checkbox" name = "physics"  /> Physics
          <input type = "checkbox" name = "chemistry" checked = "checked" /> Chemistry
