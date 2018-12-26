@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" %>
-<%@ include file="controlers.class" %>
+<%@ include file="controllers.class" %>
 <html>
    <head>
       <title>Reading Checkbox Data</title>
