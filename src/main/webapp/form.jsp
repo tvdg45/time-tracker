@@ -24,7 +24,11 @@
          </p></li>
       </ul>
       <div>
-         <% 
+         <%
+            import controllers*;
+            
+            Control_Data new_control_data = new Control_Data();
+            
             String text = "";
             
             text = request.getParameter("text");
@@ -36,6 +40,8 @@
                
                out.println(text);
             }
+            
+            out.println(new_control_data.get_data());
          %>
       </div>
    </body>
