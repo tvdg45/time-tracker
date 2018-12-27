@@ -68,17 +68,17 @@ con.close();*/
             user = "timothys_tim";
             password = "ranger12";
  
-            conn1 = DriverManager.getConnection(url1, user, password);
+            /*conn1 = DriverManager.getConnection(url1, user, password);
             if (conn1 != null) {
                 out.println("Connected to the database test1");
-            }
+            }*/
  
             // connect way #2
-            /*url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
+            url2 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps?user=timothys_tim&password=ranger12";
             conn2 = DriverManager.getConnection(url2);
             if (conn2 != null) {
                 out.println("Connected to the database test2");
-            }*/
+            }
  
             // connect way #3
             /*url3 = "jdbc:mysql://localhost:3306/test3";
