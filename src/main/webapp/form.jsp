@@ -31,7 +31,7 @@
             
             String text = "";
             
-            text = new_control.getParameter("text");
+            text = request.getParameter("text");
             
             if (text == "null") {
                
