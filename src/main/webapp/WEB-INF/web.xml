@@ -32,7 +32,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>addfriend</servlet-name>
-        <url-pattern>https://java-test-9.herokuapp.com/addfriend</url-pattern>
+        <url-pattern>/addfriend</url-pattern>
     </servlet-mapping>
 
 </web-app>
