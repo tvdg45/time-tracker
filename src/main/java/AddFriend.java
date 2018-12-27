@@ -18,7 +18,9 @@ public class AddFriend extends HttpServlet {
 	
 	PrintWriter out = response.getWriter();
 		
-	out.println("<h1>hello</h1>");
+	basic_data_handling.Request_Data declare_request_data = new basic_data_handling.Request_Data();
+		
+	out.println(declare_request_data.get_data());
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
