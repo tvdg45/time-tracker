@@ -27,7 +27,7 @@
       </ul>
       <div>
          <%
-            Control new_control = new Control();
+            controllers.Control new_control = new controllers.Control();
             
             String text = "";
             
