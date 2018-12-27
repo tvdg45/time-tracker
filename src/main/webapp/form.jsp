@@ -1,5 +1,5 @@
-<!--<%@ //page language="java" contentType="text/html;charset=UTF-8" %>
-<%@ //page import = "java.util.*, controllers.Control" %>!-->
+<!--<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ page import = "java.util.*, controllers.Control" %>!-->
 <html>
    <head>
       <title>Reading Checkbox Data</title>
