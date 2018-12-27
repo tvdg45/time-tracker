@@ -15,22 +15,6 @@ public class AddFriend extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
-        String friendname =request.getParameter("username"); 
-        Integer iMeid = (Integer)session.getAttribute("meid");
-        
-        try {
-        	int iFriendId = LoginDao.findMeid(friendname);
-        	if (-1 != iFriendId) {
-        		LoginDao.addFriend(iMeid + "", iFriendId + "");
-            	LoginDao.addFriend(iFriendId + "", iMeid + "");
-            	response.sendRedirect("friend");
-        	}
-        	
-        } finally {
-            out.close();
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
