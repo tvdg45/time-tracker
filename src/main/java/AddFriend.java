@@ -53,8 +53,6 @@ public class AddFriend extends HttpServlet {
 	String url1 = "";
 	String url2 = "";
 	String url3 = "";
-	
-	Properties info = new Properties();
 		
 try {
 /*Class.forName("com.mysql.jdbc.Driver");  
