@@ -66,9 +66,9 @@ while(rs.next()) {
 out.println(rs.getString(0) + "<br />");  
 con.close();*/
             // connect way #1
-            url1 = "jdbc:mysql://localhost:3306/test1";
-            user = "root";
-            password = "secret";
+            url1 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps";
+            user = "timothys_tim";
+            password = "ranger12";
  
             conn1 = DriverManager.getConnection(url1, user, password);
             if (conn1 != null) {
