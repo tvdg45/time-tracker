@@ -37,7 +37,8 @@ public class AddFriend extends HttpServlet {
 	out.println(declare_request_data.get_data());
 	
 	out.println("<br />");
-		
+
+try {
 Class.forName("com.mysql.jdbc.Driver");  
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost/timothys_digital_solutions_third_party_apps?user=timothys_tim&password=ranger12");  
 //here sonoo is database name, root is username and password  
@@ -47,6 +48,11 @@ while(rs.next()) {
 out.println(rs.getString(2) + "<br />");  
 con.close();
 }
+} catch (Exception e) {
+            throw e;
+        } finally {
+            close();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
