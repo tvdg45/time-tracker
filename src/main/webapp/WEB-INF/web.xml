@@ -21,6 +21,10 @@
         <servlet-name>SAMLServlet</servlet-name>
         <servlet-class>com.salesforce.saml.SAMLServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addfriend</servlet-name>
+        <servlet-class>AddFriend</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>SAMLServlet</servlet-name>
