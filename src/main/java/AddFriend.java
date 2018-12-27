@@ -20,6 +20,18 @@ public class AddFriend extends HttpServlet {
 		
 	basic_data_handling.Request_Data declare_request_data = new basic_data_handling.Request_Data();
 		
+	out.println("<html>\n");
+   	out.println("<body>\n");
+      	out.println("<form action = \"https://java-test-9.herokuapp.com/addfriend\" method = \"POST\">\n");
+        out.println("First Name: <input type = \"text\" name = \"first_name\">\n");
+        out.println("<br />\n");
+        out.println("Last Name: <input type = \"text\" name = \"last_name\" />\n");
+        out.println("<input type = \"submit\" value = \"Submit\" />\n");
+      	out.println("</form><br />\n");
+	out.println(request.getParameter("first_name") + "\n\n<br />\n\n" + request.getParameter("last_name"));
+      	out.println("</body>\n");
+	out.println("</html>\n");
+		
 	out.println(declare_request_data.get_data());
     }
 
