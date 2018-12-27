@@ -48,6 +48,12 @@ public class AddFriend extends HttpServlet {
         Connection conn2 = null;
         Connection conn3 = null;
 		
+	String user = "";
+	String password = "";
+	String url1 = "";
+	String url2 = "";
+	String url3 = "";
+		
 try {
 /*Class.forName("com.mysql.jdbc.Driver");  
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps&user=timothys_tim&password=ranger12");  
@@ -58,9 +64,9 @@ while(rs.next()) {
 out.println(rs.getString(0) + "<br />");  
 con.close();*/
             // connect way #1
-            String url1 = "jdbc:mysql://localhost:3306/test1";
-            String user = "root";
-            String password = "secret";
+            url1 = "jdbc:mysql://localhost:3306/test1";
+            user = "root";
+            password = "secret";
  
             conn1 = DriverManager.getConnection(url1, user, password);
             if (conn1 != null) {
@@ -68,14 +74,14 @@ con.close();*/
             }
  
             // connect way #2
-            String url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
+            url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
             conn2 = DriverManager.getConnection(url2);
             if (conn2 != null) {
                 System.out.println("Connected to the database test2");
             }
  
             // connect way #3
-            String url3 = "jdbc:mysql://localhost:3306/test3";
+            url3 = "jdbc:mysql://localhost:3306/test3";
             Properties info = new Properties();
             info.put("user", "root");
             info.put("password", "secret");
