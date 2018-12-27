@@ -30,6 +30,10 @@
         <servlet-name>SAMLServlet</servlet-name>
         <url-pattern>/_saml</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addfriend</servlet-name>
+        <url-pattern>/addfriend</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 
