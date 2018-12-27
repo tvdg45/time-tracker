@@ -50,8 +50,6 @@ con.close();
 }
 } catch (Exception e) {
             throw e;
-        } finally {
-            close();
         }
     }
 
