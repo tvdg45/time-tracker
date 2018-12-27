@@ -1,5 +1,3 @@
-<!--<%@ page language="java" contentType="text/html;charset=UTF-8" %>
-<%@ page import = "java.util.*, controllers.Control" %>!-->
 <html>
    <head>
       <title>Reading Checkbox Data</title>
@@ -26,9 +24,7 @@
          </p></li>
       </ul>
       <div>
-         <%
-            //controllers.Control new_control = new controllers.Control();
-            
+         <%           
             String text = "";
             
             text = request.getParameter("text");
@@ -40,8 +36,6 @@
                
                out.println(text);
             }
-            
-            //out.println(new_control.get_data());
          %>
       </div>
    </body>
