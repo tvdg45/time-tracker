@@ -53,6 +53,8 @@ public class AddFriend extends HttpServlet {
 	String url1 = "";
 	String url2 = "";
 	String url3 = "";
+	
+	Properties info = new Properties();
 		
 try {
 /*Class.forName("com.mysql.jdbc.Driver");  
@@ -82,7 +84,6 @@ con.close();*/
  
             // connect way #3
             url3 = "jdbc:mysql://localhost:3306/test3";
-            Properties info = new Properties();
             info.put("user", "root");
             info.put("password", "secret");
  
