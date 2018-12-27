@@ -4,10 +4,10 @@ public class Request_Data {
 
 	public String get_data() {
 		
-    String output = "";
+    		String output = "";
     
-    output += "<h1><b>Welcome, user!</b></h1>\n";
-    
-    return output;
+   		output += "<h1><b>Welcome, user!</b></h1>\n";
+		
+		return output;
 	}
 }
