@@ -37,9 +37,7 @@ public class AddFriend extends HttpServlet {
         out.println("<input type = \"submit\" value = \"Submit\" />");
       	out.println("</form><br />");
 	out.println(request.getParameter("first_name") + "\n\n<br />\n\n" + request.getParameter("last_name"));
-      	out.println("</body>");
-	out.println("</html>");
-		
+	
 	out.println(declare_request_data.get_data());
 	
 	out.println("<br />");
@@ -55,8 +53,11 @@ out.println(rs.getString(2) + "<br />");
 con.close();
 }
 } catch (Exception e) {
-            throw e;
+            out.println("<label>sorry</label>");
         }
+		
+      	out.println("</body>");
+	out.println("</html>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
