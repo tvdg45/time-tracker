@@ -16,7 +16,7 @@ public class AddFriend extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 	
-	out.println("<h1>hello</h1>");
+	System.out.println("<h1>hello</h1>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
