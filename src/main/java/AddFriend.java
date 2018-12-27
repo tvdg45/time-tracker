@@ -74,7 +74,7 @@ con.close();*/
             }*/
  
             // connect way #2
-            url2 = "jdbc:mysql://sv9.byethost9.org:2083/timothys_digital_solutions_third_party_apps?user=timothys_tim&password=ranger12";
+            url2 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps?user=timothys_tim&password=ranger12";
             conn2 = DriverManager.getConnection(url2);
             if (conn2 != null) {
                 out.println("Connected to the database test2");
