@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 public class AddFriend extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+	response.addHeader("Access-Control-Allow-Origin", "*");
         response.setContentType("text/html;charset=UTF-8");
 	
 	PrintWriter out = response.getWriter();
