@@ -91,7 +91,6 @@ con.close();*/
             if (conn3 != null) {
                 out.println("Connected to the database test3");
             }
-}
 } catch (Exception e) {
             out.println("<label>sorry</label>");
         }
