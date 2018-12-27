@@ -70,14 +70,14 @@ con.close();*/
  
             conn1 = DriverManager.getConnection(url1, user, password);
             if (conn1 != null) {
-                System.out.println("Connected to the database test1");
+                out.println("Connected to the database test1");
             }
  
             // connect way #2
             url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
             conn2 = DriverManager.getConnection(url2);
             if (conn2 != null) {
-                System.out.println("Connected to the database test2");
+                out.println("Connected to the database test2");
             }
  
             // connect way #3
@@ -88,7 +88,7 @@ con.close();*/
  
             conn3 = DriverManager.getConnection(url3, info);
             if (conn3 != null) {
-                System.out.println("Connected to the database test3");
+                out.println("Connected to the database test3");
             }
 }
 } catch (Exception e) {
