@@ -44,15 +44,46 @@ public class AddFriend extends HttpServlet {
 	
 	out.println("<br />");
 
+        Connection conn1 = null;
+        Connection conn2 = null;
+        Connection conn3 = null;
+		
 try {
-Class.forName("com.mysql.jdbc.Driver");  
+/*Class.forName("com.mysql.jdbc.Driver");  
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps&user=timothys_tim&password=ranger12");  
 //here sonoo is database name, root is username and password  
 Statement stmt=con.createStatement();  
 ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app ORDER BY row_id DESC");  
 while(rs.next()) { 
 out.println(rs.getString(0) + "<br />");  
-con.close();
+con.close();*/
+            // connect way #1
+            String url1 = "jdbc:mysql://localhost:3306/test1";
+            String user = "root";
+            String password = "secret";
+ 
+            conn1 = DriverManager.getConnection(url1, user, password);
+            if (conn1 != null) {
+                System.out.println("Connected to the database test1");
+            }
+ 
+            // connect way #2
+            String url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
+            conn2 = DriverManager.getConnection(url2);
+            if (conn2 != null) {
+                System.out.println("Connected to the database test2");
+            }
+ 
+            // connect way #3
+            String url3 = "jdbc:mysql://localhost:3306/test3";
+            Properties info = new Properties();
+            info.put("user", "root");
+            info.put("password", "secret");
+ 
+            conn3 = DriverManager.getConnection(url3, info);
+            if (conn3 != null) {
+                System.out.println("Connected to the database test3");
+            }
 }
 } catch (Exception e) {
             out.println("<label>sorry</label>");
