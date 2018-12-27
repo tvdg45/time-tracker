@@ -76,21 +76,21 @@ con.close();*/
             }
  
             // connect way #2
-            url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
+            /*url2 = "jdbc:mysql://localhost:3306/test2?user=root&password=secret";
             conn2 = DriverManager.getConnection(url2);
             if (conn2 != null) {
                 out.println("Connected to the database test2");
-            }
+            }*/
  
             // connect way #3
-            url3 = "jdbc:mysql://localhost:3306/test3";
+            /*url3 = "jdbc:mysql://localhost:3306/test3";
             info.put("user", "root");
             info.put("password", "secret");
  
             conn3 = DriverManager.getConnection(url3, info);
             if (conn3 != null) {
                 out.println("Connected to the database test3");
-            }
+            }*/
 } catch (Exception e) {
             out.println("<label>sorry</label>");
         }
