@@ -27,7 +27,7 @@
       </ul>
       <div>
          <%
-            controllers.Control new_control = new controllers.Control();
+            //controllers.Control new_control = new controllers.Control();
             
             String text = "";
             
@@ -41,7 +41,7 @@
                out.println(text);
             }
             
-            out.println(new_control.get_data());
+            //out.println(new_control.get_data());
          %>
       </div>
    </body>
