@@ -44,10 +44,10 @@ public class AddFriend extends HttpServlet {
 
 try {
 Class.forName("com.mysql.jdbc.Driver");  
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost/?user=timothys_tim&password=ranger12");  
+Connection con=DriverManager.getConnection("jdbc:mysql://sv9.byethost9.org:2083/timothys_digital_solutions_third_party_apps", "timothys_tim", "ranger12");  
 //here sonoo is database name, root is username and password  
 Statement stmt=con.createStatement();  
-ResultSet rs=stmt.executeQuery("select * from timothys_digital_solutions_third_party_apps.third_party_account_info_per_traffic_monitor_app");  
+ResultSet rs=stmt.executeQuery("select * from third_party_account_info_per_traffic_monitor_app");  
 while(rs.next()) { 
 out.println(rs.getString(2) + "<br />");  
 con.close();
