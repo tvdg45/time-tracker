@@ -63,6 +63,7 @@ ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_
 while(rs.next()) { 
 out.println(rs.getString(0) + "<br />");  
 con.close();
+}
             // connect way #1
             url1 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps";
             user = "timothys_tim";
