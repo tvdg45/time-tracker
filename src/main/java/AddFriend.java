@@ -54,11 +54,9 @@ public class AddFriend extends HttpServlet {
 	String url2 = "";
 	String url3 = "";
 		
-	//Class.forName("com.mysql.jdbc.Driver");
-		
 try {
-/*Class.forName("com.mysql.jdbc.Driver");  
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps&user=timothys_tim&password=ranger12");  
+//Class.forName("com.mysql.jdbc.Driver");
+/*Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps&user=timothys_tim&password=ranger12");  
 //here sonoo is database name, root is username and password  
 Statement stmt=con.createStatement();  
 ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app ORDER BY row_id DESC");  
@@ -108,7 +106,7 @@ con.close();*/
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -122,7 +120,7 @@ con.close();*/
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
