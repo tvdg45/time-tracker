@@ -51,7 +51,7 @@ Connection con=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/timo
 Statement stmt=con.createStatement();  
 ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app ORDER BY row_id DESC");  
 while(rs.next()) { 
-out.println(rs.getString(0) + "<br />");  
+out.println(rs.getString(1) + "<br />");  
 con.close();
 }
 } catch (Exception e) {
