@@ -43,16 +43,6 @@ public class AddFriend extends HttpServlet {
 	out.println(declare_request_data.get_data());
 	
 	out.println("<br />");
-
-        Connection conn1 = null;
-        Connection conn2 = null;
-        Connection conn3 = null;
-		
-	String user = "";
-	String password = "";
-	String url1 = "";
-	String url2 = "";
-	String url3 = "";
 		
 try {
 Class.forName("com.mysql.jdbc.Driver");
@@ -64,32 +54,6 @@ while(rs.next()) {
 out.println(rs.getString(0) + "<br />");  
 con.close();
 }
-            // connect way #1
-            url1 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps";
-            user = "timothys_tim";
-            password = "ranger12";
- 
-            /*conn1 = DriverManager.getConnection(url1, user, password);
-            if (conn1 != null) {
-                out.println("Connected to the database test1");
-            }*/
- 
-            // connect way #2
-            url2 = "jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps?user=timothys_tim&password=ranger12";
-            conn2 = DriverManager.getConnection(url2);
-            if (conn2 != null) {
-                out.println("Connected to the database test2");
-            }
- 
-            // connect way #3
-            /*url3 = "jdbc:mysql://localhost:3306/test3";
-            info.put("user", "root");
-            info.put("password", "secret");
- 
-            conn3 = DriverManager.getConnection(url3, info);
-            if (conn3 != null) {
-                out.println("Connected to the database test3");
-            }*/
 } catch (SQLException ex) {
             out.println("<label>sorry</label>");
         }
