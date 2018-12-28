@@ -54,7 +54,7 @@ while(rs.next()) {
 out.println(rs.getString(0) + "<br />");  
 con.close();
 }
-} catch (SQLException ex) {
+} catch (Exception e) {
             out.println("<label>sorry</label>");
         }
 		
