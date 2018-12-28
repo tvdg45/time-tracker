@@ -55,7 +55,7 @@ out.println(rs.getString(0) + "<br />");
 con.close();
 }
 } catch (Exception e) {
-            out.println("<label>sorry</label>");
+            out.println("<label>" + e + "</label>");
         }
 		
       	out.println("</body>");
