@@ -55,7 +55,7 @@ public class AddFriend extends HttpServlet {
 	String url3 = "";
 		
 try {
-//Class.forName("com.mysql.jdbc.Driver");
+Class.forName("com.mysql.jdbc.Driver");
 /*Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/timothys_digital_solutions_third_party_apps&user=timothys_tim&password=ranger12");  
 //here sonoo is database name, root is username and password  
 Statement stmt=con.createStatement();  
