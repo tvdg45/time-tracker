@@ -3,13 +3,6 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -48,10 +41,6 @@ public class AddFriend extends HttpServlet {
 	out.println(request.getParameter("first_name") + "\n\n<br />\n\n" + request.getParameter("last_name"));
 	
 	out.println(declare_request_data.get_data());
-		
-	DateFormat dateFormat = new SimpleDateFormat("l, F jS, Y");
-	Date date = new Date();
-	out.println(dateFormat.format(date));
 	
 	out.println("<br />");
 		
@@ -64,9 +53,12 @@ ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_
 while(rs.next()) { 
 out.println(rs.getString(1) + "<br />");
 }
+out.println(rs.getRow() + "<br />");
 } catch (Exception e) {
             out.println("<label>" + e + "</label>");
         }
+		
+	
 		
       	out.println("</body>");
 	out.println("</html>");
