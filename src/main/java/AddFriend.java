@@ -52,7 +52,7 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
     // create the preparedstatement and add the criteria
     PreparedStatement ps = conn.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE row_id = ? ORDER BY row_id DESC");
 	
-	ps.setString(1, "Tim");
+	ps.setString(1, "Timothy");
     // process the results
     ResultSet rs = ps.executeQuery();
     while ( rs.next() )
