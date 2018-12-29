@@ -41,6 +41,10 @@ public class AddFriend extends HttpServlet {
 	out.println(request.getParameter("first_name") + "\n\n<br />\n\n" + request.getParameter("last_name"));
 	
 	out.println(declare_request_data.get_data());
+		
+	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+	out.println(dateFormat.format(date));
 	
 	out.println("<br />");
 		
