@@ -50,8 +50,9 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
 //here sonoo is database name, root is username and password
 
     // create the preparedstatement and add the criteria
-    PreparedStatement ps = conn.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app ORDER BY row_id DESC");
-
+    PreparedStatement ps = conn.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE row_id = ? ORDER BY row_id DESC");
+	
+	ps.setString(1, "Tim");
     // process the results
     ResultSet rs = ps.executeQuery();
     while ( rs.next() )
