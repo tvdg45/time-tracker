@@ -49,7 +49,7 @@ public class AddFriend extends HttpServlet {
 	
 	out.println(declare_request_data.get_data());
 		
-	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	DateFormat dateFormat = new SimpleDateFormat("l, F jS, Y");
 	Date date = new Date();
 	out.println(dateFormat.format(date));
 	
