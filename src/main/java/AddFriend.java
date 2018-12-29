@@ -53,6 +53,7 @@ ResultSet rs=stmt.executeQuery("SELECT url FROM third_party_traffic_log ORDER BY
 while(rs.next()) { 
 out.println(rs.getString(1) + "<br />");
 }
+rs.last();
 out.println(rs.getRow() + "<br />");
 } catch (Exception e) {
             out.println("<label>" + e + "</label>");
