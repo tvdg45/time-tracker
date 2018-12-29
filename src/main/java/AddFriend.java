@@ -49,7 +49,7 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection con=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/timothys_digital_solutions_third_party_apps", "timothys_tim", "ranger12");  
 //here sonoo is database name, root is username and password  
 Statement stmt=con.createStatement();  
-ResultSet rs=stmt.executeQuery("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app ORDER BY row_id DESC");  
+ResultSet rs=stmt.executeQuery("SELECT url FROM third_party_traffic_log ORDER BY row_id DESC");  
 while(rs.next()) { 
 out.println(rs.getString(1) + "<br />");
 }
