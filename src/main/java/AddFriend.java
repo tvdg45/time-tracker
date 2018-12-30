@@ -88,7 +88,7 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
     rs.last();
 	
 out.println(rs.getRow() + "<br />");
-out.println(is_email_valid("jdoe") + "<br />");
+out.println(is_email_valid("jdoe@hotmail.com") + "<br />");
 } catch (Exception e) {
 	
             LOGGER.log(Level.INFO, "" + e + "");
