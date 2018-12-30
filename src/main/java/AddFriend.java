@@ -71,7 +71,7 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
 out.println(rs.getRow() + "<br />");
 } catch (Exception e) {
 		
-		LOGGER.log(Level.INFO, "n");
+		LOGGER.log(Level.INFO, "" + e + "");
             out.println("<label>" + e + "</label>");
         }
 		
