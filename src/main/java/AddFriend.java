@@ -21,6 +21,9 @@ import javax.servlet.http.HttpSession;
 
 
 public class AddFriend extends HttpServlet {
+	
+	private static Logger logger = Logger.getLogger(MyClass.class);
+	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 	response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
@@ -63,6 +66,8 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
 	
 out.println(rs.getRow() + "<br />");
 } catch (Exception e) {
+	
+	logger.log("Exceptions happen!", e);
             out.println("<label>" + e + "</label>");
         }
 		
