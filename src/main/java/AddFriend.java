@@ -62,10 +62,10 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
 	ps.setInt(1, 1);
     // process the results
     ResultSet rs = ps.executeQuery();
-    while ( rs.next() )
+    /*while ( rs.next() )
     {
       out.println(rs.getInt(1) + "<br />");
-    }
+    }*/
     rs.last();
 	
 out.println(rs.getRow() + "<br />");
