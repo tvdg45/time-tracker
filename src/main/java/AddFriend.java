@@ -5,7 +5,10 @@ import java.util.Map;
 
 import java.util.logging.Level; 
 import java.util.logging.Logger; 
-import java.util.logging.*; 
+import java.util.logging.*;
+
+import java.util.regex.Matcher; 
+import java.util.regex.Pattern; 
 
 import java.sql.*;
 import java.sql.Connection;
@@ -28,8 +31,24 @@ public class AddFriend extends HttpServlet {
 	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
+    public static boolean is_email_valid(String input_string) { 
+        
+		String email_regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+		
+        Pattern pattern = Pattern.compile(email_regex);
+		
+        if (input_string == null) {
+            
+			return false;
+		} else {
+			
+			return pattern.matcher(input_string).matches();
+		}
+    }
+	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+		
 	response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
         response.setContentType("text/html;charset=UTF-8");
 	
@@ -69,6 +88,7 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
     rs.last();
 	
 out.println(rs.getRow() + "<br />");
+out.println(is_email_valid("jdoe") + "<br />");
 } catch (Exception e) {
 	
             LOGGER.log(Level.INFO, "" + e + "");
