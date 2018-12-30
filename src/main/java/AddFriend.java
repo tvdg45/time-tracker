@@ -2,7 +2,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
+
+import java.util.logging.Level; 
+import java.util.logging.Logger; 
+import java.util.logging.*; 
 
 import java.sql.*;
 import java.sql.Connection;
@@ -23,7 +26,7 @@ import javax.servlet.http.HttpSession;
 
 public class AddFriend extends HttpServlet {
 	
-	private static Logger logger = Logger.getLogger(MyClass.class);
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -68,7 +71,6 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://82.163.176.10:3306/tim
 out.println(rs.getRow() + "<br />");
 } catch (Exception e) {
 	
-	logger.log("Exceptions happen!", e);
             out.println("<label>" + e + "</label>");
         }
 		
