@@ -25,8 +25,7 @@ public class Run_Sign_Up extends HttpServlet {
 		String confirm_password = request.getParameter("confirm_password");
 		String date_received = request.getParameter("date_received");
 		String time_received = request.getParameter("time_received");
-		//String sign_up = request.getParameter("sign_up");
-		String sign_up = "go";
+		String sign_up = request.getParameter("sign_up");
 		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		response.setContentType("text/html;charset=UTF-8");
@@ -35,10 +34,7 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
-		if (sign_up != null) {
-			
-			out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
-		}
+		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
