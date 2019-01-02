@@ -22,7 +22,7 @@
         <servlet-class>com.salesforce.saml.SAMLServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>run_sign_up</servlet-name>
+        <servlet-name>Run_Sign_Up</servlet-name>
         <servlet-class>Run_Sign_Up</servlet-class>
     </servlet>
 
@@ -31,7 +31,7 @@
         <url-pattern>/_saml</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>run_sign_up</servlet-name>
+        <servlet-name>Run_Sign_Up</servlet-name>
         <url-pattern>/sign-up</url-pattern>
     </servlet-mapping>
 
