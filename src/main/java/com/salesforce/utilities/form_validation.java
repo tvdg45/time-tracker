@@ -11,9 +11,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger; 
 import java.util.logging.*;  
 
-package form_validation;
+package utilities;
 
-public class utilities.Form_Validation {
+public class Form_Validation {
 	
 	public static boolean is_string_null_or_white_space(String input_string) {
     
