@@ -33,47 +33,47 @@ public abstract class Sign_Up extends Config {
 	private String sign_up;
 
 	//sets
-	protected String set_first_name(String first_name) {
-
+	protected void set_first_name(String first_name) {
+		
 		this.first_name = first_name;
 	}
 	
-	protected String set_last_name(String last_name) {
+	protected void set_last_name(String last_name) {
 
 		this.last_name = last_name;
 	}
 	
-	protected String set_email(String email) {
+	protected void set_email(String email) {
 
 		this.email = email;
 	}
 	
-	protected String set_username(String username) {
+	protected void set_username(String username) {
 		
 		this.username = username;
 	}
 	
-	protected String set_password(String password) {
+	protected void set_password(String password) {
 		
 		this.password = password;
 	}
 	
-	protected String set_confirm_password(String confirm_password) {
+	protected void set_confirm_password(String confirm_password) {
 		
 		this.confirm_password = confirm_password;
 	}
 	
-	protected String set_date_received(String date_received) {
+	protected void set_date_received(String date_received) {
 
 		this.date_received = date_received;
 	}
 	
-	protected String set_time_received(String time_received) {
+	protected void set_time_received(String time_received) {
 
 		this.time_received = time_received;
 	}
 	
-	protected String set_sign_up(String sign_up) {
+	protected void set_sign_up(String sign_up) {
 
 		this.sign_up = sign_up;
 	}
@@ -183,6 +183,8 @@ public abstract class Sign_Up extends Config {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
 		}
+		
+		return output;
 	}
 	
 	private String repeat_found_in_username(String input_string) {
@@ -214,6 +216,8 @@ public abstract class Sign_Up extends Config {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
 		}
+		
+		return output;
 	}
 	
 	protected String[] sign_up() {
