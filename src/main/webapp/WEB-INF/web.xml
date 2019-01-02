@@ -23,7 +23,7 @@
     </servlet>
     <servlet>
         <servlet-name>run_sign_up</servlet-name>
-        <servlet-class>run_sign_up</servlet-class>
+        <servlet-class>Run_Sign_Up</servlet-class>
     </servlet>
 
     <servlet-mapping>
