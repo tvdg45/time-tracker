@@ -26,11 +26,13 @@ public class Run_Sign_Up extends HttpServlet {
 		String date_received = request.getParameter("date_received");
 		String time_received = request.getParameter("time_received");
 		String sign_up = request.getParameter("sign_up");
-		out.println(sign_up);
+		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		response.setContentType("text/html;charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
+		
+		out.println(sign_up);
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
