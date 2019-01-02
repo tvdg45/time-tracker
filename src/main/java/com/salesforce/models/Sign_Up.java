@@ -218,6 +218,8 @@ public abstract class Sign_Up extends Config {
 	
 	protected String[] sign_up() {
 		
+		Form_Validation form_validation = new Form_Validation();
+		
 		String[] output = new String[8];
 		String redundancy_found_in_email = "";
 		String redundancy_found_in_username = "";
@@ -237,19 +239,19 @@ public abstract class Sign_Up extends Config {
 			redundancy_found_in_email = this.repeat_found_in_email(get_email);
 			redundancy_found_in_username = this.repeat_found_in_username(get_username);
 			
-			if (this.is_string_null_or_white_space(get_first_name) || this.is_string_null_or_white_space(get_last_name) || this.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email)) || redundancy_found_in_email == "yes" || this.is_string_null_or_white_space(get_username) || get_username.length() < 3 || this.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username == "yes" || this.is_string_null_or_white_space(get_password) || get_password.length() < 8 || this.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || this.is_string_null_or_white_space(get_confirm_password) || get_confirm_password != get_password) {
+			if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name) || form_validation.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email)) || redundancy_found_in_email == "yes" || form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username == "yes" || form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || form_validation.is_string_null_or_white_space(get_confirm_password) || get_confirm_password != get_password) {
 				
-				if (this.is_string_null_or_white_space(get_first_name)) {
+				if (form_validation.is_string_null_or_white_space(get_first_name)) {
 					
 					output[0] = "You must provide your first name.";
 				}
 				
-				if (this.is_string_null_or_white_space(get_last_name)) {
+				if (form_validation.is_string_null_or_white_space(get_last_name)) {
 					
 					output[1] = "You must provide your last name.";
 				}
 				
-				if (this.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email))) {
+				if (form_validation.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email))) {
 					
 					output[2] = "You must provide a valid email.";
 				}
@@ -259,7 +261,7 @@ public abstract class Sign_Up extends Config {
 					output[3] = "That email is already taken.  Please choose a different one.";
 				}
 				
-				if (this.is_string_null_or_white_space(get_username) || get_username.length() < 3 || this.number_of_white_spaces(get_username) > 0) {
+				if (form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0) {
 					
 					output[4] = "Your username must contain at least three characters. Your username is allowed to contain letters, numbers, and symbols. Symbols include !, $, #, etc. Your username must not contain any spaces.";
 				}
@@ -269,12 +271,12 @@ public abstract class Sign_Up extends Config {
 					output[5] = "That username is already taken.  Please choose a different one.";
 				}
 				
-				if (this.is_string_null_or_white_space(get_password) || get_password.length() < 8 || this.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password) {
+				if (form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password) {
 					
 					output[6] = "Your password must contain at least eight characters, including at least one uppercase letter, and two numeric characters. Your password is allowed to contain symbols, such as !, $, #, etc. Your password must not be the same as your username.";
 				}
 				
-				if (this.is_string_null_or_white_space(get_confirm_password)) {
+				if (form_validation.is_string_null_or_white_space(get_confirm_password)) {
 					
 					output[7] = "You must confirm your password.";
 				} else if (get_confirm_password != get_password) {
