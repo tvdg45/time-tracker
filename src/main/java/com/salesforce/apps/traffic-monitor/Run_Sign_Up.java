@@ -32,7 +32,7 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		sign_up.Control_Sign_Up run_sign_up = new sign_up.Control_Sign_Up();
+		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
     }
