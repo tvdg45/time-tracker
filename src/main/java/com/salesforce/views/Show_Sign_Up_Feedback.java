@@ -5,7 +5,7 @@ public class Show_Sign_Up_Feedback {
 	
 	public String show_sign_up_feedback(String[] sign_up) {
 		
-		config.Config use_config = new config.Config();
+		Config use_config = new Config();
 		
 		String output = "";
 		
