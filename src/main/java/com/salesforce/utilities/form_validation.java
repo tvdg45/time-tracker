@@ -13,7 +13,7 @@ import java.util.logging.*;
 
 package form_validation;
 
-public class Form_Validation {
+public class utilities.Form_Validation {
 	
 	public static boolean is_string_null_or_white_space(String input_string) {
     
