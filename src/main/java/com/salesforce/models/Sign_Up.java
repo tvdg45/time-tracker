@@ -340,7 +340,7 @@ public abstract class Sign_Up extends Config {
 			}
 		} else {
 			
-			output[0] += "no user action";
+			output[0] = "no user action";
 		}
 		
 		return output;
