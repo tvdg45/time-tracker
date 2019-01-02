@@ -17,9 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-package sign_up;
-
-public abstract class Sign_Up extends config.Config {
+public abstract class Sign_Up extends Config {
 	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
