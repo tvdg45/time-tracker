@@ -239,7 +239,7 @@ public abstract class Sign_Up extends Config {
 			redundancy_found_in_email = this.repeat_found_in_email(get_email);
 			redundancy_found_in_username = this.repeat_found_in_username(get_username);
 			
-			if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name) || form_validation.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email)) || redundancy_found_in_email == "yes" || form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username == "yes" || form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || form_validation.is_string_null_or_white_space(get_confirm_password) || get_confirm_password != get_password) {
+			if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name) || form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email)) || redundancy_found_in_email == "yes" || form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username == "yes" || form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || form_validation.is_string_null_or_white_space(get_confirm_password) || get_confirm_password != get_password) {
 				
 				if (form_validation.is_string_null_or_white_space(get_first_name)) {
 					
@@ -251,7 +251,7 @@ public abstract class Sign_Up extends Config {
 					output[1] = "You must provide your last name.";
 				}
 				
-				if (form_validation.is_string_null_or_white_space(get_email) || !(is_email_valid(get_email))) {
+				if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
 					
 					output[2] = "You must provide a valid email.";
 				}
