@@ -68,7 +68,7 @@ public class Config {
 		//You can define the following constant as a database connection parameter.  Database username and database password are the two other parameters.  That makes a total of three parameters in your database connection.
 		
 		//Example: Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
-		String database_url = "jdbc:mysql://" + this.database_server() + ":" + this.database_port() + "/" + database_name;
+		String database_url = "jdbc:mysql://" + this.database_server() + ":" + this.database_port() + "/" + this.database_name();
 		
 		output += database_url;
 		
