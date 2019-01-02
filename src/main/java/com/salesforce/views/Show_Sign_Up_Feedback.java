@@ -1,6 +1,4 @@
 //Author: Timothy van der Graaff
-package sign_up;
-
 public class Show_Sign_Up_Feedback {
 	
 	public String show_sign_up_feedback(String[] sign_up) {
