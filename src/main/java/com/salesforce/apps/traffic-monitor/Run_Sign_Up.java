@@ -41,7 +41,7 @@ public class Run_Sign_Up extends HttpServlet {
 		confirm_password = request.getParameter("confirm_password");
 		date_received = request.getParameter("date_received");
 		time_received = request.getParameter("time_received");
-		sign_up = request.getParameter("sign_up").ToString();
+		sign_up = request.getParameter("sign_up");
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
@@ -49,7 +49,7 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("<title>Sign up form</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
+		//out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
 		out.println("<input type=\"text\" name=\"first_name\" /><br />");
 		out.println("<input type=\"text\" name=\"last_name\" /><br />");
 		out.println("<input type=\"text\" name=\"email\" /><br />");
@@ -58,8 +58,8 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("<input type=\"text\" name=\"confirm_password\" /><br />");
 		out.println("<input type=\"text\" name=\"date_received\" /><br />");
 		out.println("<input type=\"text\" name=\"time_received\" /><br />");
-		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" /><br />");
-		out.println("</form>");
+		//out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" /><br />");
+		//out.println("</form>");
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</body>");
 		out.println("</html>");
