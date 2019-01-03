@@ -23,25 +23,15 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
-		String first_name = "";
-		String last_name = "";
-		String email = "";
-		String username = "";
-		String password = "";
-		String confirm_password = "";
-		String date_received = "";
-		String time_received = "";
-		String sign_up = "";
-		
-		first_name = request.getParameter("first_name");
-		last_name = request.getParameter("last_name");
-		email = request.getParameter("email");
-		username = request.getParameter("username");
-		password = request.getParameter("password");
-		confirm_password = request.getParameter("confirm_password");
-		date_received = request.getParameter("date_received");
-		time_received = request.getParameter("time_received");
-		sign_up = request.getParameter("sign_up");
+		String first_name = request.getParameter("first_name");
+		String last_name = request.getParameter("last_name");
+		String email = request.getParameter("email");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String confirm_password = request.getParameter("confirm_password");
+		String date_received = request.getParameter("date_received");
+		String time_received = request.getParameter("time_received");
+		String sign_up = request.getParameter("sign_up");
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
