@@ -30,13 +30,12 @@ public class Run_Sign_Up extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		response.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, OPTIONS, DELETE");
 		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
-		response.addHeader("Access-Control-Max-Age", "86400");
 		
 		PrintWriter out = response.getWriter();
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
-		out.println("<form method=\"post\">");
+		out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</form>");
     }
