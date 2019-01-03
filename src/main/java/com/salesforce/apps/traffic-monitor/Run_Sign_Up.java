@@ -30,6 +30,7 @@ public class Run_Sign_Up extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		response.setHeader("Access-Control-Allow-Methods", "POST");
 		response.setHeader("Access-Control-Allow-Methods", "GET");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with, authorization, Content-Type, Authorization, credential, X-XSRF-TOKEN");
 		response.setContentType("text/html;charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
