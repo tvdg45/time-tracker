@@ -33,9 +33,17 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
+		out.println("<!DOCTYPE html>");
+		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+		out.println("<head>");
+		out.println("<title>Sign up form</title>");
+		out.println("</head>");
+		out.println("<body>");
 		out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</form>");
+		out.println("</body>");
+		out.println("</html>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
