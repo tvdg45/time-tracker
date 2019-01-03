@@ -5,6 +5,7 @@
     <version>1.0</version>
     <name>herokusamlsp</name>
     <artifactId>herokusamlsp</artifactId>
+    <artifactId>servlet-cors-destination</artifactId>
     <packaging>jar</packaging>
 
     <properties>
