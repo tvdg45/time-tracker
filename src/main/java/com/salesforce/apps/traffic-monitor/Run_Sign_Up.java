@@ -17,7 +17,7 @@ public class Run_Sign_Up extends HttpServlet {
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		
 		PrintWriter out = response.getWriter();
 		
