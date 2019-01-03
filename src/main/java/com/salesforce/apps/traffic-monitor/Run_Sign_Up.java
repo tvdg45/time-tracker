@@ -36,7 +36,9 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
+		out.println("<form method="post">");
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
+		out.println("</form>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
