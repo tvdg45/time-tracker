@@ -243,7 +243,7 @@ public abstract class Sign_Up extends Config {
 			redundancy_found_in_email = this.repeat_found_in_email(get_email);
 			redundancy_found_in_username = this.repeat_found_in_username(get_username);
 			
-			if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name) || form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email)) || redundancy_found_in_email == "yes" || form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username == "yes" || form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || form_validation.is_string_null_or_white_space(get_confirm_password) || get_confirm_password != get_password) {
+			if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name) || form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email)) || redundancy_found_in_email.equals("yes") || form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username.equals("yes") || form_validation.is_string_null_or_white_space(get_password) || get_password.length() < 8 || form_validation.number_of_uppercase_characters(get_password) < 1 || get_password.replaceAll("\\D", "").length() < 2 || get_username == get_password || form_validation.is_string_null_or_white_space(get_confirm_password) || !(get_confirm_password.equals(get_password))) {
 				
 				if (form_validation.is_string_null_or_white_space(get_first_name)) {
 					
@@ -260,7 +260,7 @@ public abstract class Sign_Up extends Config {
 					output[2] = "You must provide a valid email.";
 				}
 				
-				if (redundancy_found_in_email == "yes") {
+				if (redundancy_found_in_email.equals("yes")) {
 					
 					output[3] = "That email is already taken.  Please choose a different one.";
 				}
@@ -270,7 +270,7 @@ public abstract class Sign_Up extends Config {
 					output[4] = "Your username must contain at least three characters. Your username is allowed to contain letters, numbers, and symbols. Symbols include !, $, #, etc. Your username must not contain any spaces.";
 				}
 				
-				if (redundancy_found_in_username == "yes") {
+				if (redundancy_found_in_username.equals("yes")) {
 					
 					output[5] = "That username is already taken.  Please choose a different one.";
 				}
@@ -283,7 +283,7 @@ public abstract class Sign_Up extends Config {
 				if (form_validation.is_string_null_or_white_space(get_confirm_password)) {
 					
 					output[7] = "You must confirm your password.";
-				} else if (get_confirm_password != get_password) {
+				} else if (!(get_confirm_password.equals(get_password))) {
 					
 					output[7] = "Passwords must match.";
 				}
