@@ -22,7 +22,7 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>CorsFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>https://www.timothysdigitalsolutions.com</url-pattern>
     </filter-mapping>
     
     <servlet>
