@@ -30,7 +30,6 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
-		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" />");
 
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
@@ -42,12 +41,13 @@ public class Run_Sign_Up extends HttpServlet {
 		String time_received = request.getParameter("time_received");
 		String sign_up = request.getParameter("sign_up");
 		
-		if (sign_up == "Signup") {
+		if (sign_up == "Sign up") {
 			
 			out.println(sign_up);
 			out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		}
 		
+		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" />");
 		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");
