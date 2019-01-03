@@ -41,7 +41,7 @@ public class Run_Sign_Up extends HttpServlet {
 		confirm_password = request.getParameter("confirm_password");
 		date_received = request.getParameter("date_received");
 		time_received = request.getParameter("time_received");
-		//sign_up = request.getParameter("sign_up");
+		sign_up = request.getParameter("sign_up");
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
