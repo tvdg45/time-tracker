@@ -41,7 +41,7 @@ public class Run_Sign_Up extends HttpServlet {
 		String time_received = request.getParameter("time_received");
 		String sign_up = request.getParameter("sign_up");
 		
-		if (sign_up == "Sign up") {
+		if (sign_up.equals("Sign up")) {
 			
 			out.println(sign_up);
 			out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
