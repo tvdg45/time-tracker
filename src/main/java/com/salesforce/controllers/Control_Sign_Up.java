@@ -19,6 +19,11 @@ public class Control_Sign_Up extends Sign_Up {
 		
 		output += control_sign_up.show_sign_up_feedback(this.sign_up());*/
 		
+		if (sign_up.equals(null)) {
+			
+			output += "no";
+		}
+		
 		return output;
 	}
 }
