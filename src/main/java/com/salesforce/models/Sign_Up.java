@@ -238,7 +238,7 @@ public abstract class Sign_Up extends Config {
 		String get_time_received = this.get_time_received();
 		String get_sign_up = this.get_sign_up();
 		
-		if (get_sign_up == "Sign up") {
+		if (get_sign_up.equals("Sign up") && !(form_validation.is_string_null_or_white_space(get_first_name))) {
 			
 			redundancy_found_in_email = this.repeat_found_in_email(get_email);
 			redundancy_found_in_username = this.repeat_found_in_username(get_username);
