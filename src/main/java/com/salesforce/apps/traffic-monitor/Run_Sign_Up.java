@@ -28,10 +28,9 @@ public class Run_Sign_Up extends HttpServlet {
 		String sign_up = request.getParameter("sign_up");
 		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
-		response.setHeader("Access-Control-Allow-Methods", "POST");
-		response.setHeader("Access-Control-Allow-Methods", "GET");
-		response.setHeader("Access-Control-Allow-Headers", "x-requested-with, authorization, Content-Type, Authorization, credential, X-XSRF-TOKEN");
-		response.setContentType("text/html;charset=UTF-8");
+		response.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, OPTIONS, DELETE");
+		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
+		response.addHeader("Access-Control-Max-Age", "86400");
 		
 		PrintWriter out = response.getWriter();
 		
