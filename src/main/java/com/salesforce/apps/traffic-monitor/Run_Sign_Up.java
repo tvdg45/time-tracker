@@ -28,8 +28,6 @@ public class Run_Sign_Up extends HttpServlet {
 		String sign_up = request.getParameter("sign_up");
 		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
-		response.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, OPTIONS, DELETE");
-		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
 		
 		PrintWriter out = response.getWriter();
 		
