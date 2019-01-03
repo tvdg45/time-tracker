@@ -21,7 +21,7 @@ public class Control_Sign_Up extends Sign_Up {
 		
 		if (sign_up.equals("null")) {
 			
-			output += "no";
+			output = "no";
 		}
 		
 		return output;
