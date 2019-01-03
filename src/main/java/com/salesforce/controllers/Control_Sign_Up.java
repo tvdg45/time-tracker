@@ -7,7 +7,7 @@ public class Control_Sign_Up extends Sign_Up {
 		
 		String output = "";
 		
-		/*this.set_first_name(first_name);
+		this.set_first_name(first_name);
 		this.set_last_name(last_name);
 		this.set_email(email);
 		this.set_username(username);
@@ -17,15 +17,7 @@ public class Control_Sign_Up extends Sign_Up {
 		this.set_time_received(time_received);
 		this.set_sign_up(sign_up);
 		
-		output += control_sign_up.show_sign_up_feedback(this.sign_up());*/
-		
-		if (sign_up.equals("null")) {
-			
-			output = "no";
-		} else {
-			
-			output = sign_up;
-		}
+		output += control_sign_up.show_sign_up_feedback(this.sign_up());
 		
 		return output;
 	}
