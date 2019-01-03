@@ -5,7 +5,7 @@ public class Control_Sign_Up extends Sign_Up {
 		
 		Show_Sign_Up_Feedback control_sign_up = new Show_Sign_Up_Feedback();
 		
-		String output = "";
+		String output = sign_up;
 		
 		/*this.set_first_name(first_name);
 		this.set_last_name(last_name);
