@@ -27,7 +27,7 @@ public class Run_Sign_Up extends HttpServlet {
 		String time_received = request.getParameter("time_received");
 		String sign_up = request.getParameter("sign_up");
 		
-		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.setContentType("text/html;charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
