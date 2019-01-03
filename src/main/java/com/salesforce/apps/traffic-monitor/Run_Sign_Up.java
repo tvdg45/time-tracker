@@ -43,6 +43,7 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<form method=\"post\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
+		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" />");
 		out.println("</form>");
 		out.println(run_sign_up.control_sign_up(String.valueOf(first_name), String.valueOf(last_name), String.valueOf(email), String.valueOf(username), String.valueOf(password), String.valueOf(confirm_password), String.valueOf(date_received), String.valueOf(time_received), String.valueOf(sign_up)));
 		out.println("</body>");
