@@ -17,16 +17,6 @@ public class Run_Sign_Up extends HttpServlet {
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String first_name = request.getParameter("first_name");
-		String last_name = request.getParameter("last_name");
-		String email = request.getParameter("email");
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String confirm_password = request.getParameter("confirm_password");
-		String date_received = request.getParameter("date_received");
-		String time_received = request.getParameter("time_received");
-		String sign_up = request.getParameter("sign_up");
-		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		
 		PrintWriter out = response.getWriter();
@@ -40,6 +30,17 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<form method=\"get\" action=\"https://user-account-management-1.herokuapp.com/sign-up\">");
+
+		String first_name = request.getParameter("first_name");
+		String last_name = request.getParameter("last_name");
+		String email = request.getParameter("email");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String confirm_password = request.getParameter("confirm_password");
+		String date_received = request.getParameter("date_received");
+		String time_received = request.getParameter("time_received");
+		String sign_up = request.getParameter("sign_up");
+		
 		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" />");
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</form>");
