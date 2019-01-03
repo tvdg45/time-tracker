@@ -42,7 +42,7 @@ public class Run_Sign_Up extends HttpServlet {
 		String sign_up = request.getParameter("sign_up");
 		
 		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" />");
-		out.ptintln(sign_up);
+		out.println(sign_up);
 		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</form>");
 		out.println("</body>");
