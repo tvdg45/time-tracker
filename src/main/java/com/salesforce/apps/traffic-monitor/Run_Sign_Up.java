@@ -50,7 +50,7 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("<input type=\"text\" name=\"time_received\" /><br />");
 		out.println("<input type=\"submit\" name=\"sign_up\" value=\"Sign up\" /><br />");
 		out.println("</form>");
-		out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
+		//out.println(run_sign_up.control_sign_up(first_name, last_name, email, username, password, confirm_password, date_received, time_received, sign_up));
 		out.println("</body>");
 		out.println("</html>");
     }
