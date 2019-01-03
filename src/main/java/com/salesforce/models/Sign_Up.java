@@ -335,7 +335,7 @@ public abstract class Sign_Up extends Config {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
 					
-					output[0] = Level.INFO, "" + e + "";
+					output[0] = "" + e + "";
 				}
 			}
 		} else {
