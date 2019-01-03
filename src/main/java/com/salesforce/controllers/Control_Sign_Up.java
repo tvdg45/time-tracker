@@ -5,6 +5,8 @@ public class Control_Sign_Up extends Sign_Up {
 		
 		Show_Sign_Up_Feedback control_sign_up = new Show_Sign_Up_Feedback();
 		
+		String output = "";
+		
 		this.set_first_name(first_name);
 		this.set_last_name(last_name);
 		this.set_email(email);
@@ -15,6 +17,8 @@ public class Control_Sign_Up extends Sign_Up {
 		this.set_time_received(time_received);
 		this.set_sign_up(sign_up);
 		
-		return control_sign_up.show_sign_up_feedback(this.sign_up());	
+		output += control_sign_up.show_sign_up_feedback(this.sign_up());
+		
+		return output;
 	}
 }
