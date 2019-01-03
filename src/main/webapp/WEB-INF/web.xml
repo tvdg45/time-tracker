@@ -12,16 +12,8 @@
         <filter-name>TLSFilter</filter-name>
         <filter-class>com.salesforce.saml.TLSFilter</filter-class>
     </filter>
-    <filter>
-        <filter-name>CorsFilter</filter-name>
-        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-    </filter>
     <filter-mapping>
         <filter-name>TLSFilter</filter-name>
-        <url-pattern>https://www.timothysdigitalsolutions.com</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
         <url-pattern>https://www.timothysdigitalsolutions.com</url-pattern>
     </filter-mapping>
     
