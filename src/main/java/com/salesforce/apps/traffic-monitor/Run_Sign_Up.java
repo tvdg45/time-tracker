@@ -91,7 +91,7 @@ public class Run_Sign_Up extends HttpServlet {
             // and password to authenticate to the mail server.
             Transport.send(message, "timvdg45", "ranger12");
         } catch (MessagingException e) {
-            e.printStackTrace();
+           out.println(e);
         }
     }
 
