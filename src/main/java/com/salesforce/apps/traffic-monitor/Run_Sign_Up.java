@@ -24,6 +24,7 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		Config use_config = new Config();
 		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
 		String first_name = request.getParameter("first_name");
@@ -42,6 +43,8 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("<title>Sign up form</title>");
 		out.println("</head>");
 		out.println("<body>");
+		out.println("<script type=\"text/javascript\" src=\"" + use_config.domain() + "/backstretch/js/jquery.min.js\"></script>");
+		out.println("<script type=\"text/javascript\" src=\"" + use_config.domain() + "/backstretch/js/jquery.backstretch.js\"></script>");
 		out.println(run_sign_up.control_sign_up(String.valueOf(first_name), String.valueOf(last_name), String.valueOf(email), String.valueOf(username), String.valueOf(password), String.valueOf(confirm_password), String.valueOf(date_received), String.valueOf(time_received), String.valueOf(sign_up)));
 		out.println("</body>");
 		out.println("</html>");
