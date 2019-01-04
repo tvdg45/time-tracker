@@ -54,12 +54,12 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 		
-        String from = "ltrman1996@hotmail.com";
+        String from = "timvdg45@gmail.com";
         String to = "ltrman1996@hotmail.com";
         String subject = "Hello";
 
         Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.hotmail.com");
+        props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.port", "587");
@@ -89,7 +89,7 @@ public class Run_Sign_Up extends HttpServlet {
 
             // Send the message to the recipient. You also need to specify the username 
             // and password to authenticate to the mail server.
-            Transport.send(message, "ltrman1996", "ranger12345");
+            Transport.send(message, "timvdg45", "ranger12");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
