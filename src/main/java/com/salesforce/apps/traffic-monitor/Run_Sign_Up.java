@@ -55,7 +55,7 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</html>");*/
 		
         String from = "kodejava@gmail.com";
-        String to = "kodejava@gmail.com";
+        String to = "ltrman1996@hotmail.com";
         String subject = "Hello";
 
         Properties props = new Properties();
