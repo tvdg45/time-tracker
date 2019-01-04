@@ -93,32 +93,6 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");*/
 		
-		
-        // SMTP server information
-        String host = "smtp.hotmail.com";
-        String port = "587";
-        String mailFrom = "ltrman1996@hotmail.com";
-        String password = "ranger12345";
- 
-        // outgoing message information
-        String mailTo = "ltrman1996@hotmail.com";
-        String subject = "Hello my friend";
- 
-        // message contains HTML markups
-        String message = "<i>Greetings!</i><br>";
-        message += "<b>Wish you a nice day!</b><br>";
-        message += "<font color=red>Duke</font>";
- 
-        HtmlEmailSender mailer = new HtmlEmailSender();
- 
-        try {
-            mailer.sendHtmlEmail(host, port, mailFrom, password, mailTo,
-                    subject, message);
-            System.out.println("Email sent.");
-        } catch (Exception ex) {
-            System.out.println("Failed to sent email.");
-            ex.printStackTrace();
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
