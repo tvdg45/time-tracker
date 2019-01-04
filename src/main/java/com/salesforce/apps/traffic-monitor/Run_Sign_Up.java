@@ -5,11 +5,13 @@ import java.util.Map;
 
 import java.util.Date;
 
+import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -22,8 +24,45 @@ import javax.servlet.http.HttpSession;
 
 
 public class Run_Sign_Up extends HttpServlet {
+
+    public void sendHtmlEmail(String host, String port,
+            final String userName, final String password, String toAddress,
+            String subject, String message) throws AddressException,
+            MessagingException {
+ 
+        // sets SMTP server properties
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", port);
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+ 
+        // creates a new session with an authenticator
+        Authenticator auth = new Authenticator() {
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(userName, password);
+            }
+        };
+ 
+        Session session = Session.getInstance(properties, auth);
+ 
+        // creates a new e-mail message
+        Message msg = new MimeMessage(session);
+ 
+        msg.setFrom(new InternetAddress(userName));
+        InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
+        msg.setRecipients(Message.RecipientType.TO, toAddresses);
+        msg.setSubject(subject);
+        msg.setSentDate(new Date());
+        // set plain text message
+        msg.setContent(message, "text/html");
+ 
+        // sends the e-mail
+        Transport.send(msg);
+ 
+    }
 	
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
 		response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -55,59 +94,31 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("</html>");*/
 		
 		
-      // Recipient's email ID needs to be mentioned.
-      String to = "ltrman1996@hotmail.com";
-
-      // Sender's email ID needs to be mentioned
-      String from = "fromemail@gmail.com";
-      final String username = "manishaspatil";//change accordingly
-      final String password = "******";//change accordingly
-
-      // Assuming you are sending email through relay.jangosmtp.net
-      String host = "relay.jangosmtp.net";
-
-      Properties props = new Properties();
-      props.put("mail.smtp.auth", "true");
-      props.put("mail.smtp.starttls.enable", "true");
-      props.put("mail.smtp.host", host);
-      props.put("mail.smtp.port", "25");
-
-      // Get the Session object.
-      Session session = Session.getInstance(props,
-         new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-               return new PasswordAuthentication(username, password);
-            }
-	});
-
-      try {
-            // Create a default MimeMessage object.
-            Message message = new MimeMessage(session);
-
-   	   // Set From: header field of the header.
-	   message.setFrom(new InternetAddress(from));
-
-	   // Set To: header field of the header.
-	   message.setRecipients(Message.RecipientType.TO,
-              InternetAddress.parse(to));
-
-	   // Set Subject: header field
-	   message.setSubject("Testing Subject");
-
-	   // Send the actual HTML message, as big as you like
-	   message.setContent(
-              "<h1>This is actual message embedded in HTML tags</h1>",
-             "text/html");
-
-	   // Send message
-	   Transport.send(message);
-
-	   out.println("Sent message successfully....");
-
-      } catch (MessagingException e) {
-	   e.printStackTrace();
-	   throw new RuntimeException(e);
-      }
+        // SMTP server information
+        String host = "smtp.hotmail.com";
+        String port = "587";
+        String mailFrom = "your-email-address";
+        String password = "your-email-password";
+ 
+        // outgoing message information
+        String mailTo = "ltrman1996@hotmail.com";
+        String subject = "Hello my friend";
+ 
+        // message contains HTML markups
+        String message = "<i>Greetings!</i><br>";
+        message += "<b>Wish you a nice day!</b><br>";
+        message += "<font color=red>Duke</font>";
+ 
+        HtmlEmailSender mailer = new HtmlEmailSender();
+ 
+        try {
+            mailer.sendHtmlEmail(host, port, mailFrom, password, mailTo,
+                    subject, message);
+            System.out.println("Email sent.");
+        } catch (Exception ex) {
+            System.out.println("Failed to sent email.");
+            ex.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
