@@ -22,8 +22,9 @@ public class Show_Sign_Up_Feedback {
 				output += "$(\".create_new_account\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"GET\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/sign-up-email.php?first_name=" + first_name + "&last_name=" + last_name + "&username=" + username + "&password=" + password + "&email=" + email + "\", true);\n";
-				output += "xhttp.send();\n";
+				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/sign-up-email.php\", true);\n";
+				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
+				output += "xhttp.send(\"first_name=" + first_name + "&last_name=" + last_name + "&username=" + username + "&password=" + password + "&email=" + email + "\");\n";
 				output += "});\n";
 				output += "</script>\n";
 				output += "<div class=\"create_new_account\" style=\"text-align: left; width: 100%\"></div>\n\n";
