@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
 
 public class Run_Sign_Up extends HttpServlet {
 
-    public void sendHtmlEmail(String host, String port,
+    /*public void sendHtmlEmail(String host, String port,
             final String userName, final String password, String toAddress,
             String subject, String message) throws AddressException,
             MessagingException {
@@ -60,7 +60,7 @@ public class Run_Sign_Up extends HttpServlet {
         // sends the e-mail
         Transport.send(msg);
  
-    }
+    }*/
 	
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
