@@ -5,14 +5,6 @@ import java.util.Map;
 
 import java.util.Date;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -53,46 +45,6 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println(run_sign_up.control_sign_up(String.valueOf(first_name), String.valueOf(last_name), String.valueOf(email), String.valueOf(username), String.valueOf(password), String.valueOf(confirm_password), String.valueOf(date_received), String.valueOf(time_received), String.valueOf(sign_up)));
 		out.println("</body>");
 		out.println("</html>");
-		
-        String from = "timvdg45@gmail.com";
-        String to = "ltrman1996@hotmail.com";
-        String subject = "Hello";
-
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.port", "587");
-        Session session = Session.getDefaultInstance(props);
-		
-        try {
-            InternetAddress fromAddress = new InternetAddress(from);
-            InternetAddress toAddress = new InternetAddress(to);
-
-            Message message = new MimeMessage(session);
-            message.setFrom(fromAddress);
-            message.setRecipient(Message.RecipientType.TO, toAddress);
-            message.setSubject(subject);
-
-            String sb = "<head>" +
-                "<style type=\"text/css\">" +
-                "  .red { color: #f00; }" +
-                "</style>" +
-                "</head>" +
-                "<h1 class=\"red\">" + message.getSubject() + "</h1>" +
-                "<p>" +
-                "Lorem ipsum dolor sit amet, <em>consectetur</em> adipisicing elit, " +
-                "sed do eiusmod tempor incididunt ut labore et dolore magna <strong>" +
-                "aliqua</strong>.</p>";
-            message.setContent(sb, "text/html; charset=utf-8");
-            message.saveChanges();
-
-            // Send the message to the recipient. You also need to specify the username 
-            // and password to authenticate to the mail server.
-            Transport.send(message, "timvdg45", "ranger12");
-        } catch (MessagingException e) {
-           out.println(e);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
