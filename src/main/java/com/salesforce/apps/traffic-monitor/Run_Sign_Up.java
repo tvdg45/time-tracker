@@ -32,7 +32,7 @@ public class Run_Sign_Up extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		/*Control_Sign_Up run_sign_up = new Control_Sign_Up();
+		Control_Sign_Up run_sign_up = new Control_Sign_Up();
 		
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
@@ -52,14 +52,14 @@ public class Run_Sign_Up extends HttpServlet {
 		out.println("<body>");
 		out.println(run_sign_up.control_sign_up(String.valueOf(first_name), String.valueOf(last_name), String.valueOf(email), String.valueOf(username), String.valueOf(password), String.valueOf(confirm_password), String.valueOf(date_received), String.valueOf(time_received), String.valueOf(sign_up)));
 		out.println("</body>");
-		out.println("</html>");*/
+		out.println("</html>");
 		
-        String from = "kodejava@gmail.com";
+        String from = "ltrman1996@hotmail.com";
         String to = "ltrman1996@hotmail.com";
         String subject = "Hello";
 
         Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.host", "smtp.hotmail.com");
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.port", "587");
@@ -89,7 +89,7 @@ public class Run_Sign_Up extends HttpServlet {
 
             // Send the message to the recipient. You also need to specify the username 
             // and password to authenticate to the mail server.
-            Transport.send(message, "kodejava", "********");
+            Transport.send(message, "ltrman1996", "ranger12345");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
