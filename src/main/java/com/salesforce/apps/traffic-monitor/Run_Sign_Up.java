@@ -22,7 +22,6 @@ public class Run_Sign_Up extends HttpServlet {
 		response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
 		response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
 	    
-	    request.setRequestMethod("POST");
 		PrintWriter out = response.getWriter();
 		
 		Config use_config = new Config();
@@ -84,7 +83,7 @@ public class Run_Sign_Up extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    @Override
+    //@Override
     public String getServletInfo() {
         
 		return "Short description";
