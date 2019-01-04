@@ -1,7 +1,7 @@
 //Author: Timothy van der Graaff
 public class Show_Sign_Up_Feedback {
 	
-	public String show_sign_up_feedback(String[] sign_up) {
+	public String show_sign_up_feedback(String[] sign_up, String first_name, String last_name, String username, String password, String email) {
 		
 		Config use_config = new Config();
 		
@@ -14,6 +14,19 @@ public class Show_Sign_Up_Feedback {
 				output = "";
 			} else if (sign_up[0] == "successful database update") {
 				
+				output += "<script type=\"text/javascript\">\n";
+				output += "$(document).ready(function() {\n\n";
+				output += "var xhttp = new XMLHttpRequest();\n\n";
+				output += "xhttp.onreadystatechange = function() {\n\n";
+				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
+				output += "$(\".create_new_account\").html(this.responseText);\n";
+				output += "}\n";
+				output += "};\n\n";
+				output += "xhttp.open(\"GET\", \"https://user-account-management-1.herokuapp.com/sign-up-email.php?first_name=" + first_name + "&last_name=" + last_name + "&username=" + username + "&password=" + password + "&email=" + email + "\", true);\n";
+				output += "xhttp.send();\n";
+				output += "});\n";
+				output += "</script>\n";
+				output += "<div class=\"create_new_account\" style=\"text-align: left; width: 100%\"></div>\n\n";
 				output += "<label>Thank you for signing up!  You should receive an email with furthur instructions. <a href='" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php'>Click here</a> to log in.</label>\n";
 			} else {
 				
