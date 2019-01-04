@@ -64,6 +64,35 @@ public class Run_Sign_Up extends HttpServlet {
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.port", "587");
         Session session = Session.getDefaultInstance(props);
+		
+        try {
+            InternetAddress fromAddress = new InternetAddress(from);
+            InternetAddress toAddress = new InternetAddress(to);
+
+            Message message = new MimeMessage(session);
+            message.setFrom(fromAddress);
+            message.setRecipient(Message.RecipientType.TO, toAddress);
+            message.setSubject(subject);
+
+            String sb = "<head>" +
+                "<style type=\"text/css\">" +
+                "  .red { color: #f00; }" +
+                "</style>" +
+                "</head>" +
+                "<h1 class=\"red\">" + message.getSubject() + "</h1>" +
+                "<p>" +
+                "Lorem ipsum dolor sit amet, <em>consectetur</em> adipisicing elit, " +
+                "sed do eiusmod tempor incididunt ut labore et dolore magna <strong>" +
+                "aliqua</strong>.</p>";
+            message.setContent(sb, "text/html; charset=utf-8");
+            message.saveChanges();
+
+            // Send the message to the recipient. You also need to specify the username 
+            // and password to authenticate to the mail server.
+            Transport.send(message, "kodejava", "********");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
