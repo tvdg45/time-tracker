@@ -27,7 +27,6 @@ public class Show_Sign_Up_Feedback {
 				output += "});\n";
 				output += "</script>\n";
 				output += "<div class=\"create_new_account\" style=\"text-align: left; width: 100%\"></div>\n\n";
-				output += "<label>Thank you for signing up!  You should receive an email with furthur instructions. <a href='" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php'>Click here</a> to log in.</label>\n";
 			} else {
 				
 				output += "<div style=\"text-align: left; width: 100%\">\n";
