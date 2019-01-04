@@ -97,8 +97,8 @@ public class Run_Sign_Up extends HttpServlet {
         // SMTP server information
         String host = "smtp.hotmail.com";
         String port = "587";
-        String mailFrom = "your-email-address";
-        String password = "your-email-password";
+        String mailFrom = "ltrman1996@hotmail.com";
+        String password = "ranger12345";
  
         // outgoing message information
         String mailTo = "ltrman1996@hotmail.com";
