@@ -106,6 +106,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			}
 		} catch (Exception e) {
 			
+			output = Level.INFO, "" + e + "";
 			LOGGER.log(Level.INFO, "" + e + "");
 		}
 		
