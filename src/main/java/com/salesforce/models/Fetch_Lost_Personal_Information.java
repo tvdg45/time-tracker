@@ -90,7 +90,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			
 			PreparedStatement select_statement = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
 			
-			select_statement.setString(1, String.valueOf(get_email));
+			select_statement.setString(1, "ltrman1996@hotmail.com");
 			//select_statement.setString(2, get_username);
 			
 			ResultSet select_results = select_statement.executeQuery();
