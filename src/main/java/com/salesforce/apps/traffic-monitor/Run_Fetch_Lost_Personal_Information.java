@@ -68,8 +68,8 @@ public class Run_Fetch_Lost_Personal_Information extends HttpServlet {
 		out.println("<body>");
 		out.println("<script type=\"text/javascript\" src=\"" + use_config.domain() + "/backstretch/js/jquery.min.js\"></script>");
 		out.println("<script type=\"text/javascript\" src=\"" + use_config.domain() + "/backstretch/js/jquery.backstretch.js\"></script>");
-		out.println(run_fetch_lost_personal_information.control_fetch_username(String.valueOf(email), String.valueOf(fetch_username));
-		out.println(run_fetch_lost_personal_information.control_fetch_password(String.valueOf(username), String.valueOf(fetch_password));
+		out.println(run_fetch_lost_personal_information.control_fetch_username(String.valueOf(email), String.valueOf(fetch_username)));
+		out.println(run_fetch_lost_personal_information.control_fetch_password(String.valueOf(username), String.valueOf(fetch_password)));
 		out.println("</body>");
 		out.println("</html>");
     }
