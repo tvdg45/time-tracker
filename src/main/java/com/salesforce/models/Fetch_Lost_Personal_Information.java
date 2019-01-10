@@ -88,12 +88,12 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement select_statement = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
+			PreparedStatement select_statement_2 = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
 			
-			select_statement.setString(1, "tvdg45");
+			select_statement_2.setString(1, "tvdg45");
 			//select_statement.setString(2, get_username);
 			
-			ResultSet select_results = select_statement.executeQuery();
+			ResultSet select_results = select_statement_2.executeQuery();
 			
 			select_results.last();
 			
