@@ -88,24 +88,24 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement select_statement_2 = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
+			PreparedStatement select_statement = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? OR username = BINARY ? ORDER BY row_id DESC");
 			
-			select_statement_2.setString(1, "tvdg45");
-			//select_statement.setString(2, get_username);
+			select_statement.setString(1, get_email);
+			select_statement.setString(2, get_username);
 			
-			ResultSet select_results_2 = select_statement_2.executeQuery();
+			ResultSet select_results = select_statement.executeQuery();
 			
-			select_results_2.last();
+			//select_results.last();
 			
-			if (select_results_2.getRow() == 1) {
+			if (select_results.getRow() == 1) {
 				
-				while (select_results_2.next()) {
+				while (select_results.next()) {
 					
-					output = select_results_2.getString(1);
+					output = select_results.getString(1);
 				}
 			}
 			
-			output = String.valueOf(select_results_2.getRow()) + "<br />" + get_email + "<br />" + get_username + "<br />";
+			output = String.valueOf(select_results.getRow()) + "<br />" + get_email + "<br />" + get_username + "<br />";
 		} catch (Exception e) {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
