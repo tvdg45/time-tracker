@@ -21,10 +21,10 @@ public class Control_Fetch_Lost_Personal_Information extends Fetch_Lost_Personal
 		
 		String output = "";
 		
-		this.set_username(username);
-		this.set_fetch_password(fetch_password);
+		//this.set_username(username);
+		//this.set_fetch_password(fetch_password);
 		
-		output += control_fetch_lost_personal_information.show_fetch_lost_personal_information_feedback(this.fetch_password(), this.search_first_name(), username, this.search_email(), this.search_password());
+		//output += control_fetch_lost_personal_information.show_fetch_lost_personal_information_feedback(this.fetch_password(), this.search_first_name(), username, this.search_email(), this.search_password());
 		
 		return output;
 	}
