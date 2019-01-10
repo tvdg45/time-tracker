@@ -47,6 +47,9 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "</ul>\n";
 				output += "</div>\n";
 			}
+		} else {
+			
+			output = fetch_username[0];
 		}
 		
 		return output;
