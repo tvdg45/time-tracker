@@ -93,19 +93,19 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			select_statement_2.setString(1, "tvdg45");
 			//select_statement.setString(2, get_username);
 			
-			ResultSet select_results = select_statement_2.executeQuery();
+			ResultSet select_results_2 = select_statement_2.executeQuery();
 			
-			select_results.last();
+			select_results_2.last();
 			
-			if (select_results.getRow() == 1) {
+			if (select_results_2.getRow() == 1) {
 				
-				while (select_results.next()) {
+				while (select_results_2.next()) {
 					
-					output = select_results.getString(1);
+					output = select_results_2.getString(1);
 				}
 			}
 			
-			output = String.valueOf(select_results.getRow()) + "<br />" + get_email + "<br />" + get_username + "<br />";
+			output = String.valueOf(select_results_2.getRow()) + "<br />" + get_email + "<br />" + get_username + "<br />";
 		} catch (Exception e) {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
