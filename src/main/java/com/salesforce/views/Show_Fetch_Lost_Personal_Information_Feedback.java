@@ -28,6 +28,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "});\n";
 				output += "</script>\n";
 				output += "<div class=\"fetch_username_email\" style=\"text-align: left; width: 100%\"></div>\n\n";
+				output += "<br />" + search_first_name + "," + search_username + "," + email;
 			} else {
 				
 				output += "<div style=\"text-align: left; width: 100%\">\n";
@@ -48,8 +49,6 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "</div>\n";
 			}
 		}
-		
-		output = fetch_username[0];
 		
 		return output;
 	}
