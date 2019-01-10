@@ -179,7 +179,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 				}
 			}
 			
-			output = String.valueOf(select_results.getRow()) + "<br />" + get_email + "<br />" + get_username + "<br />";
+			output = String.valueOf(select_results.getRow()) + "<br />" + get_username + "<br />";
 		} catch (Exception e) {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
