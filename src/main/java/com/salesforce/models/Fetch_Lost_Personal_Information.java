@@ -141,8 +141,6 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					output = select_results.getString(1);
 				}
 			}
-			
-			output = String.valueOf(select_results.getRow()) + "<br />" + get_email + "<br />";
 		} catch (Exception e) {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
@@ -178,8 +176,6 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					output = select_results.getString(1);
 				}
 			}
-			
-			output = String.valueOf(select_results.getRow()) + get_username + "<br />";
 		} catch (Exception e) {
 			
 			LOGGER.log(Level.INFO, "" + e + "");
