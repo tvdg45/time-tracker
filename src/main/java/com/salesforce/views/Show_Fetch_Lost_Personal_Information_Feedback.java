@@ -1,18 +1,18 @@
 //Author: Timothy van der Graaff
 public class Show_Fetch_Lost_Personal_Information_Feedback {
 	
-	public String show_fetch_lost_personal_information_feedback(String[] fetch_username, String search_first_name, String search_username, String email) {
+	public String show_fetch_lost_personal_information_feedback(String[][] fetch_username, String[][] search_first_name, String[][] search_username, String email) {
 		
 		Config use_config = new Config();
 		
 		String output = "";
 		
-		if (fetch_username[0] != "database error") {
+		if (fetch_username[0][0] != "database error") {
 			
-			if (fetch_username[0] == "no user action") {
+			if (fetch_username[0][0] == "no user action") {
 				
 				output = "";
-			} else if (fetch_username[0] == "successful username authentication") {
+			} else if (fetch_username[0][0] == "successful username authentication") {
 				
 				output += "<script type=\"text/javascript\">\n";
 				output += "$(document).ready(function() {\n\n";
@@ -24,11 +24,11 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "};\n\n";
 				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-username-email.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
-				output += "xhttp.send(\"first_name=" + search_first_name + "&username=" + search_username + "&email=" + email + "\");\n";
+				output += "xhttp.send(\"first_name=" + search_first_name[0][1] + "&username=" + search_username[0][2] + "&email=" + email + "\");\n";]1
 				output += "});\n";
 				output += "</script>\n";
 				output += "<div class=\"fetch_username_email\" style=\"text-align: left; width: 100%\"></div>\n\n";
-				output += "<br />" + search_first_name + "," + search_username + "," + email;
+				output += "<br />" + search_first_name[0][1] + "," + search_username[0][2] + "," + email;
 			} else {
 				
 				output += "<div style=\"text-align: left; width: 100%\">\n";
@@ -39,9 +39,9 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 	
 				for (int row = 0; row < fetch_username.length; row++) {
 
-					if (fetch_username[row] != null) {
+					if (fetch_username[row][0] != null) {
 						
-						output += "<li><label>" + fetch_username[row] + "</label></li>\n";
+						output += "<li><label>" + fetch_username[row][0] + "</label></li>\n";
 					}
 				}
 	
