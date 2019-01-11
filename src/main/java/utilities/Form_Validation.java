@@ -1,10 +1,11 @@
 //Author: Timothy van der Graaff
-import java.util.regex.Matcher; 
+package utilities;
+
 import java.util.regex.Pattern; 
 
 public class Form_Validation {
 	
-	public static boolean is_string_null_or_white_space(String input_string) {
+	public boolean is_string_null_or_white_space(String input_string) {
     
 		if (input_string == null) {
 			
@@ -22,7 +23,7 @@ public class Form_Validation {
 		return true;
 	}
 	
-    public static boolean is_email_valid(String input_string) { 
+    public boolean is_email_valid(String input_string) { 
         
 		String email_regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 		
@@ -37,7 +38,7 @@ public class Form_Validation {
 		}
     }
 	
-	public static int number_of_white_spaces(String input_string) {
+	public int number_of_white_spaces(String input_string) {
 		
 		int output = 0;
 		
@@ -46,7 +47,7 @@ public class Form_Validation {
 		return output;
 	}
 	
-	public static int number_of_uppercase_characters(String input_string) {
+	public int number_of_uppercase_characters(String input_string) {
 		
 		int output;
 		
