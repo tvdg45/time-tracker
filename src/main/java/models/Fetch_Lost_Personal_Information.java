@@ -1,4 +1,6 @@
 //Author: Timothy van der Graaff
+package models;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public abstract class Fetch_Lost_Personal_Information extends Config {
+public abstract class Fetch_Lost_Personal_Information extends configuration.Config {
 	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
@@ -148,7 +150,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 	
 	protected String[][] fetch_username() {
 		
-		Form_Validation form_validation = new Form_Validation();
+		utilities.Form_Validation form_validation = new utilities.Form_Validation();
 		
 		String[][] output = new String[1][4];
 		
@@ -205,7 +207,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 	
 	protected String[][] fetch_password() {
 		
-		Form_Validation form_validation = new Form_Validation();
+		utilities.Form_Validation form_validation = new utilities.Form_Validation();
 		
 		String[][] output = new String[1][5];
 		
