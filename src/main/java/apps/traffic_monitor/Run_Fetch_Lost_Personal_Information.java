@@ -1,3 +1,5 @@
+package apps.traffic_monitor;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -52,8 +54,8 @@ public class Run_Fetch_Lost_Personal_Information extends HttpServlet {
 	    
 		PrintWriter out = response.getWriter();
 		
-		Config use_config = new Config();
-		Control_Fetch_Lost_Personal_Information run_fetch_lost_personal_information = new Control_Fetch_Lost_Personal_Information();
+		configuration.Config use_config = new configuration.Config();
+		controllers.Control_Fetch_Lost_Personal_Information run_fetch_lost_personal_information = new controllers.Control_Fetch_Lost_Personal_Information();
 		
 		String email = request.getParameter("email");
 		String username = request.getParameter("username");
