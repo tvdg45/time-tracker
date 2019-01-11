@@ -10,13 +10,17 @@
     </welcome-file-list>
     <filter>
         <filter-name>TLSFilter</filter-name>
-        <filter-class>com.salesforce.saml.TLSFilter</filter-class>
+        <filter-class>saml.TLSFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>TLSFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
+    <servlet>
+        <servlet-name>SAMLServlet</servlet-name>
+        <servlet-class>saml.SAMLServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>Run_Sign_Up</servlet-name>
         <servlet-class>Run_Sign_Up</servlet-class>
@@ -26,6 +30,10 @@
         <servlet-class>Run_Fetch_Lost_Personal_Information</servlet-class>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>SAMLServlet</servlet-name>
+        <url-pattern>/_saml</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Run_Sign_Up</servlet-name>
         <url-pattern>/sign-up</url-pattern>
