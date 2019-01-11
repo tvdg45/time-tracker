@@ -1,4 +1,6 @@
 //Author: Timothy van der Graaff
+package configuration;
+
 public class Config {
 	
 	public String database_server() {
