@@ -1,7 +1,7 @@
 package saml;
 
-import com.salesforce.util.Bag;
-import com.salesforce.util.XSDDateTime;
+import util.Bag;
+import util.XSDDateTime;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
 import org.apache.commons.httpclient.HttpClient;
