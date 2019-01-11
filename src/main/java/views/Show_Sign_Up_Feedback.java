@@ -1,9 +1,11 @@
 //Author: Timothy van der Graaff
+package views;
+
 public class Show_Sign_Up_Feedback {
 	
 	public String show_sign_up_feedback(String[] sign_up, String first_name, String last_name, String username, String password, String email) {
 		
-		Config use_config = new Config();
+		configuration.Config use_config = new configuration.Config();
 		
 		String output = "";
 		
