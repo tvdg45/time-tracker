@@ -309,6 +309,8 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 							output[0][1] = select_results.getString(1);
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
+							
+							LOGGER.log(Level.INFO, "" + output[0][1] + output[0][2] + output[0][3] + "");
 						}
 					}
 				} catch (Exception e) {
