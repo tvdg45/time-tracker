@@ -295,7 +295,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					ResultSet select_results = select_statement.executeQuery();
 					
-					select_results.last();
+					//select_results.last();
 					
 					if (select_results.getRow() != 1) {
 						
