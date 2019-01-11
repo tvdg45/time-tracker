@@ -1,5 +1,3 @@
-package com.salesforce;
-
 import java.io.File;
 
 import org.apache.catalina.WebResourceRoot;
