@@ -271,7 +271,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		
 		Form_Validation form_validation = new Form_Validation();
 		
-		String[][] output = new String[1][2];
+		String[][] output = new String[1][4];
 		
 		String get_email = this.get_email();
 		String get_fetch_username = this.get_fetch_username();
@@ -289,7 +289,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 					
-					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
+					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
 				
 					select_statement.setString(1, get_email);
 					
@@ -307,7 +307,8 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 						while (select_results.next()) {
 							
 							output[0][1] = select_results.getString(1);
-							output[0][2] = select_results.getString(1);
+							output[0][2] = select_results.getString(2);
+							output[0][3] = select_results.getString(3);
 						}
 					}
 				} catch (Exception e) {
