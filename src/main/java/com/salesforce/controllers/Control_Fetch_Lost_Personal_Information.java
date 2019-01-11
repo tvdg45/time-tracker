@@ -10,7 +10,7 @@ public class Control_Fetch_Lost_Personal_Information extends Fetch_Lost_Personal
 		this.set_email(email);
 		this.set_fetch_username(fetch_username);
 		
-		output += control_fetch_lost_personal_information.show_fetch_lost_personal_information_feedback(this.fetch_username(), this.search_first_name(), this.search_username(), email);
+		output += control_fetch_lost_personal_information.show_fetch_lost_personal_information_feedback(this.fetch_username(), this.fetch_username(), this.fetch_username(), email);
 		
 		return output;
 	}
