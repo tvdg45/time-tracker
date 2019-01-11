@@ -23,11 +23,11 @@
     </servlet>
     <servlet>
         <servlet-name>Run_Sign_Up</servlet-name>
-        <servlet-class>Run_Sign_Up</servlet-class>
+        <servlet-class>apps.traffic_monitor.Run_Sign_Up</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Run_Fetch_Lost_Personal_Information</servlet-name>
-        <servlet-class>Run_Fetch_Lost_Personal_Information</servlet-class>
+        <servlet-class>apps.traffic_monitor.Run_Fetch_Lost_Personal_Information</servlet-class>
     </servlet>
 
     <servlet-mapping>
