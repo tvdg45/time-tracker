@@ -1,4 +1,6 @@
 //Author: Timothy van der Graaff
+package models;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public abstract class Sign_Up extends Config {
+public abstract class Sign_Up extends configuration.Config {
 	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
@@ -222,7 +224,7 @@ public abstract class Sign_Up extends Config {
 	
 	protected String[] sign_up() {
 		
-		Form_Validation form_validation = new Form_Validation();
+		utilities.Form_Validation form_validation = new utilities.Form_Validation();
 		
 		String[] output = new String[8];
 		String redundancy_found_in_email = "";
