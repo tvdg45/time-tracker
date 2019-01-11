@@ -1,9 +1,11 @@
 //Author: Timothy van der Graaff
-public class Control_Sign_Up extends Sign_Up {
+package controllers;
+
+public class Control_Sign_Up extends models.Sign_Up {
 	
 	public String control_sign_up(String first_name, String last_name, String email, String username, String password, String confirm_password, String date_received, String time_received, String sign_up) {
 		
-		Show_Sign_Up_Feedback control_sign_up = new Show_Sign_Up_Feedback();
+		views.Show_Sign_Up_Feedback control_sign_up = new views.Show_Sign_Up_Feedback();
 		
 		String output = "";
 		
