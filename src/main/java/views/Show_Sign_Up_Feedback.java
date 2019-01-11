@@ -18,6 +18,12 @@ public class Show_Sign_Up_Feedback {
 				
 				output += "<script type=\"text/javascript\">\n";
 				output += "$(document).ready(function() {\n\n";
+				output += "$(\"#new_first_name\").val(\"\");\n";
+				output += "$(\"#new_last_name\").val(\"\");\n";
+				output += "$(\"#new_email\").val(\"\");\n";
+				output += "$(\"#new_username\").val(\"\");\n";
+				output += "$(\"#new_password\").val(\"\");\n";
+				output += "$(\"#confirm_new_password\").val(\"\");\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
