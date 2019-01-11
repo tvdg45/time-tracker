@@ -271,7 +271,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		
 		Form_Validation form_validation = new Form_Validation();
 		
-		String[][] output = new String[1][4];
+		String[][] output = new String[4][4];
 		
 		String get_email = this.get_email();
 		String get_fetch_username = this.get_fetch_username();
@@ -306,7 +306,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 						
 						while (select_results.next()) {
 							
-							output[0][1].equals(select_results.getString(1));
+							output[0][1] = select_results.getString(1);
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
