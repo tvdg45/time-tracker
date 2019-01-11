@@ -351,11 +351,11 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		return output;
 	}
 	
-	protected String[] fetch_password() {
+	protected String[][] fetch_password() {
 		
 		Form_Validation form_validation = new Form_Validation();
 		
-		String[] output = new String[1];
+		String[][] output = new String[1][5];
 		
 		String get_username = this.get_username();
 		String get_fetch_password = this.get_fetch_password();
@@ -373,22 +373,28 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 					
-					PreparedStatement select_statement = connection.prepareStatement("SELECT row_id FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
+					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email, password FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
 				
 					select_statement.setString(1, get_username);
 					
 					ResultSet select_results = select_statement.executeQuery();
 					
-					select_results.last();
-					
-					if (select_results.getRow() != 1) {
+					if (this.check_number_of_rows("third_party_account_info_per_traffic_monitor_app", "username", get_username) != 1) {
 						
 						output[0] = "That username does not match our records.  Please try again.";
 					} else {
 						
+						this.change_password(get_username);
+						
 						output[0] = "successful password authentication";
 						
-						this.change_password(get_username);
+						while (select_results.next()) {
+							
+							output[0][1] = select_results.getString(1);
+							output[0][2] = select_results.getString(2);
+							output[0][3] = select_results.getString(3);
+							output[0][4] = select_results.getString(4);
+						}						
 					}
 				} catch (Exception e) {
 					
