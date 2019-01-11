@@ -306,7 +306,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 						
 						while (select_results.next()) {
 							
-							output[0][0] = select_results.getString(1);
+							output[0][0] = String.valueOf(select_results.getString(1));
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
