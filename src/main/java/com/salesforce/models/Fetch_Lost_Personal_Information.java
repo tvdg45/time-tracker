@@ -364,7 +364,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			
 			if (get_username.equals("null") || form_validation.is_string_null_or_white_space(get_username)) {
 				
-				output[0] = "You must provide your username.";
+				output[0][0] = "You must provide your username.";
 			} else {
 				
 				try {
@@ -381,12 +381,12 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					if (this.check_number_of_rows("third_party_account_info_per_traffic_monitor_app", "username", get_username) != 1) {
 						
-						output[0] = "That username does not match our records.  Please try again.";
+						output[0][0] = "That username does not match our records.  Please try again.";
 					} else {
 						
 						this.change_password(get_username);
 						
-						output[0] = "successful password authentication";
+						output[0][0] = "successful password authentication";
 						
 						while (select_results.next()) {
 							
@@ -400,12 +400,12 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
 					
-					output[0] = "database error";
+					output[0][0] = "database error";
 				}
 			}
 		} else {
 			
-			output[0] = "no user action";
+			output[0][0] = "no user action";
 		}
 		
 		return output;
