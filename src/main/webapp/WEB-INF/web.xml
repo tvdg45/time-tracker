@@ -18,10 +18,6 @@
     </filter-mapping>
     
     <servlet>
-        <servlet-name>SAMLServlet</servlet-name>
-        <servlet-class>com.salesforce.saml.SAMLServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Run_Sign_Up</servlet-name>
         <servlet-class>Run_Sign_Up</servlet-class>
     </servlet>
@@ -30,10 +26,6 @@
         <servlet-class>Run_Fetch_Lost_Personal_Information</servlet-class>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>SAMLServlet</servlet-name>
-        <url-pattern>/_saml</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Run_Sign_Up</servlet-name>
         <url-pattern>/sign-up</url-pattern>
