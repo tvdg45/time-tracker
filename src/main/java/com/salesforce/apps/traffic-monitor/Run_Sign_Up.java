@@ -1,3 +1,6 @@
+//Author: Timothy van der Graaff
+package apps.traffic_monitor;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -52,8 +55,8 @@ public class Run_Sign_Up extends HttpServlet {
 	    
 		PrintWriter out = response.getWriter();
 		
-		Config use_config = new Config();
-		Control_Sign_Up run_sign_up = new Control_Sign_Up();
+		configuration.Config use_config = new configuration.Config();
+		controllers.Control_Sign_Up run_sign_up = new controllers.Control_Sign_Up();
 		
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
