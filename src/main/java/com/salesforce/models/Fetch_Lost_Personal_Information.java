@@ -293,15 +293,14 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 				
 					select_statement.setString(1, get_email);
 					
-					ResultSet select_number_results = select_statement.executeQuery();
 					ResultSet select_results = select_statement.executeQuery();
 					
-					select_number_results.last();
+					//select_results.last();
 					
-					if (select_number_results.getRow() != 1) {
+					//if (select_results.getRow() != 1) {
 						
-						output[0][0] = "That email does not match our records.  Please try again.";
-					} else {
+					//	output[0][0] = "That email does not match our records.  Please try again.";
+					//} else {
 						
 						output[0][0] = "successful username authentication";
 						
@@ -311,7 +310,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
-					}
+					//}
 				} catch (Exception e) {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
