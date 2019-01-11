@@ -18,6 +18,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				
 				output += "<script type=\"text/javascript\">\n";
 				output += "$(document).ready(function() {\n\n";
+				output += "$(\"#email\").val(\"\");\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
@@ -34,6 +35,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				
 				output += "<script type=\"text/javascript\">\n";
 				output += "$(document).ready(function() {\n\n";
+				output += "$(\"#find_password_username\").val(\"\");\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
