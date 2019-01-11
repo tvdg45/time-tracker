@@ -267,11 +267,11 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		}
 	}
 	
-	protected String[] fetch_username() {
+	protected String[][] fetch_username() {
 		
 		Form_Validation form_validation = new Form_Validation();
 		
-		String[] output = new String[1];
+		String[][] output = new String[1][1];
 		
 		String get_email = this.get_email();
 		String get_fetch_username = this.get_fetch_username();
@@ -280,7 +280,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 			
 			if (get_email.equals("null") || form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
 				
-				output[0] = "You must provide a valid email.";
+				output[0][0] = "You must provide a valid email.";
 			} else {
 				
 				try {
@@ -289,7 +289,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 					
-					PreparedStatement select_statement = connection.prepareStatement("SELECT row_id FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
+					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
 				
 					select_statement.setString(1, get_email);
 					
@@ -299,21 +299,26 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					if (select_results.getRow() != 1) {
 						
-						output[0] = "That email does not match our records.  Please try again.";
+						output[0][0] = "That email does not match our records.  Please try again.";
 					} else {
 						
-						output[0] = "successful username authentication";
+						output[0][0] = "successful username authentication";
+						
+						while (select_results.next()) {
+							
+							output[0][1] = select_results.getString(1);
+						}
 					}
 				} catch (Exception e) {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
 					
-					output[0] = "database error";
+					output[0][0] = "database error";
 				}
 			}
 		} else {
 			
-			output[0] = "no user action";
+			output[0][0] = "no user action";
 		}
 		
 		return output;
