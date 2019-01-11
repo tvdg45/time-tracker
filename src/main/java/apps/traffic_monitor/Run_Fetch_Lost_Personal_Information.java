@@ -1,3 +1,4 @@
+//Author: Timothy van der Graaff
 package apps.traffic_monitor;
 
 import java.io.IOException;
