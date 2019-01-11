@@ -1,7 +1,7 @@
 //Author: Timothy van der Graaff
 public class Show_Fetch_Lost_Personal_Information_Feedback {
 	
-	public String show_fetch_lost_personal_information_feedback(String[][] fetch_username, String[][] search_first_name, String[][] search_username, String email) {
+	public String show_fetch_lost_personal_information_feedback(String[][] fetch_username) {
 		
 		Config use_config = new Config();
 		
@@ -24,11 +24,11 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "};\n\n";
 				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-username-email.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
-				output += "xhttp.send(\"first_name=" + search_first_name[0][1] + "&username=" + search_username[0][2] + "&email=" + email + "\");\n";]1
+				output += "xhttp.send(\"first_name=" + fetch_username[0][1] + "&username=" + fetch_username[0][2] + "&email=" + fetch_username[0][3] + "\");\n";]1
 				output += "});\n";
 				output += "</script>\n";
 				output += "<div class=\"fetch_username_email\" style=\"text-align: left; width: 100%\"></div>\n\n";
-				output += "<br />" + search_first_name[0][1] + "," + search_username[0][2] + "," + email;
+				output += "<br />" + fetch_username[0][1] + "," + fetch_username[0][2] + "," + fetch_username[0][3];
 			} else {
 				
 				output += "<div style=\"text-align: left; width: 100%\">\n";
