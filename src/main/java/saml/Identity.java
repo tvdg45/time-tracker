@@ -28,7 +28,7 @@
 
 package saml;
 
-import com.salesforce.util.Bag;
+import util.Bag;
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONObject;
