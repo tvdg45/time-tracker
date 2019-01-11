@@ -45,5 +45,4 @@ public class SAMLException extends Exception{
     public SAMLException(Throwable throwable) {
         super(throwable);
     }
-
 }
