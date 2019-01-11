@@ -53,7 +53,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 		return output;
 	}
 	
-	public String show_fetch_lost_personal_information_feedback(String[] fetch_password, String search_first_name, String username, String search_email, String search_password) {
+	/*public String show_fetch_lost_personal_information_feedback(String[] fetch_password, String search_first_name, String username, String search_email, String search_password) {
 		
 		Config use_config = new Config();
 		
@@ -102,5 +102,5 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 		}		
 		
 		return output;
-	}
+	}*/
 }
