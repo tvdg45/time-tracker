@@ -312,16 +312,6 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 				
 				try {
 					
-					Class.forName("com.mysql.jdbc.Driver");
-					
-					Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
-					
-					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
-				
-					select_statement.setString(1, get_email);
-					
-					ResultSet select_results = select_statement.executeQuery();
-					
 					if (this.check_number_of_rows("third_party_account_info_per_traffic_monitor_app", "email", get_email) != 1) {
 						
 						output[0][0] = "That email does not match our records.  Please try again.";
@@ -329,6 +319,16 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 						
 						output[0][0] = "successful username authentication";
 						
+						Class.forName("com.mysql.jdbc.Driver");
+						
+						Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
+					
+						PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email FROM third_party_account_info_per_traffic_monitor_app WHERE email = BINARY ? ORDER BY row_id DESC");
+				
+						select_statement.setString(1, get_email);
+					
+						ResultSet select_results = select_statement.executeQuery();
+					
 						while (select_results.next()) {
 							
 							output[0][1] = select_results.getString(1);
@@ -369,24 +369,24 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 				
 				try {
 					
-					Class.forName("com.mysql.jdbc.Driver");
-					
-					Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
-					
-					PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email, password FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
-				
-					select_statement.setString(1, get_username);
-					
-					ResultSet select_results = select_statement.executeQuery();
-					
 					if (this.check_number_of_rows("third_party_account_info_per_traffic_monitor_app", "username", get_username) != 1) {
 						
 						output[0][0] = "That username does not match our records.  Please try again.";
 					} else {
 						
+						output[0][0] = "successful password authentication";
+						
 						this.change_password(get_username);
 						
-						output[0][0] = "successful password authentication";
+						Class.forName("com.mysql.jdbc.Driver");
+						
+						Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
+						
+						PreparedStatement select_statement = connection.prepareStatement("SELECT first_name, username, email, password FROM third_party_account_info_per_traffic_monitor_app WHERE username = BINARY ? ORDER BY row_id DESC");
+						
+						select_statement.setString(1, get_username);
+						
+						ResultSet select_results = select_statement.executeQuery();
 						
 						while (select_results.next()) {
 							
