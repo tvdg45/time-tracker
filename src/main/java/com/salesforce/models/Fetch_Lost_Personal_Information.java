@@ -267,6 +267,33 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		}
 	}
 	
+	private int check_number_of_rows(String table_name, String field_name, String input_value) {
+		
+		int output = 0;
+		
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
+			
+			PreparedStatement select_statement = connection.prepareStatement("SELECT row_id FROM " + table_name + " WHERE " + field_name + " = BINARY ? ORDER BY row_id DESC");
+			
+			select_statement.setString(1, input_value);
+			
+			ResultSet select_results = select_statement.executeQuery();
+			
+			select_results.last();
+			
+			output = select_results.getRow();
+		} catch (Exception e) {
+			
+			LOGGER.log(Level.INFO, "" + e + "");
+		}
+		
+		return output;
+	}
+	
 	protected String[][] fetch_username() {
 		
 		Form_Validation form_validation = new Form_Validation();
@@ -295,12 +322,10 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					ResultSet select_results = select_statement.executeQuery();
 					
-					//select_results.last();
-					
-					//if (select_results.getRow() != 1) {
+					if (this.check_number_of_rows("third_party_account_info_per_traffic_monitor_app", "email", get_email) != 1) {
 						
-					//	output[0][0] = "That email does not match our records.  Please try again.";
-					//} else {
+						output[0][0] = "That email does not match our records.  Please try again.";
+					} else {
 						
 						output[0][0] = "successful username authentication";
 						
@@ -310,7 +335,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
-					//}
+					}
 				} catch (Exception e) {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
