@@ -297,20 +297,20 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 					
 					//select_results.last();
 					
-					if (select_results.getRow() != 1) {
+					//if (select_results.getRow() != 1) {
+					//	
+					//	output[0][0] = "That email does not match our records.  Please try again.";
+					//} else {
 						
-						output[0][0] = "That email does not match our records.  Please try again.";
-					} else {
-						
-						output[0][0] = "successful username authentication";
+					//	output[0][0] = "successful username authentication";
 						
 						while (select_results.next()) {
 							
-							output[0][0] = String.valueOf(select_results.getString(1));
+							output[0][0] = select_results.getString(1);
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
-					}
+					//}
 				} catch (Exception e) {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
