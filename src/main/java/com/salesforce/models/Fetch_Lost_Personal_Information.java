@@ -271,7 +271,7 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 		
 		Form_Validation form_validation = new Form_Validation();
 		
-		String[][] output = new String[4][4];
+		String[][] output = new String[1][4];
 		
 		String get_email = this.get_email();
 		String get_fetch_username = this.get_fetch_username();
@@ -293,24 +293,25 @@ public abstract class Fetch_Lost_Personal_Information extends Config {
 				
 					select_statement.setString(1, get_email);
 					
+					ResultSet select_number_results = select_statement.executeQuery();
 					ResultSet select_results = select_statement.executeQuery();
 					
-					//select_results.last();
+					select_number_results.last();
 					
-					//if (select_results.getRow() != 1) {
-					//	
-					//	output[0][0] = "That email does not match our records.  Please try again.";
-					//} else {
+					if (select_number_results.getRow() != 1) {
 						
-					//	output[0][0] = "successful username authentication";
+						output[0][0] = "That email does not match our records.  Please try again.";
+					} else {
+						
+						output[0][0] = "successful username authentication";
 						
 						while (select_results.next()) {
 							
-							output[0][0] = select_results.getString(1);
+							output[0][1] = select_results.getString(1);
 							output[0][2] = select_results.getString(2);
 							output[0][3] = select_results.getString(3);
 						}
-					//}
+					}
 				} catch (Exception e) {
 					
 					LOGGER.log(Level.INFO, "" + e + "");
