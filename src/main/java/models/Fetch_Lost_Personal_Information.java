@@ -159,7 +159,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		
 		if (get_fetch_username.equals("Get username")) {
 			
-			if (get_email.equals("null") || form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
+			if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
 				
 				output[0][0] = "You must provide a valid email.";
 			} else {
@@ -216,7 +216,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		
 		if (get_fetch_password.equals("Get password")) {
 			
-			if (get_username.equals("null") || form_validation.is_string_null_or_white_space(get_username)) {
+			if (form_validation.is_string_null_or_white_space(get_username)) {
 				
 				output[0][0] = "You must provide your username.";
 			} else {
