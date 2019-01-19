@@ -3,12 +3,12 @@ package controllers;
 
 public class Control_Fetch_Lost_Personal_Information extends models.Fetch_Lost_Personal_Information {
 	
-	//private views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information;
+	public views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information;
 	
-	public Control_Fetch_Lost_Personal_Information() {
+	/*public Control_Fetch_Lost_Personal_Information() {
 		
-		views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information;
-	}
+		this.control_fetch_lost_personal_information = control_fetch_lost_personal_information;
+	}*/
 	
 	public String control_fetch_username(String email, String fetch_username) {
 		
