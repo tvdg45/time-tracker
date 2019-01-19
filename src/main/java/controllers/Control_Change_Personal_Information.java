@@ -15,7 +15,7 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_fetch_lost_personal_information_feedback(this.change_basic_information());
+		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_basic_information());
 		
 		return output;
 	}
@@ -31,7 +31,7 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_fetch_lost_personal_information_feedback(this.change_email());
+		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_email());
 		
 		return output;
 	}
@@ -47,7 +47,7 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_fetch_lost_personal_information_feedback(this.change_username());
+		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_username());
 		
 		return output;
 	}
@@ -65,7 +65,7 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_fetch_lost_personal_information_feedback(this.change_password());
+		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_password());
 		
 		return output;
 	}
