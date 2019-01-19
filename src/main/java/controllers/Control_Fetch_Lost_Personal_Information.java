@@ -3,9 +3,12 @@ package controllers;
 
 public class Control_Fetch_Lost_Personal_Information extends models.Fetch_Lost_Personal_Information {
 	
-	public String control_fetch_username(String email, String fetch_username) {
+	Control_Fetch_Lost_Personal_Information() {
 		
 		views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information = new views.Show_Fetch_Lost_Personal_Information_Feedback();
+	}
+	
+	public String control_fetch_username(String email, String fetch_username) {
 		
 		String output = "";
 		
@@ -18,8 +21,6 @@ public class Control_Fetch_Lost_Personal_Information extends models.Fetch_Lost_P
 	}
 	
 	public String control_fetch_password(String username, String fetch_password) {
-		
-		views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information = new views.Show_Fetch_Lost_Personal_Information_Feedback();
 		
 		String output = "";
 		
