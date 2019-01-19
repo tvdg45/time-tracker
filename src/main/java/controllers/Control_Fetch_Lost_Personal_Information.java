@@ -3,7 +3,7 @@ package controllers;
 
 public class Control_Fetch_Lost_Personal_Information extends models.Fetch_Lost_Personal_Information {
 	
-	Control_Fetch_Lost_Personal_Information() {
+	public Control_Fetch_Lost_Personal_Information() {
 		
 		views.Show_Fetch_Lost_Personal_Information_Feedback control_fetch_lost_personal_information = new views.Show_Fetch_Lost_Personal_Information_Feedback();
 	}
