@@ -157,7 +157,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		String get_email = this.get_email();
 		String get_fetch_username = this.get_fetch_username();
 		
-		if (get_fetch_username.equals("Get username")) {
+		if (!(get_fetch_username.equals("null"))) {
 			
 			if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
 				
@@ -214,7 +214,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		String get_username = this.get_username();
 		String get_fetch_password = this.get_fetch_password();
 		
-		if (get_fetch_password.equals("Get password")) {
+		if (!(get_fetch_password.equals("null"))) {
 			
 			if (form_validation.is_string_null_or_white_space(get_username)) {
 				
