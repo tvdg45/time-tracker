@@ -643,17 +643,17 @@ public abstract class Change_Personal_Information extends configuration.Config {
 							
 							if ((form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes")) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
-								output[0] = "Your password must contain at least eight characters, including at least one uppercase letter, and two numeric characters. Your password is allowed to contain symbols, such as !, $, #, etc. Your new password must not be the same as your username or current password.";
+								output[1] = "Your password must contain at least eight characters, including at least one uppercase letter, and two numeric characters. Your password is allowed to contain symbols, such as !, $, #, etc. Your new password must not be the same as your username or current password.";
 							}
 							
 							if (form_validation.is_string_null_or_white_space(get_confirm_new_password) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
-								output[0] = "You must confirm your password.";
+								output[2] = "You must confirm your password.";
 							}
 							
 							if ((!(form_validation.is_string_null_or_white_space(get_new_password)) && !(form_validation.is_string_null_or_white_space(get_confirm_new_password)) && !(get_new_password.equals(get_confirm_new_password))) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
-								output[0] = "Passwords must match.";
+								output[3] = "Passwords must match.";
 							}
 						} else {
 							
