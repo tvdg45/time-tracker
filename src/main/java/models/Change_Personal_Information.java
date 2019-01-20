@@ -437,7 +437,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		
 		utilities.Form_Validation form_validation = new utilities.Form_Validation();
 		
-		String[] output = new String[1];
+		String[] output = new String[2];
 		int int_admin_session = 0;
 		String redundancy_found_in_email = "";
 		
