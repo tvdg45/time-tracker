@@ -634,12 +634,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 						is_new_password_your_username = this.validate_username(get_new_password, get_save_password);
 						is_new_password_your_current_one = this.validate_password(get_new_password, get_save_password);
 						
-						output[0] = get_current_password + " " + get_save_password;
 						if (form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")) || form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes") || form_validation.is_string_null_or_white_space(get_confirm_new_password) || !(get_new_password.equals(get_confirm_new_password))) {
 							
 							if (form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes"))) {
 								
-								output[0] += "You must correctly provide your current password.  Check for misspellings.";
+								output[0] = "You must correctly provide your current password.  Check for misspellings.";
 							}
 							
 							if ((form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes")) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
