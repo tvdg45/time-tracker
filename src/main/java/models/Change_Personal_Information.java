@@ -364,11 +364,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		
 		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
-			if (!(form_validation.is_string_null_or_white_space(get_save_basic_information)) || !(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+			if (!(get_save_basic_information.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					if (!(form_validation.is_string_null_or_white_space(get_save_basic_information))) {
+					if (!(get_save_basic_information.equals("null"))) {
 						
 						if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name)) {
 							
@@ -413,7 +413,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 								output[0] = "database error";
 							}
 						}
-					} else if (!(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+					} else if (!(get_cancel_changes.equals("null"))) {
 						
 						output[0] = "voided changes";
 					}
@@ -448,11 +448,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		
 		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
-			if (!(form_validation.is_string_null_or_white_space(get_save_email)) || !(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+			if (!(get_save_email.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					if (!(form_validation.is_string_null_or_white_space(get_save_email))) {
+					if (!(get_save_email.equals("null"))) {
 						
 						redundancy_found_in_email = this.repeat_found_in_email(get_email, get_save_email);
 						
@@ -499,7 +499,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 							}							
 						}
 						
-					} else if (!(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+					} else if (!(get_cancel_changes.equals("null"))) {
 						
 						output[0] = "voided changes";
 					}
@@ -535,11 +535,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		
 		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
-			if (!(form_validation.is_string_null_or_white_space(get_save_username)) || !(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+			if (!(get_save_username.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					if (!(form_validation.is_string_null_or_white_space(get_save_username))) {
+					if (!(get_save_username.equals("null"))) {
 						
 						redundancy_found_in_username = this.repeat_found_in_username(get_username, get_save_username);
 						is_username_your_password = this.validate_password(get_username, get_save_username);
@@ -586,7 +586,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 								output[0] = "database error";
 							}							
 						}
-					} else if (!(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+					} else if (!(get_cancel_changes.equals("null"))) {
 						
 						output[0] = "voided changes";
 					}
@@ -625,11 +625,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		
 		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
-			if (!(form_validation.is_string_null_or_white_space(get_save_password)) || !(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+			if (!(get_save_password.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					if (!(form_validation.is_string_null_or_white_space(get_save_password))) {
+					if (!(get_save_password.equals("null"))) {
 						
 						is_password_valid = this.validate_password(get_current_password, get_save_password);
 						is_new_password_your_username = this.validate_username(get_new_password, get_save_password);
@@ -687,7 +687,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 								output[0] = "database error";
 							}							
 						}
-					} else if (!(form_validation.is_string_null_or_white_space(get_cancel_changes))) {
+					} else if (!(get_cancel_changes.equals("null"))) {
 						
 						output[0] = "voided changes";
 					}
