@@ -14,9 +14,9 @@ public class Show_Personal_Information_Changer_Feedback {
 				output = "";
 			} else if (change_personal_information[0] == "successful database update" || change_personal_information[0] == "voided changes" || change_personal_information[0] == "not logged in") {
 				
-				//output += "<script type='text/javascript'>\n";
-				//output += "window.location = document.location.href.replace('#', '');\n";
-				//output += "</script>\n";
+				output += "<script type='text/javascript'>\n";
+				output += "window.location = document.location.href.replace('#', '');\n";
+				output += "</script>\n";
 			} else {
 				
 				output += "<div style=\"text-align: left; width: 100%\">\n";
