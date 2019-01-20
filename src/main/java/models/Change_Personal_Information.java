@@ -498,7 +498,6 @@ public abstract class Change_Personal_Information extends configuration.Config {
 								output[0] = "database error";
 							}							
 						}
-						
 					} else if (!(get_cancel_changes.equals("null"))) {
 						
 						output[0] = "voided changes";
@@ -553,7 +552,7 @@ public abstract class Change_Personal_Information extends configuration.Config {
 							
 							if (redundancy_found_in_username.equals("yes")) {
 								
-								output[0] = "That username is already taken.  Please choose a different one.";
+								output[1] = "That username is already taken.  Please choose a different one.";
 							}
 						} else {
 							
