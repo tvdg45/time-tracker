@@ -160,6 +160,6 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 			output[0][0] = "database error";
 		}
 
-		return output;
+		return output[0][0];
 	}
 }
