@@ -30,7 +30,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 		configuration.Config use_config = new configuration.Config();
 		
 		String output = "";
-		String[][] personal_information = new String[this.search_personal_information("third_party_account_info_per_traffic_monitor_app", admin_session)][5];
+		String[][] personal_information;
 		
 		personal_information = this.search_personal_information(admin_session);
 		
