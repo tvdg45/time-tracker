@@ -93,7 +93,7 @@ public class Config {
 	
 	public String third_party_domain() {
 		
-		String output "";
+		String output = "";
 		
 		//Define any domain name below.  Your domain name can also have a directory included.
 		
