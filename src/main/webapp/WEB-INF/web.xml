@@ -54,9 +54,9 @@
         <servlet-name>Run_Change_Personal_Information</servlet-name>
         <url-pattern>/change-personal-information</url-pattern>
     </servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Run_Request_Personal_Information</servlet-name>
-		<url-pattern>/admin-personal-information</url-pattern>
-	</servlet-mapping>
+    <servlet-mapping>
+	<servlet-name>Run_Request_Personal_Information</servlet-name>
+	<url-pattern>/admin-personal-information</url-pattern>
+    </servlet-mapping>
 
 </web-app>
