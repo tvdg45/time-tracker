@@ -111,7 +111,7 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 	//This overloaded method gathers search results.
 	protected String search_personal_information(String admin_session) {
 		
-		String[][] output = new String[this.search_personal_information("third_party_account_info_per_traffic_monitor_app", admin_session)][6];
+		String[][] output = new String[1][6];
 		int int_admin_session = 0;
 		int row = 0;
 		
