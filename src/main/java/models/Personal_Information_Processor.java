@@ -111,7 +111,7 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 	//This overloaded method gathers search results.
 	protected String[][] search_personal_information(String admin_session) {
 		
-		String[][] output = new String[1][6];
+		String[][] output = new String[this.search_personal_information("third_party_account_info_per_traffic_monitor_app", admin_session)][6];
 		int int_admin_session = 0;
 		int row = 0;
 		
@@ -141,11 +141,11 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 			
 				while (select_results.next()) {
 				
-					output[0][1] = String.valueOf(select_results.getInt(1));
-					output[0][2] = select_results.getString(2);
-					output[0][3] = select_results.getString(3);
-					output[0][4] = select_results.getString(4);
-					output[0][5] = select_results.getString(5);
+					output[row][1] = String.valueOf(select_results.getInt(1));
+					output[row][2] = select_results.getString(2);
+					output[row][3] = select_results.getString(3);
+					output[row][4] = select_results.getString(4);
+					output[row][5] = select_results.getString(5);
 				
 					row++;
 				}
@@ -160,6 +160,6 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 			output[0][0] = "database error";
 		}
 
-		return output[0][0];
+		return output;
 	}
 }
