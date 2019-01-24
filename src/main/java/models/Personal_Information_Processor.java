@@ -141,11 +141,11 @@ public abstract class Personal_Information_Processor extends configuration.Confi
 			
 				while (select_results.next()) {
 				
-					output[row][1] = String.valueOf(select_results.getInt(1));
-					output[row][2] = select_results.getString(2);
-					output[row][3] = select_results.getString(3);
-					output[row][4] = select_results.getString(4);
-					output[row][5] = select_results.getString(5);
+					output[0][1] = String.valueOf(select_results.getInt(1));
+					output[0][2] = select_results.getString(2);
+					output[0][3] = select_results.getString(3);
+					output[0][4] = select_results.getString(4);
+					output[0][5] = select_results.getString(5);
 				
 					row++;
 				}
