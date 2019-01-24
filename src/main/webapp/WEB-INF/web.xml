@@ -33,6 +33,10 @@
         <servlet-name>Run_Change_Personal_Information</servlet-name>
         <servlet-class>apps.traffic_monitor.Run_Change_Personal_Information</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Run_Request_Personal_Information</servlet-name>
+        <servlet-class>apps.traffic_monitor.Run_Request_Personal_Information</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>SAMLServlet</servlet-name>
@@ -50,5 +54,9 @@
         <servlet-name>Run_Change_Personal_Information</servlet-name>
         <url-pattern>/change-personal-information</url-pattern>
     </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Run_Request_Personal_Information</servlet-name>
+		</url-pattern>/admin-personal-information</url-pattern>
+	</servlet-mapping>
 
 </web-app>
