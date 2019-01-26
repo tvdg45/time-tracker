@@ -55,6 +55,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "function update_basic_information() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
+				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
+				output += "$(\".change_basic_information\").html(\"<label>Editing basic information...  Please wait.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_basic_information\").html(this.responseText);\n";
 				output += "}\n";
@@ -123,6 +126,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "function update_email() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
+				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
+				output += "$(\".change_email\").html(\"<label>Editing email...  Please wait.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_email\").html(this.responseText);\n";
 				output += "}\n";
@@ -182,6 +188,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "function update_username() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
+				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
+				output += "$(\".change_username\").html(\"<label>Editing username...  Please wait.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_username\").html(this.responseText);\n";
 				output += "}\n";
@@ -241,6 +250,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "function update_password() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
+				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
+				output += "$(\".change_password\").html(\"<label>Editing password...  Please wait.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_password\").html(this.responseText);\n";
 				output += "}\n";
