@@ -58,6 +58,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
 				output += "$(\".change_basic_information\").html(\"<label>Editing basic information...  Please wait.</label>\");\n";
 				output += "}\n";
+				output += "if (this.readyState == 4 && this.status == 0) {\n\n";
+				output += "$(\".change_basic_information\").html(\"<label>Sorry, your basic information was not changed.  Check your internet connection.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_basic_information\").html(this.responseText);\n";
 				output += "}\n";
@@ -129,6 +132,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
 				output += "$(\".change_email\").html(\"<label>Editing email...  Please wait.</label>\");\n";
 				output += "}\n";
+				output += "if (this.readyState == 4 && this.status == 0) {\n\n";
+				output += "$(\".change_email\").html(\"<label>Sorry, your email was not changed.  Check your internet connection.</label>\");\n";
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_email\").html(this.responseText);\n";
 				output += "}\n";
@@ -191,6 +197,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
 				output += "$(\".change_username\").html(\"<label>Editing username...  Please wait.</label>\");\n";
 				output += "}\n";
+				output += "if (this.readyState == 4 && this.status == 0) {\n\n";
+				output += "$(\".change_username\").html(\"<label>Sorry, your username was not changed.  Check your internet connection.</label>\");\n";
+				output += "}\n";		
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_username\").html(this.responseText);\n";
 				output += "}\n";
@@ -255,7 +264,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 0) {\n\n";
 				output += "$(\".change_password\").html(\"<label>Sorry, your password was not changed.  Check your internet connection.</label>\");\n";
-				output += "}\n";				
+				output += "}\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_password\").html(this.responseText);\n";
 				output += "}\n";
