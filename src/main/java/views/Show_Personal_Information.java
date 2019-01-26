@@ -257,12 +257,12 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\"#update_password_button_section\").slideUp(1200);\n";
 				output += "}\n\n";
 				output += "function update_password() {\n\n";
-				output += "$(\".update_basic_information_prompt\").slideUp();\n";
-				output += "$(\".update_email_prompt\").slideUp();\n";
-				output += "$(\".update_username_prompt\").slideUp();\n";
-				output += "$(\".update_basic_information_button_section\").slideDown();\n";
-				output += "$(\".update_email_button_section\").slideDown();\n";
-				output += "$(\".update_username_button_section\").slideDown();\n\n";
+				output += "$(\"#update_basic_information_prompt\").slideUp(1200);\n";
+				output += "$(\"#update_email_prompt\").slideUp(1200);\n";
+				output += "$(\"#update_username_prompt\").slideUp(1200);\n";
+				output += "$(\"#update_basic_information_button_section\").slideDown(1200);\n";
+				output += "$(\"#update_email_button_section\").slideDown(1200);\n";
+				output += "$(\"#update_username_button_section\").slideDown(1200);\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
