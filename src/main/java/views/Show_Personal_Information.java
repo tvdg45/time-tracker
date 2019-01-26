@@ -249,7 +249,6 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "}\n\n";
 				output += "function update_password() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
-				output += "try {\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
 				output += "$(\".change_password\").html(\"<label>Editing password...  Please wait.</label>\");\n";
@@ -264,9 +263,6 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"current_password=\" + $(\"#current_password\").val() + \"&new_password=\" + $(\"#new_password\").val() + \"&confirm_new_password=\" + $(\"#confirm_new_password\").val() + \"&save_password=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
-				output += "} catch(Exception e) {\n\n";
-				output += "$(\".change_password\").html(\"<label>Sorry, your password was not changed.  Check your internet connection.</label>\");\n";
-				output += "}\n";
 				output += "}\n\n";
 				output += "function undo_password_changes() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
