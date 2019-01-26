@@ -253,9 +253,9 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "if (this.readyState == 0 || this.readyState == 1 || this.readyState == 2 || this.readyState == 3) {\n\n";
 				output += "$(\".change_password\").html(\"<label>Editing password...  Please wait.</label>\");\n";
 				output += "}\n";
-				output += "if (this.status == 404) {\n\n";
-				output += "$(\".change_password\").html(\"<label>Sorry, your password was not changed.  Check your internet connection.</label>\");\n";
-				output += "}\n";				
+				//output += "if (this.status == 404) {\n\n";
+				output += "$(\".change_password\").html(this.status);\n";
+				//output += "}\n";				
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_password\").html(this.responseText);\n";
 				output += "}\n";
