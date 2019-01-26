@@ -274,6 +274,12 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "xhttp.send(\"current_password=\" + $(\"#current_password\").val() + \"&new_password=\" + $(\"#new_password\").val() + \"&confirm_new_password=\" + $(\"#confirm_new_password\").val() + \"&save_password=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
 				output += "function undo_password_changes() {\n\n";
+				output += "$(\".update_basic_information_prompt\").slideUp();\n";
+				output += "$(\".update_email_prompt\").slideUp();\n";
+				output += "$(\".update_username_prompt\").slideUp();\n";
+				output += "$(\".update_basic_information_button_section\").slideDown();\n";
+				output += "$(\".update_email_button_section\").slideDown();\n";
+				output += "$(\".update_username_button_section\").slideDown();\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
 				output += "xhttp.onreadystatechange = function() {\n\n";
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
