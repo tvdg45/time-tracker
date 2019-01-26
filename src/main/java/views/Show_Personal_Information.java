@@ -254,7 +254,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_password\").html(\"<label>Editing password...  Please wait.</label>\");\n";
 				output += "}\n";
 				//output += "if (this.status == 404) {\n\n";
-				output += "$(\".change_password\").html(this.status);\n";
+				output += "$(\".change_password\").html(this.readyState);\n";
 				//output += "}\n";				
 				output += "if (this.readyState == 4 && this.status == 200) {\n\n";
 				output += "$(\".change_password\").html(this.responseText);\n";
