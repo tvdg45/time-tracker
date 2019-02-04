@@ -17,9 +17,10 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 			output += "var random_string = '';\n";
 			output += "var r_num = 0;\n\n";
 			output += "function add_website() {\n\n";
+			output += "random_string = '';\n";
 			output += "for (var i = 0; i < string_length; i++) {\n\n";
 			output += "r_num = Math.floor(Math.random() * chars.length);\n";
-			output += "random_string = chars.substring(r_num, r_num + 1);\n";
+			output += "random_string += chars.substring(r_num, r_num + 1);\n";
 			output += "}\n\n";
 			output += "var xhttp = new XMLHttpRequest();\n\n";
 			output += "xhttp.onreadystatechange = function() {\n\n";
