@@ -8,7 +8,7 @@ public class Config {
 		String output = "";
 		
 		//You can use a name like "localhost", a URL, or an IP address.
-		String database_server = "server";
+		String database_server = "82.163.176.10";
 		
 		output += database_server;
 		
@@ -20,7 +20,7 @@ public class Config {
 		String output = "";
 		
 		//This method is used for remote database server connections.  Only number values are allowed.
-		String database_port = "0000";
+		String database_port = "3306";
 		
 		output += database_port;
 		
@@ -32,7 +32,7 @@ public class Config {
 		String output = "";
 		
 		//Choose your database by defining the following constant.
-		String database_name = "name";
+		String database_name = "timothys_digital_solutions_third_party_apps";
 		
 		output += database_name;
 		
@@ -44,7 +44,7 @@ public class Config {
 		String output = "";
 		
 		//Choose your username by defining the following constant.
-		String database_username = "name";
+		String database_username = "timothys_tim";
 		
 		output += database_username;
 		
@@ -56,7 +56,7 @@ public class Config {
 		String output = "";
 		
 		//Choose your password by defining the following constant.
-		String database_password = "name";
+		String database_password = "ranger12";
 		
 		output += database_password;
 		
