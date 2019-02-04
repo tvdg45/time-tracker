@@ -17,7 +17,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 			output += "var random_string = '';\n";
 			output += "var r_num = 0;\n\n";
 			output += "function add_website() {\n\n";
-			output += "random_string = '';\n";
+			output += "random_string = '';\n\n";
 			output += "for (var i = 0; i < string_length; i++) {\n\n";
 			output += "r_num = Math.floor(Math.random() * chars.length);\n";
 			output += "random_string += chars.substring(r_num, r_num + 1);\n";
@@ -78,6 +78,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "xhttp.send(\"id=" + search_websites[row][1] + "&url=\" + $(\"#confirm_url_" + search_websites[row][1] + "\").val() + \"&change_url=Change URL\");\n";
 				output += "}\n\n";
 				output += "function change_token_" + search_websites[row][1] + "() {\n\n";
+				output += "random_string_" + search_websites[row][1] + " = '';\n\n";
 				output += "for (var i_" + search_websites[row][1] + " = 0; i_" + search_websites[row][1] + " < string_length; i_" + search_websites[row][1] + "++) {\n\n";
 				output += "r_num_" + search_websites[row][1] + " = Math.floor(Math.random() * chars_" + search_websites[row][1] + ".length);\n";
 				output += "random_string_" + search_websites[row][1] + " += chars_" + search_websites[row][1] + ".substring(r_num_" + search_websites[row][1] + ", r_num_" + search_websites[row][1] + " + 1);\n";
