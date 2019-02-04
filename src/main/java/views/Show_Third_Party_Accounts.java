@@ -95,7 +95,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "};\n\n";
 				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
-				output += "xhttp.send(\"id=" + search_websites[row][1] + "&token=\" + random_string_" + search_websites[row][1] + "\"&change_token=Change token\");\n";
+				output += "xhttp.send(\"id=" + search_websites[row][1] + "&token=\" + random_string_" + search_websites[row][1] + " + \"&change_token=Change token\");\n";
 				output += "}\n\n";
 				output += "function confirm_delete_website_" + search_websites[row][1] + "() {\n\n";
 				output += "var xhttp = new XMLHttpRequest();\n\n";
