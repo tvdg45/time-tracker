@@ -195,7 +195,7 @@ public abstract class Third_Party_Accounts_Processor extends configuration.Confi
 		
 		utilities.Form_Validation form_validation = new utilities.Form_Validation();
 		
-		String[][] output = new String[this.search_websites("third_party_website_info_per_traffic_monitor_app", get_admin_session)][6];
+		String[][] output = new String[this.search_websites("third_party_website_info_per_traffic_monitor_app", this.get_admin_session())][6];
 		int int_admin_session = 0;
 		int row = 0;
 		
