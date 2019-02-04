@@ -47,7 +47,7 @@ public abstract class Third_Party_Accounts_Processor extends configuration.Confi
 	
 	protected String convert_to_memory_unit(String input_value) {
 		
-		DecimalFormat decimal_format = new DecimalFormat("#,###.00");
+		DecimalFormat decimal_format = new DecimalFormat("#,##0.00");
 		
 		String output = "";
 		double dec_input_value = 0;
