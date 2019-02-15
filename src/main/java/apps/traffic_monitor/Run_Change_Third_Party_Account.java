@@ -76,7 +76,7 @@ public class Run_Change_Third_Party_Account extends HttpServlet {
 		out.println("<!DOCTYPE html>");
 		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
 		out.println("<head>");
-		out.println("<title>Change personal information form</title>");
+		out.println("<title>Change third party account form</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<script type=\"text/javascript\" src=\"" + use_config.domain() + "/backstretch/js/jquery.min.js\"></script>");
