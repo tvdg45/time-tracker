@@ -813,6 +813,8 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] delete_website() {
 		
+		utilities.FormValidation form_validation = new utilities.FormValidation();
+		
 		String[] output = new String[1];
 		int int_id = 0;
 		String delete_from_shopping_cart = "";
@@ -887,6 +889,8 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] downgrade_plan() {
 		
+		utilities.FormValidation form_validation = new utilities.FormValidation();
+		
 		String[] output = new String[1];
 		int int_id = 0;
 		
@@ -946,6 +950,8 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	}
 	
 	protected String[] upgrade_plan() {
+		
+		utilities.FormValidation form_validation = new utilities.FormValidation();
 		
 		String[] output = new String[1];
 		int int_id = 0;
