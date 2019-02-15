@@ -885,9 +885,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		return output;
 	}
 	
-	protected String downgrade_plan() {
+	protected String[] downgrade_plan() {
 		
-		String output = new String[1];
+		String[] output = new String[1];
 		int int_id = 0;
 		
 		String get_id = this.get_id();
@@ -945,9 +945,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		return output;
 	}
 	
-	protected String upgrade_plan() {
+	protected String[] upgrade_plan() {
 		
-		String output = new String[1];
+		String[] output = new String[1];
 		int int_id = 0;
 		
 		String get_id = this.get_id();
