@@ -839,12 +839,12 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						int_id = 0;
 					}
 					
-					delete_from_shopping_cart = this.delete_from_shopping_cart(int_id);
-					delete_items_sold = this.delete_items_sold(int_id);
+					delete_from_shopping_cart = this.delete_from_shopping_cart(get_id);
+					delete_items_sold = this.delete_items_sold(get_id);
 					
 					if (delete_items_sold == "successful database update") {
 						
-						delete_receipt = this.delete_receipt(int_id);
+						delete_receipt = this.delete_receipt(get_id);
 					}
 					
 					if (delete_from_shopping_cart == "successful database update" && delete_receipt == "successful database update") {
