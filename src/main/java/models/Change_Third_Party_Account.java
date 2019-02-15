@@ -225,7 +225,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			create_statement.execute();
 		} catch (Exception e) {
 			
-			LOGGER.log("The 'third_party_traffic_monitor_app_shopping_cart' table was not created because it already exists.  This is not necessarily an error.");
+			LOGGER.log(Level.INFO, "The 'third_party_traffic_monitor_app_shopping_cart' table was not created because it already exists.  This is not necessarily an error.");
 		}
 	}
 	
@@ -242,7 +242,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			create_statement.execute();
 		} catch (Exception e) {
 			
-			LOGGER.log("The 'third_party_website_info_per_traffic_monitor_app' table was not created because it already exists.  This is not necessarily an error.");
+			LOGGER.log(Level.INFO, "The 'third_party_website_info_per_traffic_monitor_app' table was not created because it already exists.  This is not necessarily an error.");
 		}		
 	}
 	
@@ -259,7 +259,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			create_statement.execute();
 		} catch (Exception e) {
 			
-			LOGGER.log("The 'third_party_traffic_monitor_app_receipts' table was not created because it already exists.  This is not necessarily an error.");
+			LOGGER.log(Level.INFO, "The 'third_party_traffic_monitor_app_receipts' table was not created because it already exists.  This is not necessarily an error.");
 		}
 	}
 	
@@ -276,7 +276,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			create_statement.execute();
 		} catch (Exception e) {
 			
-			LOGGER.log("The 'third_party_traffic_monitor_app_items_sold' table was not created because it already exists.  This is not necessarily an error.");
+			LOGGER.log(Level.INFO, "The 'third_party_traffic_monitor_app_items_sold' table was not created because it already exists.  This is not necessarily an error.");
 		}		
 	}
 	
