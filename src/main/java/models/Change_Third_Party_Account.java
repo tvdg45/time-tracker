@@ -220,14 +220,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement prepared_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_shopping_cart (row_id INT NOT NULL, item TEXT NOT NULL, description TEXT NOT NULL, price DECIMAL(10,2) NOT NULL, quantity INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
+			PreparedStatement create_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_shopping_cart (row_id INT NOT NULL, item TEXT NOT NULL, description TEXT NOT NULL, price DECIMAL(10,2) NOT NULL, quantity INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
 			
-			ResultSet result_set = prepared_statement.executeQuery();
-			
-			while (result_set.next()) {
-				
-				output = result_set.getInt(1);
-			}
+			create_statement.execute();
 		} catch (Exception e) {
 			
 			LOGGER.log("The 'third_party_traffic_monitor_app_shopping_cart' table was not created because it already exists.  This is not necessarily an error.");
@@ -242,14 +237,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement prepared_statement = connection.prepareStatement("CREATE TABLE third_party_website_info_per_traffic_monitor_app (row_id INT NOT NULL, url TEXT NOT NULL, token TEXT NOT NULL, memory_plan TEXT NOT NULL, memory_limit TEXT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, account_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
+			PreparedStatement create_statement = connection.prepareStatement("CREATE TABLE third_party_website_info_per_traffic_monitor_app (row_id INT NOT NULL, url TEXT NOT NULL, token TEXT NOT NULL, memory_plan TEXT NOT NULL, memory_limit TEXT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, account_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
 			
-			ResultSet result_set = prepared_statement.executeQuery();
-			
-			while (result_set.next()) {
-				
-				output = result_set.getInt(1);
-			}
+			create_statement.execute();
 		} catch (Exception e) {
 			
 			LOGGER.log("The 'third_party_website_info_per_traffic_monitor_app' table was not created because it already exists.  This is not necessarily an error.");
@@ -264,14 +254,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement prepared_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_receipts (row_id INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
+			PreparedStatement create_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_receipts (row_id INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
 			
-			ResultSet result_set = prepared_statement.executeQuery();
-			
-			while (result_set.next()) {
-				
-				output = result_set.getInt(1);
-			}
+			create_statement.execute();
 		} catch (Exception e) {
 			
 			LOGGER.log("The 'third_party_traffic_monitor_app_receipts' table was not created because it already exists.  This is not necessarily an error.");
@@ -286,14 +271,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			
 			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
 			
-			PreparedStatement prepared_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_items_sold (row_id INT NOT NULL, item TEXT NOT NULL, description TEXT NOT NULL, price DECIMAL(10,2) NOT NULL, quantity INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, receipt_id INT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
+			PreparedStatement create_statement = connection.prepareStatement("CREATE TABLE third_party_traffic_monitor_app_items_sold (row_id INT NOT NULL, item TEXT NOT NULL, description TEXT NOT NULL, price DECIMAL(10,2) NOT NULL, quantity INT NOT NULL, date_received TEXT NOT NULL, time_received TEXT NOT NULL, receipt_id INT NOT NULL, website_id INT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
 			
-			ResultSet result_set = prepared_statement.executeQuery();
-			
-			while (result_set.next()) {
-				
-				output = result_set.getInt(1);
-			}
+			create_statement.execute();
 		} catch (Exception e) {
 			
 			LOGGER.log("The 'third_party_traffic_monitor_app_items_sold' table was not created because it already exists.  This is not necessarily an error.");
