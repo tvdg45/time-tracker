@@ -282,8 +282,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	private double convert_to_bytes_from_gigabytes(String input_value) {
 		
-		DecimalFormat decimal_format = new DecimalFormat("#,##0.00");
-		
 		double output = 0;
 		double dec_input_value = 0;
 		double megabytes = 0;
@@ -292,7 +290,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		
 		try {
 			
-			dec_input_value = Double.valueOf(input_value);
+			dec_input_value = Double.parseDouble(input_value);
 		} catch (Exception e) {
 			
 			dec_input_value = 0;
@@ -302,7 +300,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		kilobytes = megabytes * 1000;
 		bytes = kilobytes * 1024;
 
-		output = decimal_format.format(Math.round(bytes * 100.0) / 100.0);
+		output = bytes;
 		
 		return output;
 	}
