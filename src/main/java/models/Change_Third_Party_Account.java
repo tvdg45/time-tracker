@@ -347,8 +347,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	//This overloaded method gathers search results.
 	private double search_number_of_bytes(String input_value) {
 		
-		DecimalFormat decimal_format = new DecimalFormat("#,##0.00");
-		
 		double output = 0;
 		int int_input_value = 0;
 		
@@ -378,10 +376,10 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					
 					try {
 						
-						output = decimal_format.format(Math.round(Double.parseDouble(select_results.getString(1)) * 100.0) / 100.0);
+						output = Double.parseDouble(select_results.getString(1);
 					} catch (Exception e) {
 						
-						output = decimal_format.format(Math.round(0 * 100.0) / 100.0);
+						output = 0;
 					}
 				}
 			} else {
