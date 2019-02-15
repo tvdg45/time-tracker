@@ -70,9 +70,8 @@
 		<servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
 		<url-pattern>/admin-third-party-accounts</url-pattern>
     </servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Run_Change_Third_Party_Account</servlet-name>
-		<url-pattern>/change-third-party-account</url-pattern>
-	</servlet-mapping>
-
+<servlet-mapping>
+	<servlet-name>Run_Change_Third_Party_Account</servlet-name>
+	<url-pattern>/change-third-party-account</url-pattern>
+</servlet-mapping>
 </web-app>
