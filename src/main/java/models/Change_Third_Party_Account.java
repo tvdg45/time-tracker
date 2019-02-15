@@ -376,7 +376,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					
 					try {
 						
-						output = Double.parseDouble(select_results.getString(1);
+						output = Double.parseDouble(select_results.getString(1));
 					} catch (Exception e) {
 						
 						output = 0;
