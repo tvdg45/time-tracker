@@ -292,7 +292,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		
 		try {
 			
-			dec_input_value = Double.parseDouble(input_value);
+			dec_input_value = Double.valueOf(input_value);
 		} catch (Exception e) {
 			
 			dec_input_value = 0;
