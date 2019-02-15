@@ -85,7 +85,7 @@ public class Control_Change_Third_Party_Account extends models.Change_Third_Part
 		return output;
 	}
 	
-	public function control_upgrade_plan(String id, String memory_plan, String memory, String upgrade_plan, String admin_session) {
+	public String control_upgrade_plan(String id, String memory_plan, String memory, String upgrade_plan, String admin_session) {
 		
 		views.Show_Change_Third_Party_Account_Feedback control_change_third_party_account = new views.Show_Change_Third_Party_Account_Feedback();
 		
