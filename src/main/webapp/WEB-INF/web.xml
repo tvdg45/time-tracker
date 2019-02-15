@@ -41,6 +41,10 @@
         <servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
         <servlet-class>apps.traffic_monitor.Run_Request_Third_Party_Accounts</servlet-class>
     </servlet>
+	<servlet>
+		<servlet-name>Run_Change_Third_Party_Account</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Change_Third_Party_Account</servlet-name>
+	</servlet>
 
     <servlet-mapping>
         <servlet-name>SAMLServlet</servlet-name>
@@ -66,5 +70,9 @@
 		<servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
 		<url-pattern>/admin-third-party-accounts</url-pattern>
     </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Run_Change_Third_Party_Account</servlet-name>
+		<url-pattern>/change-third-party-account</url-pattern>
+	</servlet-mapping>
 
 </web-app>
