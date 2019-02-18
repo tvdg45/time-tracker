@@ -912,6 +912,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					LOGGER.log(Level.INFO, "Memory: " + get_memory + "");
 					LOGGER.log(Level.INFO, "convert_to_bytes_from_gigabytes: " + this.convert_to_bytes_from_gigabytes(get_memory) + "");
 					LOGGER.log(Level.INFO, "search_number_of_bytes: " + this.search_number_of_bytes(get_id) + "");
+					LOGGER.log(Level.INFO, "Total memory: " + String.valueOf(int_memory) + "");
 					
 					
 					try {
@@ -921,6 +922,8 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						
 						int_id = 0;
 					}
+					
+					LOGGER.log(Level.INFO, "ID: " + String.valueOf(int_id) + "");
 
 					try {
 						
