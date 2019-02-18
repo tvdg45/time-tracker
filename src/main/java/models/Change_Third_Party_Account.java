@@ -926,7 +926,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						PreparedStatement update_statement = connection.prepareStatement("UPDATE third_party_website_info_per_traffic_monitor_app SET memory_plan = ?, memory_limit = ? WHERE row_id = ?");
 						
 						update_statement.setString(1, get_memory_plan);
-						update_statement.setString(2, String.valueOf(int_memory));
+						update_statement.setString(2, String.valueOf(int_memory).replace("-", ""));
 						update_statement.setInt(3, int_id);
 						
 						update_statement.execute();
