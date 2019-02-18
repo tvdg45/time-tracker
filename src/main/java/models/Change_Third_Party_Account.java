@@ -893,6 +893,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		
 		String[] output = new String[1];
 		int int_id = 0;
+		double dec_memory = 0;
 		
 		String get_id = this.get_id();
 		String get_memory_plan = this.get_memory_plan();
@@ -905,6 +906,8 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 			if (!(get_downgrade_plan.equals("null"))) {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+					
+					dec_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 					
 					try {
 						
@@ -923,7 +926,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						PreparedStatement update_statement = connection.prepareStatement("UPDATE third_party_website_info_per_traffic_monitor_app SET memory_plan = ?, memory_limit = ? WHERE row_id = ?");
 						
 						update_statement.setString(1, get_memory_plan);
-						update_statement.setString(2, String.valueOf(this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id)));
+						update_statement.setString(2, String.valueOf(dec_memory));
 						update_statement.setInt(3, int_id);
 					} catch (Exception e) {
 						
