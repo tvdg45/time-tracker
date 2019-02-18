@@ -909,12 +909,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					
 					int_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 					
-					LOGGER.log(Level.INFO, "Memory: " + get_memory + "");
-					LOGGER.log(Level.INFO, "convert_to_bytes_from_gigabytes: " + this.convert_to_bytes_from_gigabytes(get_memory) + "");
-					LOGGER.log(Level.INFO, "search_number_of_bytes: " + this.search_number_of_bytes(get_id) + "");
-					LOGGER.log(Level.INFO, "Total memory: " + String.valueOf(int_memory) + "");
-					
-					
 					try {
 						
 						int_id = Integer.valueOf(get_id);
@@ -922,8 +916,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						
 						int_id = 0;
 					}
-					
-					LOGGER.log(Level.INFO, "ID: " + String.valueOf(int_id) + "");
 
 					try {
 						
@@ -934,8 +926,16 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						PreparedStatement update_statement = connection.prepareStatement("UPDATE third_party_website_info_per_traffic_monitor_app SET memory_plan = ?, memory_limit = ? WHERE row_id = ?");
 						
 						update_statement.setString(1, get_memory_plan);
-						update_statement.setString(2, String.valueOf(int_memory));
+						update_statement.setString(2, ("" + String.valueOf(int_memory) + ""));
 						update_statement.setInt(3, int_id);
+						
+					LOGGER.log(Level.INFO, "Memory: " + get_memory + "");
+					LOGGER.log(Level.INFO, "convert_to_bytes_from_gigabytes: " + this.convert_to_bytes_from_gigabytes(get_memory) + "");
+					LOGGER.log(Level.INFO, "search_number_of_bytes: " + this.search_number_of_bytes(get_id) + "");
+					LOGGER.log(Level.INFO, "Total memory: " + String.valueOf(int_memory) + "");
+					LOGGER.log(Level.INFO, "ID: " + String.valueOf(int_id) + "");
+					
+					
 					} catch (Exception e) {
 						
 						LOGGER.log(Level.INFO, "" + e + "");
