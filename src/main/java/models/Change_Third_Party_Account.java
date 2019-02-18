@@ -909,6 +909,11 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					
 					dec_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 					
+					LOGGER.log(Level.INFO, "Memory: " + get_memory + "");
+					LOGGER.log(Level.INFO, "convert_to_bytes_from_gigabytes: " + this.convert_to_bytes_from_gigabytes(get_memory) + "");
+					LOGGER.log(Level.INFO, "search_number_of_bytes: " + this.search_number_of_bytes(get_id) + "");
+					
+					
 					try {
 						
 						int_id = Integer.valueOf(get_id);
