@@ -280,23 +280,23 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		}		
 	}
 	
-	private double convert_to_bytes_from_gigabytes(String input_value) {
+	private int convert_to_bytes_from_gigabytes(String input_value) {
 		
-		double output = 0;
-		double dec_input_value = 0;
-		double megabytes = 0;
-		double kilobytes = 0;
-		double bytes = 0;
+		int output = 0;
+		int int_input_value = 0;
+		int megabytes = 0;
+		int kilobytes = 0;
+		int bytes = 0;
 		
 		try {
 			
-			dec_input_value = Double.parseDouble(input_value);
+			int_input_value = Integer.valueOf(input_value);
 		} catch (Exception e) {
 			
-			dec_input_value = 0;
+			int_input_value = 0;
 		}
 
-		megabytes = dec_input_value * 1000;
+		megabytes = int_input_value * 1000;
 		kilobytes = megabytes * 1000;
 		bytes = kilobytes * 1024;
 
@@ -345,9 +345,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	}
 	
 	//This overloaded method gathers search results.
-	private double search_number_of_bytes(String input_value) {
+	private int search_number_of_bytes(String input_value) {
 		
-		double output = 0;
+		int output = 0;
 		int int_input_value = 0;
 		
 		try {
@@ -376,7 +376,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					
 					try {
 						
-						output = Double.parseDouble(select_results.getString(1));
+						output = Integer.valueOf(select_results.getString(1));
 					} catch (Exception e) {
 						
 						output = 0;
@@ -893,7 +893,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		
 		String[] output = new String[1];
 		int int_id = 0;
-		double dec_memory = 0;
+		int int_memory = 0;
 		
 		String get_id = this.get_id();
 		String get_memory_plan = this.get_memory_plan();
@@ -907,7 +907,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 				
 				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					dec_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
+					int_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 					
 					LOGGER.log(Level.INFO, "Memory: " + get_memory + "");
 					LOGGER.log(Level.INFO, "convert_to_bytes_from_gigabytes: " + this.convert_to_bytes_from_gigabytes(get_memory) + "");
@@ -931,7 +931,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 						PreparedStatement update_statement = connection.prepareStatement("UPDATE third_party_website_info_per_traffic_monitor_app SET memory_plan = ?, memory_limit = ? WHERE row_id = ?");
 						
 						update_statement.setString(1, get_memory_plan);
-						update_statement.setString(2, String.valueOf(dec_memory));
+						update_statement.setString(2, String.valueOf(int_memory));
 						update_statement.setInt(3, int_id);
 					} catch (Exception e) {
 						
