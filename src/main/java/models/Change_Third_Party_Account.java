@@ -963,6 +963,44 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		return output;
 	}
 	
+	private String delete_all_traffic_records(String input_value) {
+		
+		String output = "";
+		int int_input_value = 0;
+		
+		try {
+			
+			int_input_value = Integer.valueOf(input_value);
+		} catch (Exception e) {
+			
+			int_input_value = 0;
+		}
+		
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
+			
+			PreparedStatement delete_statement = connection.prepareStatement("DELETE FROM third_party_traffic_log WHERE website_id = ?");
+			
+			delete_statement.setInt(1, int_input_value);
+			
+			delete_statement.execute();
+			
+			output = "successful database update";
+		} catch (Exception e) {
+			
+			LOGGER.log(Level.INFO, "" + e + "");
+			
+			this.create_new_purchase_receipt_table();
+			
+			output = "database error";
+		}
+		
+		return output;
+	}
+	
 	protected String[] delete_website() {
 		
 		utilities.Form_Validation form_validation = new utilities.Form_Validation();
@@ -976,6 +1014,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String delete_traffic_by_date = "";
 		String delete_traffic_by_month_of_year = "";
 		String delete_traffic_by_year = "";
+		String delete_all_traffic_records = "";
 		
 		String get_id = this.get_id();
 		String get_delete_website = this.get_delete_website();
@@ -1007,8 +1046,9 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 					delete_traffic_by_date = this.delete_traffic_by_date(get_id);
 					delete_traffic_by_month_of_year = this.delete_traffic_by_month_of_year(get_id);
 					delete_traffic_by_year = this.delete_traffic_by_year(get_id);
+					delete_all_traffic_records = this.delete_all_traffic_records(get_id);
 					
-					if (delete_from_shopping_cart == "successful database update" && delete_receipt == "successful database update" && delete_traffic_by_today_date == "successful database update" && delete_traffic_by_date == "successful database update" && delete_traffic_by_month_of_year == "successful database update" && delete_traffic_by_year == "successful database update") {
+					if (delete_from_shopping_cart == "successful database update" && delete_receipt == "successful database update" && delete_traffic_by_today_date == "successful database update" && delete_traffic_by_date == "successful database update" && delete_traffic_by_month_of_year == "successful database update" && delete_traffic_by_year == "successful database update" && delete_all_traffic_records == "successful database update") {
 						
 						try {
 							
