@@ -3,9 +3,14 @@ package controllers;
 
 public class Control_Change_Personal_Information extends models.Change_Personal_Information {
 	
-	public String control_basic_information_changer(String first_name, String last_name, String save_basic_information, String cancel_changes, String admin_session) {
+	protected views.Show_Personal_Information_Changer_Feedback control_change_personal_information;
+	
+	public Control_Change_Personal_Information() {
 		
-		views.Show_Personal_Information_Changer_Feedback control_change_personal_information = new views.Show_Personal_Information_Changer_Feedback();
+		control_change_personal_information = new views.Show_Personal_Information_Changer_Feedback();
+	}
+	
+	public String control_basic_information_changer(String first_name, String last_name, String save_basic_information, String cancel_changes, String admin_session) {
 		
 		String output = "";
 		
@@ -15,14 +20,12 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_basic_information());
+		output += this.control_change_personal_information.show_personal_information_changer_feedback(this.change_basic_information());
 		
 		return output;
 	}
 	
 	public String control_email_changer(String email, String save_email, String cancel_changes, String admin_session) {
-		
-		views.Show_Personal_Information_Changer_Feedback control_change_personal_information = new views.Show_Personal_Information_Changer_Feedback();
 		
 		String output = "";
 		
@@ -31,14 +34,12 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_email());
+		output += this.control_change_personal_information.show_personal_information_changer_feedback(this.change_email());
 		
 		return output;
 	}
 	
 	public String control_username_changer(String username, String save_username, String cancel_changes, String admin_session) {
-		
-		views.Show_Personal_Information_Changer_Feedback control_change_personal_information = new views.Show_Personal_Information_Changer_Feedback();
 		
 		String output = "";
 		
@@ -47,14 +48,12 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_username());
+		output += this.control_change_personal_information.show_personal_information_changer_feedback(this.change_username());
 		
 		return output;
 	}
 	
 	public String control_password_changer(String current_password, String new_password, String confirm_new_password, String save_password, String cancel_changes, String admin_session) {
-		
-		views.Show_Personal_Information_Changer_Feedback control_change_personal_information = new views.Show_Personal_Information_Changer_Feedback();
 		
 		String output = "";
 		
@@ -65,7 +64,7 @@ public class Control_Change_Personal_Information extends models.Change_Personal_
 		this.set_cancel_changes(cancel_changes);
 		this.set_admin_session(admin_session);
 		
-		output += control_change_personal_information.show_personal_information_changer_feedback(this.change_password());
+		output += this.control_change_personal_information.show_personal_information_changer_feedback(this.change_password());
 		
 		return output;
 	}
