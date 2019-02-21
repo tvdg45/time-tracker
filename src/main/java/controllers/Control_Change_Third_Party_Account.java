@@ -7,7 +7,7 @@ public class Control_Change_Third_Party_Account extends models.Change_Third_Part
 	
 	public Control_Change_Third_Party_Account() {
 		
-		control_change_third_party_account = views.Show_Change_Third_Party_Account_Feedback();
+		control_change_third_party_account = new views.Show_Change_Third_Party_Account_Feedback();
 	}
 	
 	public String control_add_website(String url, String token, String date_received, String time_received, String add_website, String admin_session) {
