@@ -3,9 +3,14 @@ package views;
 
 public class Show_Fetch_Lost_Personal_Information_Feedback {
 	
-	public String show_fetch_lost_personal_information_feedback(String[][] fetch_lost_personal_information) {
+	protected configuration.Config this.use_config;
+	
+	public Show_Fetch_Lost_Personal_Information_Feedback() {
 		
-		configuration.Config use_config = new configuration.Config();
+		this.use_config = new configuration.Config();
+	}
+	
+	public String show_fetch_lost_personal_information_feedback(String[][] fetch_lost_personal_information) {
 		
 		String output = "";
 		
@@ -25,7 +30,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "$(\".fetch_username_email\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-username-email.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-username-email.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"first_name=" + fetch_lost_personal_information[0][1] + "&username=" + fetch_lost_personal_information[0][2] + "&email=" + fetch_lost_personal_information[0][3] + "\");\n";
 				output += "});\n";
@@ -42,7 +47,7 @@ public class Show_Fetch_Lost_Personal_Information_Feedback {
 				output += "$(\".fetch_password_email\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-password-email.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/fetch-password-email.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"first_name=" + fetch_lost_personal_information[0][1] + "&username=" + fetch_lost_personal_information[0][2] + "&email=" + fetch_lost_personal_information[0][3] + "&password=" + fetch_lost_personal_information[0][4] + "\");\n";
 				output += "});\n";
