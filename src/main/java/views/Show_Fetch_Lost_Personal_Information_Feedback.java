@@ -3,11 +3,11 @@ package views;
 
 public class Show_Fetch_Lost_Personal_Information_Feedback {
 	
-	protected configuration.Config this.use_config;
+	protected configuration.Config use_config;
 	
 	public Show_Fetch_Lost_Personal_Information_Feedback() {
 		
-		this.use_config = new configuration.Config();
+		use_config = new configuration.Config();
 	}
 	
 	public String show_fetch_lost_personal_information_feedback(String[][] fetch_lost_personal_information) {
