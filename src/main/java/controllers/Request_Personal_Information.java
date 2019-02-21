@@ -7,7 +7,7 @@ public class Request_Personal_Information {
 	
 	public Request_Personal_Information() {
 		
-		request_personal_information = views.Show_Personal_Information();
+		request_personal_information = new views.Show_Personal_Information();
 	}
 	
 	public String admin_request_personal_information(String admin_session) {
