@@ -25,7 +25,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	private utilities.Form_Validation form_validation;
 	
-	public Change_Personal_Information() {
+	public Change_Third_Party_Account() {
 		
 		form_validation = new utilities.Form_Validation();
 	}
