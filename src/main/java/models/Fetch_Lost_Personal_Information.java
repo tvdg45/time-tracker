@@ -22,6 +22,13 @@ import java.util.Date;
 
 public abstract class Fetch_Lost_Personal_Information extends configuration.Config {
 	
+	private utilities.Form_Validation form_validation;
+	
+	public Fetch_Lost_Personal_Information() {
+		
+		form_validation = new utilities.Form_Validation();
+	}
+	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	//gets and sets variables
@@ -150,8 +157,6 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 	
 	protected String[][] fetch_username() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[][] output = new String[1][4];
 		
 		String get_email = this.get_email();
@@ -159,7 +164,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		
 		if (!(get_fetch_username.equals("null"))) {
 			
-			if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
+			if (this.form_validation.is_string_null_or_white_space(get_email) || !(this.form_validation.is_email_valid(get_email))) {
 				
 				output[0][0] = "You must provide a valid email.";
 			} else {
@@ -207,8 +212,6 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 	
 	protected String[][] fetch_password() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[][] output = new String[1][5];
 		
 		String get_username = this.get_username();
@@ -216,7 +219,7 @@ public abstract class Fetch_Lost_Personal_Information extends configuration.Conf
 		
 		if (!(get_fetch_password.equals("null"))) {
 			
-			if (form_validation.is_string_null_or_white_space(get_username)) {
+			if (this.form_validation.is_string_null_or_white_space(get_username)) {
 				
 				output[0][0] = "You must provide your username.";
 			} else {
