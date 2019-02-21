@@ -3,9 +3,14 @@ package views;
 
 public class Show_Sign_Up_Feedback {
 	
+	protected configuration.Config use_config;
+    
+    public Show_Sign_Up_Feedback() {
+        
+        use_config = new configuration.Config();
+    }
+	
 	public String show_sign_up_feedback(String[] sign_up, String first_name, String last_name, String username, String password, String email) {
-		
-		configuration.Config use_config = new configuration.Config();
 		
 		String output = "";
 		
@@ -30,7 +35,7 @@ public class Show_Sign_Up_Feedback {
 				output += "$(\".create_new_account\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/sign-up-email.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/sign-up-email.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"first_name=" + first_name + "&last_name=" + last_name + "&username=" + username + "&password=" + password + "&email=" + email + "\");\n";
 				output += "});\n";
