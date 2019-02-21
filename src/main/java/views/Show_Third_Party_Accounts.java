@@ -2,7 +2,7 @@
 package views;
 
 public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Processor {
-    
+	
 	protected configuration.Config use_config;
     
     public Show_Third_Party_Accounts() {
