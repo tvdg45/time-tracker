@@ -22,7 +22,14 @@ import java.util.Date;
 
 public abstract class Change_Personal_Information extends configuration.Config {
 	
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private utilities.Form_Validation form_validation;
+	
+	public Change_Personal_Information() {
+		
+		form_validation = new utilities.Form_Validation();
+	}
+	
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);	
 	
 	//gets and sets variables
 	private String first_name;
@@ -351,8 +358,6 @@ public abstract class Change_Personal_Information extends configuration.Config {
 
 	protected String[] change_basic_information() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[2];
 		int int_admin_session = 0;
 		
@@ -362,22 +367,22 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		String get_cancel_changes = this.get_cancel_changes();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_save_basic_information.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					if (!(get_save_basic_information.equals("null"))) {
 						
-						if (form_validation.is_string_null_or_white_space(get_first_name) || form_validation.is_string_null_or_white_space(get_last_name)) {
+						if (this.form_validation.is_string_null_or_white_space(get_first_name) || this.form_validation.is_string_null_or_white_space(get_last_name)) {
 							
-							if (form_validation.is_string_null_or_white_space(get_first_name)) {
+							if (this.form_validation.is_string_null_or_white_space(get_first_name)) {
 								
 								output[0] = "You must provide your first name.";
 							}
 							
-							if (form_validation.is_string_null_or_white_space(get_last_name)) {
+							if (this.form_validation.is_string_null_or_white_space(get_last_name)) {
 								
 								output[1] = "You must provide your last name.";
 							}
@@ -435,8 +440,6 @@ public abstract class Change_Personal_Information extends configuration.Config {
 	
 	protected String[] change_email() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[2];
 		int int_admin_session = 0;
 		String redundancy_found_in_email = "";
@@ -446,19 +449,19 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		String get_cancel_changes = this.get_cancel_changes();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_save_email.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					if (!(get_save_email.equals("null"))) {
 						
 						redundancy_found_in_email = this.repeat_found_in_email(get_email, get_save_email);
 						
-						if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email)) || redundancy_found_in_email.equals("yes")) {
+						if (this.form_validation.is_string_null_or_white_space(get_email) || !(this.form_validation.is_email_valid(get_email)) || redundancy_found_in_email.equals("yes")) {
 							
-							if (form_validation.is_string_null_or_white_space(get_email) || !(form_validation.is_email_valid(get_email))) {
+							if (this.form_validation.is_string_null_or_white_space(get_email) || !(this.form_validation.is_email_valid(get_email))) {
 								
 								output[0] = "You must provide a valid email.";
 							}
@@ -520,8 +523,6 @@ public abstract class Change_Personal_Information extends configuration.Config {
 	
 	protected String[] change_username() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[2];
 		int int_admin_session = 0;
 		String redundancy_found_in_username = "";
@@ -532,20 +533,20 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		String get_cancel_changes = this.get_cancel_changes();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_save_username.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					if (!(get_save_username.equals("null"))) {
 						
 						redundancy_found_in_username = this.repeat_found_in_username(get_username, get_save_username);
 						is_username_your_password = this.validate_password(get_username, get_save_username);
 						
-						if (form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username.equals("yes") || is_username_your_password.equals("yes")) {
+						if (this.form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || this.form_validation.number_of_white_spaces(get_username) > 0 || redundancy_found_in_username.equals("yes") || is_username_your_password.equals("yes")) {
 							
-							if (form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || form_validation.number_of_white_spaces(get_username) > 0 || is_username_your_password.equals("yes")) {
+							if (this.form_validation.is_string_null_or_white_space(get_username) || get_username.length() < 3 || this.form_validation.number_of_white_spaces(get_username) > 0 || is_username_your_password.equals("yes")) {
 								
 								output[0] = "Your username must contain at least three characters. Your username is allowed to contain letters, numbers, and symbols. Symbols include !, $, #, etc. Your username must not contain any spaces. Your username must not be the same as your password.";
 							}
@@ -607,8 +608,6 @@ public abstract class Change_Personal_Information extends configuration.Config {
 	
 	protected String[] change_password() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[4];
 		int int_admin_session = 0;
 		String is_password_valid = "";
@@ -622,11 +621,11 @@ public abstract class Change_Personal_Information extends configuration.Config {
 		String get_cancel_changes = this.get_cancel_changes();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_save_password.equals("null")) || !(get_cancel_changes.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					if (!(get_save_password.equals("null"))) {
 						
@@ -634,24 +633,24 @@ public abstract class Change_Personal_Information extends configuration.Config {
 						is_new_password_your_username = this.validate_username(get_new_password, get_save_password);
 						is_new_password_your_current_one = this.validate_password(get_new_password, get_save_password);
 						
-						if (form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")) || form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes") || form_validation.is_string_null_or_white_space(get_confirm_new_password) || !(get_new_password.equals(get_confirm_new_password))) {
+						if (this.form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")) || this.form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || this.form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes") || this.form_validation.is_string_null_or_white_space(get_confirm_new_password) || !(get_new_password.equals(get_confirm_new_password))) {
 							
-							if (form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes"))) {
+							if (this.form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes"))) {
 								
 								output[0] = "You must correctly provide your current password.  Check for misspellings.";
 							}
 							
-							if ((form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes")) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
+							if ((this.form_validation.is_string_null_or_white_space(get_new_password) || get_new_password.length() < 8 || this.form_validation.number_of_uppercase_characters(get_new_password) < 1 || get_new_password.replaceAll("\\D", "").length() < 2 || is_new_password_your_username.equals("yes") || is_new_password_your_current_one.equals("yes")) && !(this.form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
 								output[1] = "Your password must contain at least eight characters, including at least one uppercase letter, and two numeric characters. Your password is allowed to contain symbols, such as !, $, #, etc. Your new password must not be the same as your username or current password.";
 							}
 							
-							if (form_validation.is_string_null_or_white_space(get_confirm_new_password) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
+							if (this.form_validation.is_string_null_or_white_space(get_confirm_new_password) && !(this.form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
 								output[2] = "You must confirm your password.";
 							}
 							
-							if ((!(form_validation.is_string_null_or_white_space(get_new_password)) && !(form_validation.is_string_null_or_white_space(get_confirm_new_password)) && !(get_new_password.equals(get_confirm_new_password))) && !(form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
+							if ((!(this.form_validation.is_string_null_or_white_space(get_new_password)) && !(this.form_validation.is_string_null_or_white_space(get_confirm_new_password)) && !(get_new_password.equals(get_confirm_new_password))) && !(this.form_validation.is_string_null_or_white_space(get_current_password) || !(is_password_valid.equals("yes")))) {
 								
 								output[3] = "Passwords must match.";
 							}
