@@ -3,6 +3,13 @@ package views;
 
 public class Show_Personal_Information extends models.Personal_Information_Processor {
 	
+	protected configuration.Config use_config;
+    
+    public Show_Personal_Information() {
+        
+        use_config = new configuration.Config();
+    }
+	
 	private String find_and_replace(String input_value) {
 		
 		String output = "";
@@ -26,8 +33,6 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 	}
 	
 	public String admin_show_personal_information(String admin_session) {
-		
-		configuration.Config use_config = new configuration.Config();
 		
 		String output = "";
 		String[][] personal_information = new String[this.search_personal_information("third_party_account_info_per_traffic_monitor_app", admin_session)][6];
@@ -71,7 +76,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_basic_information\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"first_name=\" + $(\"#first_name\").val() + \"&last_name=\" + $(\"#last_name\").val() + \"&save_basic_information=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -82,7 +87,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_basic_information\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"cancel_changes=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -151,7 +156,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_email\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"email=\" + $(\"#email\").val() + \"&save_email=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -162,7 +167,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_email\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"cancel_changes=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -222,7 +227,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_username\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"username=\" + $(\"#username\").val() + \"&save_username=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -233,7 +238,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_username\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"cancel_changes=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -293,7 +298,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_password\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"current_password=\" + $(\"#current_password\").val() + \"&new_password=\" + $(\"#new_password\").val() + \"&confirm_new_password=\" + $(\"#confirm_new_password\").val() + \"&save_password=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
@@ -304,7 +309,7 @@ public class Show_Personal_Information extends models.Personal_Information_Proce
 				output += "$(\".change_password\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.third_party_domain() + "/change-personal-information\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.third_party_domain() + "/change-personal-information\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"cancel_changes=" + personal_information[row][1] + "&admin_session=" + personal_information[row][1] + "\");\n";
 				output += "}\n\n";
