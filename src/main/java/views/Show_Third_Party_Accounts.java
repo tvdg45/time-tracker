@@ -2,10 +2,15 @@
 package views;
 
 public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Processor {
+    
+	protected configuration.Config use_config;
+    
+    public Show_Third_Party_Accounts() {
+        
+        use_config = new configuration.Config();
+    }
 	
 	public String show_websites(String[][] search_websites) {
-		
-		configuration.Config use_config = new configuration.Config();
 		
 		String output = "";
 		
@@ -34,7 +39,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 			output += "$(\".add_website\").html(this.responseText);\n";
 			output += "}\n";
 			output += "};\n\n";
-			output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
+			output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
 			output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 			output += "xhttp.send(\"url=\" + $(\"#url\").val() + \"&token=\" + random_string + \"&add_website=Add website\");\n";
 			output += "}\n";
@@ -73,7 +78,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "$(\"#confirm_change_url_" + search_websites[row][1] + "\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"id=" + search_websites[row][1] + "&url=\" + $(\"#confirm_url_" + search_websites[row][1] + "\").val() + \"&change_url=Change URL\");\n";
 				output += "}\n\n";
@@ -95,7 +100,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "$(\"#change_token_" + search_websites[row][1] + "\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"id=" + search_websites[row][1] + "&token=\" + random_string_" + search_websites[row][1] + " + \"&change_token=Change token\");\n";
 				output += "}\n\n";
@@ -112,7 +117,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "$(\"#confirm_delete_website_" + search_websites[row][1] + "\").html(this.responseText);\n";
 				output += "}\n";
 				output += "};\n\n";
-				output += "xhttp.open(\"POST\", \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
+				output += "xhttp.open(\"POST\", \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/change-third-party-account.php\");\n";
 				output += "xhttp.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
 				output += "xhttp.send(\"id=" + search_websites[row][1] + "&delete_website=Delete website\");\n";
 				output += "}\n\n";
@@ -168,7 +173,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				}
 				
 				output += "<div style='text-align: left; width: 100%'>\n";
-				output += "<label><a href=\"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "\">View traffic</a> | <a href=\"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=buy-memory\">Buy memory</a> | <a href=\"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=submit-payment\">View cart</a> | <a href=\"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=view-receipts\">View receipts</a> | <a href=\"#\" id=\"showing_source_code_" + search_websites[row][1] + "\" onclick=\"show_source_code_" + search_websites[row][1] + "()\">Show source code</a> | <a href=\"#\" id=\"changing_url_" + search_websites[row][1] + "\" onclick=\"change_url_" + search_websites[row][1] + "()\">Change URL</a> | <a href=\"#\" id=\"changing_token_" + search_websites[row][1] + "\" onclick=\"change_token_" + search_websites[row][1] + "()\">Change token</a> | <a href=\"#\" id=\"changing_token_" + search_websites[row][1] + "\" onclick=\"delete_website_" + search_websites[row][1] + "()\">Delete website</a></label>\n";
+				output += "<label><a href=\"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "\">View traffic</a> | <a href=\"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=buy-memory\">Buy memory</a> | <a href=\"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=submit-payment\">View cart</a> | <a href=\"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/admin.php?id=" + search_websites[row][1] + "&page=view-receipts\">View receipts</a> | <a href=\"#\" id=\"showing_source_code_" + search_websites[row][1] + "\" onclick=\"show_source_code_" + search_websites[row][1] + "()\">Show source code</a> | <a href=\"#\" id=\"changing_url_" + search_websites[row][1] + "\" onclick=\"change_url_" + search_websites[row][1] + "()\">Change URL</a> | <a href=\"#\" id=\"changing_token_" + search_websites[row][1] + "\" onclick=\"change_token_" + search_websites[row][1] + "()\">Change token</a> | <a href=\"#\" id=\"changing_token_" + search_websites[row][1] + "\" onclick=\"delete_website_" + search_websites[row][1] + "()\">Delete website</a></label>\n";
 				output += "</div>\n";
 				output += "<div style='text-align: left; width: 100%'>\n";
 				output += "<div id='change_token_" + search_websites[row][1] + "'></div>\n";
@@ -186,7 +191,7 @@ public class Show_Third_Party_Accounts extends models.Third_Party_Accounts_Proce
 				output += "<label>&lt;script&gt;</label><br />\n";
 				output += "<label>$(document).ready(function() {</label><br /><br />\n";
 				output += "<label>$.ajax({</label><br /><br />\n";
-				output += "<label>url: \"" + use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/index.php?id=" + search_websites[row][1] + "&token=" + search_websites[row][3] + "&url=\" + document.location.href</label><br />\n";
+				output += "<label>url: \"" + this.use_config.domain() + "/third-party-web-apps/apps/traffic-monitor/index.php?id=" + search_websites[row][1] + "&token=" + search_websites[row][3] + "&url=\" + document.location.href</label><br />\n";
 				output += "<label>}).then(function(data) {</label><br /><br />\n";
 				output += "<label>$(\".greeting_content\").html(data);</label><br />\n";
 				output += "<label>});</label><br />\n";
