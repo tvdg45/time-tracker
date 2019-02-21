@@ -23,6 +23,13 @@ import java.util.Date;
 
 public abstract class Third_Party_Accounts_Processor extends configuration.Config {
 	
+	private utilities.Form_Validation form_validation;
+	
+	public Third_Party_Accounts_Processor() {
+		
+		form_validation = new utilities.Form_Validation();
+	}
+	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	//gets and sets variables
@@ -193,8 +200,6 @@ public abstract class Third_Party_Accounts_Processor extends configuration.Confi
 	//This overloaded method gathers search results.
 	protected String[][] search_websites() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[][] output = new String[this.search_websites("third_party_website_info_per_traffic_monitor_app", this.get_admin_session())][6];
 		int int_admin_session = 0;
 		int row = 0;
@@ -209,7 +214,7 @@ public abstract class Third_Party_Accounts_Processor extends configuration.Confi
 			int_admin_session = 0;
 		}
 		
-		if (get_admin_session.equals("null") || form_validation.is_string_null_or_white_space(get_admin_session)) {
+		if (get_admin_session.equals("null") || this.form_validation.is_string_null_or_white_space(get_admin_session)) {
 			
 			output[0][0] = "not logged in";
 		} else {
