@@ -23,6 +23,13 @@ import java.util.Date;
 
 public abstract class Change_Third_Party_Account extends configuration.Config {
 	
+	private utilities.Form_Validation form_validation;
+	
+	public Change_Personal_Information() {
+		
+		form_validation = new utilities.Form_Validation();
+	}
+	
 	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	//gets and sets variables
@@ -434,8 +441,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 
 	protected String[] add_website() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[3];
 		int int_admin_session = 0;
 		String check_for_existing_website = "";
@@ -447,22 +452,22 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_add_website = this.get_add_website();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_add_website.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					check_for_existing_website = this.check_for_existing_website(get_url.toLowerCase());
 					
-					if (form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0) || form_validation.is_string_null_or_white_space(get_token) || check_for_existing_website == "website already exists") {
+					if (this.form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0) || this.form_validation.is_string_null_or_white_space(get_token) || check_for_existing_website == "website already exists") {
 						
-						if (form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0)) {
+						if (this.form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0)) {
 							
 							output[0] = "You must provide a website URL, starting with http:// or https://.";
 						}
 						
-						if (form_validation.is_string_null_or_white_space(get_token)) {
+						if (this.form_validation.is_string_null_or_white_space(get_token)) {
 							
 							output[1] = "You do not have a valid token.  Try adding the website again.";
 						}
@@ -548,8 +553,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] change_url() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[2];
 		int int_id = 0;
 		String check_for_existing_website = "";
@@ -559,17 +562,17 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_change_url = this.get_change_url();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_change_url.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					check_for_existing_website = this.check_for_existing_website(get_url.toLowerCase());
 					
-					if (form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0) || check_for_existing_website == "website already exists") {
+					if (this.form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0) || check_for_existing_website == "website already exists") {
 						
-						if (form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0)) {
+						if (this.form_validation.is_string_null_or_white_space(get_url) || (get_url.indexOf("http://") < 0 && get_url.indexOf("https://") < 0)) {
 							
 							output[0] = "You must provide a website URL, starting with http:// or https://.";
 						}
@@ -629,8 +632,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] change_token() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[1];
 		int int_id = 0;
 		
@@ -639,13 +640,13 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_change_token = this.get_change_token();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_change_token.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
-					if (form_validation.is_string_null_or_white_space(get_token)) {
+					if (this.form_validation.is_string_null_or_white_space(get_token)) {
 						
 						output[0] = "You do not have a valid token.  Try adding the website again.";
 					} else {
@@ -1003,8 +1004,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] delete_website() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[1];
 		int int_id = 0;
 		String delete_from_shopping_cart = "";
@@ -1020,11 +1019,11 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_delete_website = this.get_delete_website();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_delete_website.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					try {
 						
@@ -1090,8 +1089,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] downgrade_plan() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[1];
 		int int_id = 0;
 		int int_memory = 0;
@@ -1102,11 +1099,11 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_downgrade_plan = this.get_downgrade_plan();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_downgrade_plan.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					int_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 					
@@ -1157,8 +1154,6 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 	
 	protected String[] upgrade_plan() {
 		
-		utilities.Form_Validation form_validation = new utilities.Form_Validation();
-		
 		String[] output = new String[1];
 		int int_id = 0;
 		
@@ -1168,11 +1163,11 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 		String get_upgrade_plan = this.get_upgrade_plan();
 		String get_admin_session = this.get_admin_session();
 		
-		if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+		if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 			
 			if (!(get_upgrade_plan.equals("null"))) {
 				
-				if (!(get_admin_session.equals("null")) && !(form_validation.is_string_null_or_white_space(get_admin_session))) {
+				if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 					
 					try {
 						
