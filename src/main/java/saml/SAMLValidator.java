@@ -42,7 +42,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-//import javax.xml.bind.DatatypeConverter;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.crypto.MarshalException;
 import javax.xml.crypto.dsig.Reference;
 import javax.xml.crypto.dsig.XMLSignature;
