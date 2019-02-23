@@ -8,7 +8,7 @@ public class Config {
 	String output = "";
 		
 	//You can use a name like "localhost", a URL, or an IP address.
-	String database_server = "82.163.176.10";
+	String database_server = "82.163.176.1";
 		
 	output += database_server;
 		
