@@ -2,106 +2,106 @@
 package configuration;
 
 public class Config {
-	
-	public String database_server() {
+    
+    public String database_server() {
 		
-		String output = "";
+	String output = "";
 		
-		//You can use a name like "localhost", a URL, or an IP address.
-		String database_server = "name";
+	//You can use a name like "localhost", a URL, or an IP address.
+	String database_server = "82.163.176.10";
 		
-		output += database_server;
+	output += database_server;
 		
-		return output;
-	}
-	
-	public String database_port() {
+	return output;
+    }
+    
+    public String database_port() {
 		
-		String output = "";
+	String output = "";
+        
+        //This method is used for remote database server connections.  Only number values are allowed.
+        String database_port = "3306";
 		
-		//This method is used for remote database server connections.  Only number values are allowed.
-		String database_port = "0000";
+	output += database_port;
 		
-		output += database_port;
+	return output;
+    }
+    
+    public String database_name() {
 		
-		return output;
-	}
-	
-	public String database_name() {
+	String output = "";
 		
-		String output = "";
+	//Choose your database by defining the following constant.
+	String database_name = "timothys_digital_solutions_third_party_apps";
 		
-		//Choose your database by defining the following constant.
-		String database_name = "name";
+	output += database_name;
 		
-		output += database_name;
+	return output;
+    }
+    
+    public String database_username() {
 		
-		return output;
-	}
-	
-	public String database_username() {
+	String output = "";
 		
-		String output = "";
+	//Choose your username by defining the following constant.
+	String database_username = "timothys_tim";
 		
-		//Choose your username by defining the following constant.
-		String database_username = "name";
+	output += database_username;
 		
-		output += database_username;
+	return output;
+    }
+    
+    public String database_password() {
 		
-		return output;
-	}
-	
-	public String database_password() {
+	String output = "";
 		
-		String output = "";
+	//Choose your password by defining the following constant.
+	String database_password = "ranger12";
 		
-		//Choose your password by defining the following constant.
-		String database_password = "name";
+	output += database_password;
 		
-		output += database_password;
+	return output;
+    }
+    
+    public String database_url() {
 		
-		return output;
-	}
-	
-	public String database_url() {
+	String output = "";
 		
-		String output = "";
+	//You can define the following constant as a database connection parameter.  Database username and database password are the two other parameters.  That makes a total of three parameters in your database connection.
 		
-		//You can define the following constant as a database connection parameter.  Database username and database password are the two other parameters.  That makes a total of three parameters in your database connection.
+	//Example: Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
+	String database_url = "jdbc:mysql://" + this.database_server() + ":" + this.database_port() + "/" + this.database_name();
 		
-		//Example: Connection connection = DriverManager.getConnection(this.database_url(), this.database_username(), this.database_password());
-		String database_url = "jdbc:mysql://" + this.database_server() + ":" + this.database_port() + "/" + this.database_name();
+	output += database_url;
 		
-		output += database_url;
+	return output;
+    }
+    
+    public String domain() {
 		
-		return output;
-	}
-	
-	public String domain() {
+	String output = "";
 		
-		String output = "";
+	//Define any domain name below.  Your domain name can also have a directory included.
 		
-		//Define any domain name below.  Your domain name can also have a directory included.
+	//Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
+	String domain = "https://www.timothysdigitalsolutions.com";
 		
-		//Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
-		String domain = "https://www.timothysdigitalsolutions.com";
+	output += domain;
 		
-		output += domain;
+	return output;
+    }
+    
+    public String third_party_domain() {
 		
-		return output;
-	}
-	
-	public String third_party_domain() {
+	String output = "";
 		
-		String output = "";
+	//Define any domain name below.  Your domain name can also have a directory included.
 		
-		//Define any domain name below.  Your domain name can also have a directory included.
+	//Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
+	String third_party_domain = "https://user-account-management-1.herokuapp.com";
 		
-		//Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
-		String third_party_domain = "https://user-account-management-1.herokuapp.com";
+	output += third_party_domain;
 		
-		output += third_party_domain;
-		
-		return output;
-	}
+	return output;
+    }
 }
