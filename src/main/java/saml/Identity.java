@@ -40,38 +40,38 @@ public class Identity {
 
 
 
-    private String subject;
-    private Bag attributes;
+ private String subject;
+ private Bag attributes;
 
-    public Identity(String identity, boolean encoded) throws UnsupportedEncodingException {
+ public Identity(String identity, boolean encoded) throws UnsupportedEncodingException {
 
-        this.attributes = new Bag();
-        if (encoded) {
-            byte[] theBytes = Base64.decodeBase64(identity);
-            String jsonString = new String(theBytes,"UTF-8");
-            JSONObject j = new JSONObject(jsonString);
-            this.subject = j.getString("subject");
+  this.attributes = new Bag();
+  if (encoded) {
+   byte[] theBytes = Base64.decodeBase64(identity);
+   String jsonString = new String(theBytes, "UTF-8");
+   JSONObject j = new JSONObject(jsonString);
+   this.subject = j.getString("subject");
 
-            Iterator iterator = j.keySet().iterator();
-            while (iterator.hasNext()) {
-                String key = (String) iterator.next();
-                if (!key.equals("subject")) {
-                    JSONArray ja = j.getJSONArray(key);
-                    for (int i = 0; i < ja.length(); i++) {
-                        this.attributes.put(key, ja.getString(i));
-                    }
-                }
-            }
-        } else {
-            this.subject = identity;
-        }
+   Iterator iterator = j.keySet().iterator();
+   while (iterator.hasNext()) {
+    String key = (String) iterator.next();
+    if (!key.equals("subject")) {
+     JSONArray ja = j.getJSONArray(key);
+     for (int i = 0; i < ja.length(); i++) {
+      this.attributes.put(key, ja.getString(i));
+     }
     }
+   }
+  } else {
+   this.subject = identity;
+  }
+ }
 
-    public String getSubject() {
-        return subject;
-    }
+ public String getSubject() {
+  return subject;
+ }
 
-    public Bag getAttributes() {
-        return attributes;
-    }
+ public Bag getAttributes() {
+  return attributes;
+ }
 }
