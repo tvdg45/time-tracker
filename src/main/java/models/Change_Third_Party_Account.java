@@ -1,5 +1,7 @@
-= //Author: Timothy van der Graaff
+//Author: Timothy van der Graaff
 package models;
+
+import java.text.DecimalFormat;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
