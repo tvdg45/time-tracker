@@ -1,77 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+<web-app
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     version="2.5">
-
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-    <filter>
-        <filter-name>TLSFilter</filter-name>
-        <filter-class>saml.TLSFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>TLSFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    
-    <servlet>
-        <servlet-name>SAMLServlet</servlet-name>
-        <servlet-class>saml.SAMLServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Sign_Up</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Sign_Up</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Fetch_Lost_Personal_Information</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Fetch_Lost_Personal_Information</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Change_Personal_Information</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Change_Personal_Information</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Request_Personal_Information</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Request_Personal_Information</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Request_Third_Party_Accounts</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Run_Change_Third_Party_Account</servlet-name>
-        <servlet-class>apps.traffic_monitor.Run_Change_Third_Party_Account</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SAMLServlet</servlet-name>
-        <url-pattern>/_saml</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Run_Sign_Up</servlet-name>
-        <url-pattern>/sign-up</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Run_Fetch_Lost_Personal_Information</servlet-name>
-        <url-pattern>/fetch-lost-personal-information</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Run_Change_Personal_Information</servlet-name>
-        <url-pattern>/change-personal-information</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>TLSFilter</filter-name>
+		<filter-class>saml.TLSFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>TLSFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>SAMLServlet</servlet-name>
+		<servlet-class>saml.SAMLServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Sign_Up</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Sign_Up</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Fetch_Lost_Personal_Information</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Fetch_Lost_Personal_Information</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Change_Personal_Information</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Change_Personal_Information</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Request_Personal_Information</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Request_Personal_Information</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Request_Third_Party_Accounts</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Run_Change_Third_Party_Account</servlet-name>
+		<servlet-class>apps.traffic_monitor.Run_Change_Third_Party_Account</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMLServlet</servlet-name>
+		<url-pattern>/_saml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Run_Sign_Up</servlet-name>
+		<url-pattern>/sign-up</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Run_Fetch_Lost_Personal_Information</servlet-name>
+		<url-pattern>/fetch-lost-personal-information</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Run_Change_Personal_Information</servlet-name>
+		<url-pattern>/change-personal-information</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>Run_Request_Personal_Information</servlet-name>
 		<url-pattern>/admin-personal-information</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>Run_Request_Third_Party_Accounts</servlet-name>
 		<url-pattern>/admin-third-party-accounts</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>Run_Change_Third_Party_Account</servlet-name>
 		<url-pattern>/change-third-party-account</url-pattern>
-    </servlet-mapping>
+	</servlet-mapping>
 </web-app>
