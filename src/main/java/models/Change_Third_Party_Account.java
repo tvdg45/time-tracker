@@ -281,7 +281,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
  private double convert_to_bytes_from_gigabytes(String input_value) {
 
   DecimalFormat decimal_format = new DecimalFormat("#,##0.00");
-  
+
   double output;
   double dec_input_value;
   double megabytes;
