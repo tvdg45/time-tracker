@@ -1,4 +1,4 @@
-//Author: Timothy van der Graaff
+= //Author: Timothy van der Graaff
 package models;
 
 import java.util.logging.Level;
@@ -276,17 +276,18 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
   }
  }
 
- private int convert_to_bytes_from_gigabytes(String input_value) {
+ private double convert_to_bytes_from_gigabytes(String input_value) {
 
-  int output;
-  int int_input_value;
-  int megabytes;
-  int kilobytes;
-  int bytes;
+  DecimalFormat decimal_format = new DecimalFormat("#,##0.00");
+  double output;
+  double int_input_value;
+  double megabytes;
+  double kilobytes;
+  double bytes;
 
   try {
 
-   int_input_value = Integer.valueOf(input_value);
+   int_input_value = Double.parseDouble(input_value);
   } catch (Exception e) {
 
    int_input_value = 0;
@@ -296,7 +297,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
   kilobytes = megabytes * 1000;
   bytes = kilobytes * 1024;
 
-  output = bytes;
+  output = Double.parseDouble(decimal_format.format(Math.round(bytes * 100.0) / 100.0));
 
   return output;
  }
@@ -1082,7 +1083,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 
   String[] output = new String[1];
   int int_id;
-  int int_memory;
+  double dec_memory;
 
   String get_id = this.get_id();
   String get_memory_plan = this.get_memory_plan();
@@ -1096,7 +1097,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
 
     if (!(get_admin_session.equals("null")) && !(this.form_validation.is_string_null_or_white_space(get_admin_session))) {
 
-     int_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
+     dec_memory = this.convert_to_bytes_from_gigabytes(get_memory) + this.search_number_of_bytes(get_id);
 
      try {
 
@@ -1115,7 +1116,7 @@ public abstract class Change_Third_Party_Account extends configuration.Config {
       PreparedStatement update_statement = connection.prepareStatement("UPDATE third_party_website_info_per_traffic_monitor_app SET memory_plan = ?, memory_limit = ? WHERE row_id = ?");
 
       update_statement.setString(1, get_memory_plan);
-      update_statement.setString(2, String.valueOf(int_memory).replace("-", ""));
+      update_statement.setString(2, String.valueOf(dec_memory).replace("-", ""));
       update_statement.setInt(3, int_id);
 
       update_statement.execute();
