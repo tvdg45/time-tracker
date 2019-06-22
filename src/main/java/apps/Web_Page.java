@@ -11,6 +11,8 @@ import controllers.Request_Website_Links;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +36,7 @@ public class Web_Page extends HttpServlet {
  @Override
  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   //processRequest(request, response);
-     
+
  }
 
  /**
@@ -47,28 +49,43 @@ public class Web_Page extends HttpServlet {
   */
  @Override
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  //processRequest(request, response);
+  processRequest(request, response);
 
-  response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
+  response.addHeader("Access-Control-Allow-Origin", "*");
   response.setHeader("Access-Control-Allow-Credentials", "true");
   response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
   response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
 
   PrintWriter out = response.getWriter();
- 
+  
+  Connection use_open_connection;
+  
+  use_open_connection = configuration.Config.openConnection();
+  
   String url = String.valueOf(request.getParameter("url"));
   String page = String.valueOf(request.getParameter("page"));
   String page_preview = String.valueOf(request.getParameter("page_preview"));
   String show_website = String.valueOf(request.getParameter("show_website"));
   
+  Request_CSS_Responsive_Design_Screens.show_website = String.valueOf(show_website);
+  
+  Request_Web_Page.show_website = String.valueOf(show_website);
+  
   Request_Web_Page.url = String.valueOf(url);
   Request_Web_Page.page = String.valueOf(page);
   Request_Web_Page.page_preview = String.valueOf(page_preview);
   Request_Web_Page.show_website = String.valueOf(show_website);
+  Request_Web_Page.use_connection = use_open_connection;
   
   Request_Website_Links.url = String.valueOf(url);
   Request_Website_Links.page = String.valueOf(page);
   Request_Website_Links.show_website = String.valueOf(show_website);
+  
+  Request_Website_Links.use_connection = use_open_connection;
+  Request_CSS_Responsive_Design_Screens.use_connection = use_open_connection;
+  Request_Website_Icon.use_connection = use_open_connection;
+  Request_Website_Logo.use_connection = use_open_connection;
+  Request_Website_Name.use_connection = use_open_connection;
   
   Request_Footer_Content.show_website = String.valueOf(show_website);
   
@@ -79,6 +96,7 @@ public class Web_Page extends HttpServlet {
   Request_Website_Links.search_website_link();
   
   //Search for footers
+  Request_Footer_Content.use_connection = use_open_connection;
   Request_Footer_Content.search_footer_content_section();
   
   //Find website name
@@ -236,7 +254,7 @@ public class Web_Page extends HttpServlet {
   out.println("</div>");
   out.println("<div class=\"footer\" style=\"text-align: left; word-wrap: break-word\">");
   out.println(Request_Footer_Content.request_footer_content());
-  out.println("</div>");
+  out.println("</div>");  
  }
 
  /**
