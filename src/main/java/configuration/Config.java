@@ -1,10 +1,36 @@
 //Author: Timothy van der Graaff
 package configuration;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import java.util.ArrayList;
 
 public class Config {
 
+ private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+ 
+ public static Connection openConnection() {
+     
+     try {
+        
+        Class.forName("com.mysql.jdbc.Driver");
+        
+        Connection connection = DriverManager.getConnection(database_url(), database_username(), database_password());
+        
+        return connection;
+     } catch (ClassNotFoundException | SQLException e) {
+
+        LOGGER.log(Level.INFO, "Unable to connect to the database");
+            
+        return null;
+     }
+ }
+ 
  public static ArrayList<String> bad_domain() {
 
   ArrayList<String> output = new ArrayList<> ();
