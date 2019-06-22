@@ -3,11 +3,17 @@ package controllers;
 
 import views.Show_Website_Logo;
 
+import java.sql.Connection;
+
 public class Request_Website_Logo extends models.Website_Logo_Processor {
+    
+    public static Connection use_connection;
     
     public static String request_website_logo() {
         
         String output;
+        
+        connection = use_connection;
         
         if (search_row_count() == 1 && !(search_website_logo().equals(""))
                 && !(search_website_logo().equals("page error"))) {

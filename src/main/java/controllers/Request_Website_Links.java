@@ -4,11 +4,14 @@ package controllers;
 import views.Show_Website_Links;
 import java.util.ArrayList;
 
+import java.sql.Connection;
+
 public class Request_Website_Links extends models.Website_Links_Processor {
     
     public static String show_website;
     public static String url;
     public static String page;
+    public static Connection use_connection;
     
     //Global variable for total number of web pages
     public static int number_of_website_links;
@@ -21,6 +24,8 @@ public class Request_Website_Links extends models.Website_Links_Processor {
     public static void search_website_link() {
         
         if (show_website.equals("yes")) {
+            
+            connection = use_connection;
         
             number_of_website_links = search_row_count();
             website_links = search_website_links();

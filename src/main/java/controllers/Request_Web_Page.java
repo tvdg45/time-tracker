@@ -5,6 +5,8 @@ import views.Show_Web_Page_Heading;
 import views.Show_Web_Page_Content;
 import java.util.ArrayList;
 
+import java.sql.Connection;
+
 public class Request_Web_Page extends models.Web_Page_Processor {
     
     public static String website_name;
@@ -12,6 +14,7 @@ public class Request_Web_Page extends models.Web_Page_Processor {
     public static String page;
     public static String page_preview;
     public static String show_website;
+    public static Connection use_connection;
     
     //Global variable for total number of web pages
     public static int number_of_web_pages;
@@ -24,6 +27,8 @@ public class Request_Web_Page extends models.Web_Page_Processor {
     public static void search_web_page() {
         
         if (show_website.equals("yes")) {
+            
+            connection = use_connection;
             
             if (url.equals("null")) {
                 
