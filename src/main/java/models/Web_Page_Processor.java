@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +16,8 @@ import utilities.Form_Validation;
 public abstract class Web_Page_Processor extends configuration.Config {
     
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
+    public static Connection connection;
     
     //global variables
     private static String url;
@@ -48,11 +49,6 @@ public abstract class Web_Page_Processor extends configuration.Config {
         
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
-            
             PreparedStatement create_statement = connection.prepareStatement(
                     
                     "CREATE TABLE company_web_pages (row_id INT NOT NULL, page_content_draft TEXT NOT NULL, " +
@@ -62,7 +58,7 @@ public abstract class Web_Page_Processor extends configuration.Config {
                     "date_received TEXT NOT NULL, time_received TEXT NOT NULL, PRIMARY KEY (row_id)) ENGINE = MYISAM;");
             
             create_statement.execute();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_web_pages' " +
                     "table was not created because it already exists.  " +
@@ -75,11 +71,6 @@ public abstract class Web_Page_Processor extends configuration.Config {
         int output;
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
             
             PreparedStatement prepared_statement = connection.prepareStatement("SELECT row_id FROM company_web_pages " +
                     "ORDER BY row_id DESC");
@@ -95,7 +86,7 @@ public abstract class Web_Page_Processor extends configuration.Config {
                 
                 output = 0;
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "{0}", e);
             
@@ -136,11 +127,6 @@ public abstract class Web_Page_Processor extends configuration.Config {
         
         try {
             
-           Class.forName("com.mysql.jdbc.Driver");
-           
-           Connection connection = DriverManager.getConnection(database_url(), database_username(), 
-                   database_password());
-           
            PreparedStatement select_statement = connection.prepareStatement("SELECT row_id, page_content_draft, " +
                    "page_name, page_description, page_keywords, page_content, page_directory, page_status " +
                    "date_received, time_received FROM company_web_pages WHERE page_directory = ? " +
@@ -178,7 +164,7 @@ public abstract class Web_Page_Processor extends configuration.Config {
                
                output.add("page not found");
            }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_web_pages' " +
                     "table is corrupt or does not exist");

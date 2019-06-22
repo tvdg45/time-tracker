@@ -7,23 +7,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public abstract class CSS_Responsive_Design_Screens_Processor extends configuration.Config {
     
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
+    public static Connection connection;
+    
     private static void create_new_table() {
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
             
             PreparedStatement create_statement = connection.prepareStatement(
                     
@@ -32,7 +29,7 @@ public abstract class CSS_Responsive_Design_Screens_Processor extends configurat
                             "PRIMARY KEY (row_id)) ENGINE = MYISAM;");
             
             create_statement.execute();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_css_responsive_design_screens' " +
                     "table was not created because it already exists.  " +
@@ -43,11 +40,6 @@ public abstract class CSS_Responsive_Design_Screens_Processor extends configurat
     private static void add_new_records() {
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
             
             PreparedStatement create_statement = connection.prepareStatement(
                     
@@ -100,7 +92,7 @@ public abstract class CSS_Responsive_Design_Screens_Processor extends configurat
                             "text-align: left; width: 100%; }');");
             
             create_statement.execute();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "");
         }
@@ -114,11 +106,6 @@ public abstract class CSS_Responsive_Design_Screens_Processor extends configurat
         int responsive_design_screen_count = 0;
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(), 
-                   database_password());
             
             PreparedStatement select_statement = connection.prepareStatement("SELECT screen_ratio, " +
                     "css_code_for_screen_ratio FROM company_css_responsive_design_screens ORDER BY row_id DESC");
@@ -138,7 +125,7 @@ public abstract class CSS_Responsive_Design_Screens_Processor extends configurat
                 element.add("responsive design screens not found");
                 attribute.add("");
             }            
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_css_responsive_design_screens' " +
                     "table is corrupt or does not exist");

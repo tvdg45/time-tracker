@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,14 +13,11 @@ public abstract class Website_Logo_Processor extends configuration.Config {
     
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
+    public static Connection connection;
+    
     private static void create_new_table() {
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
             
             PreparedStatement create_statement = connection.prepareStatement(
                     
@@ -30,7 +26,7 @@ public abstract class Website_Logo_Processor extends configuration.Config {
                             "ENGINE = MYISAM;");
             
             create_statement.execute();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_website_logo' " +
                     "table was not created because it already exists.  " +
@@ -44,11 +40,6 @@ public abstract class Website_Logo_Processor extends configuration.Config {
         int output;
         
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(),
-                    database_password());
             
             PreparedStatement prepared_statement = connection.prepareStatement("SELECT row_id FROM company_website_logo " +
                     "ORDER BY row_id ASC");
@@ -64,7 +55,7 @@ public abstract class Website_Logo_Processor extends configuration.Config {
                 
                 output = 0;
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "{0}", e);
             
@@ -80,11 +71,6 @@ public abstract class Website_Logo_Processor extends configuration.Config {
         
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection connection = DriverManager.getConnection(database_url(), database_username(), 
-                   database_password());
-            
             PreparedStatement select_statement = connection.prepareStatement("SELECT file_path FROM " +
                     "company_website_logo ORDER BY row_id ASC LIMIT 1");
             
@@ -94,7 +80,7 @@ public abstract class Website_Logo_Processor extends configuration.Config {
                 
                 output = select_results.getString(1);
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_website_logo' " +
                     "table is corrupt or does not exist");
