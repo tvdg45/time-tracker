@@ -51,7 +51,7 @@ public class Web_Page extends HttpServlet {
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   processRequest(request, response);
 
-  response.addHeader("Access-Control-Allow-Origin", "*");
+  response.addHeader("Access-Control-Allow-Origin", "https://www.timothysdigitalsolutions.com");
   response.setHeader("Access-Control-Allow-Credentials", "true");
   response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
   response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
@@ -107,6 +107,7 @@ public class Web_Page extends HttpServlet {
   out.println(Request_Web_Page.request_page_description());
   out.println(Request_Web_Page.request_page_keywords());
   out.println(Request_Web_Page.request_title());
+  out.println(url);
   out.println("<script>document.body.style.backgroundColor = \"#FBDFCC\";</script>\n");
   out.println("<style type=\"text/css\">");
   out.println("p, label, ul, ol, .pre_header { font-family: normal normal normal 'Open Sans', sans-serif; font-size: 12pt; color: #000000; cursor: text; }");
