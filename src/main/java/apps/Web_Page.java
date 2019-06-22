@@ -107,7 +107,6 @@ public class Web_Page extends HttpServlet {
   out.println(Request_Web_Page.request_page_description());
   out.println(Request_Web_Page.request_page_keywords());
   out.println(Request_Web_Page.request_title());
-  out.println(url);
   out.println("<script>document.body.style.backgroundColor = \"#FBDFCC\";</script>\n");
   out.println("<style type=\"text/css\">");
   out.println("p, label, ul, ol, .pre_header { font-family: normal normal normal 'Open Sans', sans-serif; font-size: 12pt; color: #000000; cursor: text; }");
