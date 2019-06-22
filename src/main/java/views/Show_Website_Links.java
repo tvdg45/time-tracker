@@ -186,20 +186,20 @@ public class Show_Website_Links {
                 if (website_links.get(2).get(i).equals("yes")) {
                 
                     output += "<div class=\"show_vertical_menu\" style=\"text-align: left; display: none\">" +
-                        "<span class=\"menu_label\" style=\"line-height: 40px; font-size: 12pt\">" +
+                        "<span class=\"focused_menu_label\" style=\"line-height: 40px; font-size: 12pt\">" +
                         "<a target=\"_blank\" style=\"padding-left: 15px; padding-right: 15px; margin-top: 12px; " +
                         "margin-bottom: 12px; font-weight: bold; text-transform: uppercase; " +
                         "white-space: normal\" href=\"" + website_links.get(1).get(i) + "\">" +
-                            website_links.get(2).get(i) + "</a></span>\n" +
+                            website_links.get(0).get(i) + "</a></span>\n" +
                         "</div>\n";
                 } else {
                 
                     output += "<div class=\"show_vertical_menu\" style=\"text-align: left; display: none\">" +
-                        "<span class=\"menu_label\" style=\"line-height: 40px; font-size: 12pt\">" +
+                        "<span class=\"focused_menu_label\" style=\"line-height: 40px; font-size: 12pt\">" +
                         "<a style=\"padding-left: 15px; padding-right: 15px; margin-top: 12px; " +
                         "margin-bottom: 12px; font-weight: bold; text-transform: uppercase; " +
                         "white-space: normal\" href=\"" + website_links.get(1).get(i) + "\">" +
-                            website_links.get(2).get(i) + "</a></span>\n" +
+                            website_links.get(0).get(i) + "</a></span>\n" +
                         "</div>\n";
                 }                
             } else {
