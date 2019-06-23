@@ -132,11 +132,21 @@ public class Web_Page extends HttpServlet {
   out.println(".foot_label { color: #C88D81; }");
   out.println(".footer a, .foot_label a { color: #FBDFCC; }");
   out.println(".footer a:hover, .foot_label a:hover { text-decoration: underline; }");
-  out.println(".signature_section { background-color: #5A403B; }");
+  out.println("");
+  out.println(".signature_section {");
+  out.println("");
+  out.println("background-color: #5A403B;");
+  out.println("background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);");
+  out.println("background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);");
+  out.println("background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);");
+  out.println("background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);");
+  out.println("-webkit-background-size: 4px 4px;");
+  out.println("-moz-background-size: 4px 4px;");
+  out.println("background-size: 4px 4px;");
+  out.println("}");
+  out.println("");
   out.println("input, textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: #5A403B; color: #FBDFCC; border: 4px solid; border-color: #5A403B; }");
   out.println("input[type=submit]:hover, input[type=button]:hover, input:focus, select:focus, textarea:focus { background-color: #FBDFCC; border-color: #5A403B; color: #5A403B; cursor: pointer; }");
-  
-  
   out.println(".header { vertical-align: top; text-align: left; }");
   out.println("");
   out.println(".header, body {");
