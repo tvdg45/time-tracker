@@ -272,7 +272,7 @@ public class Web_Page extends HttpServlet {
   out.println("</div>");
   out.println("</div>");
   out.println("<div id=\"footer_responsive_format\">");
-  out.println("<div style=\"text-align: center; width: 98%; margin-left: 1%; margin-right: 1%; padding-top: 0px; padding-bottom: 20px;\">");
+  out.println("<div style=\"text-align: center; width: 98%; margin-left: 1%; margin-right: 1%; padding-top: 15px; padding-bottom: 20px;\">");
   out.println("<span class=\"foot_label\">Powered by <b><a href=\"http://www.timothysdigitalsolutions.com/\">Timothy's Digital Solutions</a> Framework</b></span>");
   out.println("</div>");
   out.println("</div>");
