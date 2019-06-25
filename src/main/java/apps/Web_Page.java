@@ -145,8 +145,10 @@ public class Web_Page extends HttpServlet {
   out.println("background-size: 4px 4px;");
   out.println("}");
   out.println("");
-  out.println("input, textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: #5A403B; color: #FBDFCC; border: 4px solid; border-color: #5A403B; }");
-  out.println("input[type=submit]:hover, input[type=button]:hover, input:focus, select:focus, textarea:focus { background-color: #FBDFCC; border-color: #5A403B; color: #5A403B; cursor: pointer; }");
+  out.println("input { font-family: arial, sans-serif; font-size: 12pt; background-color: #5A403B; color: #FBDFCC; border: 4px solid; border-color: #5A403B; }");
+  out.println("input[type=text], input[type=password], textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: white; color: #5A403B; border: 4px solid; border-color: #5A403B; }");
+  out.println("input:focus, select:focus, textarea:focus { background-color: white; border-color: #C88D8; color: #C88D8; cursor: pointer; }");
+  out.println("input[type=submit]:hover, input[type=button]:hover, input[type=submit]:focus, input[type=button]:focus { background-color: transparent; border-color: #5A403B; color: #5A403B; cursor: pointer; }");
   out.println(".header { vertical-align: top; text-align: left; }");
   out.println("");
   out.println(".header, body {");
