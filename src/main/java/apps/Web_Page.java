@@ -146,9 +146,9 @@ public class Web_Page extends HttpServlet {
   out.println("}");
   out.println("");
   out.println("input { font-family: arial, sans-serif; font-size: 12pt; background-color: #5A403B; color: #FBDFCC; border: 4px solid; border-color: #5A403B; }");
-  out.println("input[type=text], input[type=password], textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: white; color: #5A403B; border: 4px solid; border-color: #5A403B; }");
+  out.println("input[type=text], input[type=password], textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: white; color: #5A403B; border: 4px solid; border-color: #5A403B; box-shadow: 10px 10px 5px black; }");
   out.println("input:focus, select:focus, textarea:focus { background-color: white; border-color: #5A403B; color: #5A403B; cursor: pointer; }");
-  out.println("input[type=submit]:hover, input[type=button]:hover, input[type=submit]:focus, input[type=button]:focus { background-color: transparent; border-color: #5A403B; color: #5A403B; cursor: pointer; }");
+  out.println("input[type=submit]:hover, input[type=button]:hover, input[type=submit]:focus, input[type=button]:focus { background-color: transparent; border-color: #5A403B; color: #5A403B; cursor: pointer; box-shadow: 10px 10px 5px black; }");
   out.println(".header { vertical-align: top; text-align: left; }");
   out.println("");
   out.println(".header, body {");
@@ -177,7 +177,6 @@ public class Web_Page extends HttpServlet {
   out.println("#logo_traditional_and_links_traditional_format, #logo_traditional_and_links_responsive_format { text-transform: uppercase; font-weight: bold; }");
   out.println("");
   out.println("textarea, input { margin-top: 6px; margin-bottom: 6px; font-size: 14pt; }");
-  out.println("textarea:focus, input:focus, input[type=button]:hover, input[type=submit]:hover { background: transparent; box-shadow: 10px 10px 5px black; }");
   out.println("");
   out.println(".footer .foot_label { text-align: left; height: 100%; width: auto; word-wrap: break-word; }");
   out.println("</style>");
