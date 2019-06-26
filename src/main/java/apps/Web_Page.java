@@ -261,7 +261,7 @@ public class Web_Page extends HttpServlet {
   out.println("</div>");
   out.println("</div>");
   out.println("</div>");
-  out.println("<div class=\"content\" style=\"vertical-align: top; text-align: left\">");
+  out.println("<div class=\"content\" style=\"vertical-align: top; text-align: left\">m");
   out.println(Request_Web_Page.request_content());
   out.println("</div>");
   out.println("<div class=\"footer\" style=\"text-align: left; word-wrap: break-word\">");
