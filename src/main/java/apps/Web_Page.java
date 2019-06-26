@@ -147,8 +147,8 @@ public class Web_Page extends HttpServlet {
   out.println("");
   out.println("input { font-family: arial, sans-serif; font-size: 12pt; background-color: #5A403B; color: #FBDFCC; border: 2px solid; padding: 2px; border-color: #5A403B; }");
   out.println("input[type=text], input[type=password], textarea, select { font-family: arial, sans-serif; font-size: 12pt; background-color: white; color: #5A403B; border: 2px solid; padding: 2px; border-color: #5A403B; }");
-  out.println("input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus { background-color: white; border-color: #5A403B; color: #5A403B; border: 2px solid; padding: 2px; cursor: pointer; }");
-  out.println("input[type=submit]:hover, input[type=button]:hover, input[type=submit]:focus, input[type=button]:focus { background-color: transparent; border-color: #5A403B; color: #5A403B; border: 2px solid; padding: 2px; cursor: pointer; }");
+  //out.println("input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus { background-color: white; border-color: #5A403B; color: #5A403B; border: 2px solid; padding: 2px; cursor: pointer; }");
+  //out.println("input[type=submit]:hover, input[type=button]:hover, input[type=submit]:focus, input[type=button]:focus { background-color: transparent; border-color: #5A403B; color: #5A403B; border: 2px solid; padding: 2px; cursor: pointer; }");
   out.println(".header { vertical-align: top; text-align: left; }");
   out.println("");
   out.println(".header, body {");
@@ -261,7 +261,7 @@ public class Web_Page extends HttpServlet {
   out.println("</div>");
   out.println("</div>");
   out.println("</div>");
-  out.println("<div class=\"content\" style=\"vertical-align: top; text-align: left\">m");
+  out.println("<div class=\"content\" style=\"vertical-align: top; text-align: left\">");
   out.println(Request_Web_Page.request_content());
   out.println("</div>");
   out.println("<div class=\"footer\" style=\"text-align: left; word-wrap: break-word\">");
