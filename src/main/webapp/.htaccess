@@ -1,3 +1,0 @@
-<IfModule mod_rewrite.c>
-ErrorDocument 404 https://timothysdigitalsolutions.herokuapp.com/web-page
-</IfModule>
