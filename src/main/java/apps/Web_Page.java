@@ -176,7 +176,7 @@ public class Web_Page extends HttpServlet {
   out.println("");
   out.println("#logo_traditional_and_links_traditional_format, #logo_traditional_and_links_responsive_format { text-transform: uppercase; font-weight: bold; }");
   out.println("");
-  out.println("textarea, input, select { margin-top: 6px; margin-bottom: 6px; font-size: 14pt; }");
+  out.println("textarea, input, select { margin-top: 6px; margin-bottom: 6px; font-size: 12pt; }");
   out.println("");
   out.println(".footer .foot_label { text-align: left; height: 100%; width: auto; word-wrap: break-word; }");
   out.println("</style>");
