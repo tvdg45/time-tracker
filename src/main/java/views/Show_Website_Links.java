@@ -136,7 +136,7 @@ public class Show_Website_Links {
         return output;
     }
     
-    //Unfocused menu label for horizonal link format
+    //Unfocused menu label for vertical link format
     private static String unfocused_menu_label_vertical_format(String link_name, String url, String new_window) {
         
         String output = "";
