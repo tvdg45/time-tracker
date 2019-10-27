@@ -122,7 +122,7 @@ public class Config {
         
         //Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
         //String third_party_domain = "https://user-account-management-1.herokuapp.com";
-        String third_party_domain = "https://timothys-digital-solutions-web.herokuapp.com";
+        String third_party_domain = "https://timothysdigitalsolutions.herokuapp.com";
         
         output += third_party_domain;
         
