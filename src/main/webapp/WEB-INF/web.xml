@@ -5,12 +5,36 @@
     </welcome-file-list>
     
     <servlet>
-        <servlet-name>Web_Page</servlet-name>
-        <servlet-class>apps.Web_Page</servlet-class>
+        <servlet-name>Time_Tracker_Interface</servlet-name>
+        <servlet-class>apps.Time_Tracker_Interface</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Create_Task</servlet-name>
+        <servlet-class>apps.Create_Task</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Finish_Selected_Task</servlet-name>
+        <servlet-class>apps.Finish_Selected_Task</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete_Tasks</servlet-name>
+        <servlet-class>apps.Delete_Tasks</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Web_Page</servlet-name>
-        <url-pattern>/web-page</url-pattern>
+        <servlet-name>Time_Tracker_Interface</servlet-name>
+        <url-pattern>/time-tracker-interface</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create_Task</servlet-name>
+        <url-pattern>/create-task</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Finish_Selected_Task</servlet-name>
+        <url-pattern>/finish-selected-task</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete_Tasks</servlet-name>
+        <url-pattern>/delete-tasks</url-pattern>
     </servlet-mapping>
 </web-app>
