@@ -28,7 +28,7 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-company-website");
+        URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-time-tracker");
         
         String read_line;
         
@@ -122,7 +122,8 @@ public class Config {
         
         //Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
         //String third_party_domain = "https://user-account-management-1.herokuapp.com";
-        String third_party_domain = "https://timothysdigitalsolutions.herokuapp.com";
+        //String third_party_domain = "https://time-tracker-java.herokuapp.com";
+        String third_party_domain = "https://time-tracker-java.herokuapp.com";
         
         output += third_party_domain;
         
