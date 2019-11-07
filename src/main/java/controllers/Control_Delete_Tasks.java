@@ -7,6 +7,7 @@ import views.Show_Change_Tasks;
 
 public class Control_Delete_Tasks extends models.Change_Tasks {
     
+	//global variables
     public static Connection use_connection;
     public static String admin_session;
     public static String[] each_selected_task;
