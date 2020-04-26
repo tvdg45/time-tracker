@@ -131,15 +131,15 @@ public abstract class Change_Tasks {
         try {
             
             PreparedStatement prepared_statement = connection.prepareStatement("SELECT row_id FROM " +
-                    "company_time_tracker_tasks ORDER BY row_id DESC");
+                    "company_time_tracker_tasks ORDER BY row_id DESC LIMIT 1");
             
-            ResultSet result_set = prepared_statement.executeQuery();
+            ResultSet select_results = prepared_statement.executeQuery();
             
-            result_set.last();
+            select_results.last();
             
-            if (result_set.getRow() > 0) {
+            if (select_results.getRow() > 0) {
                
-                output = result_set.getRow();
+                output = select_results.getInt(1);
             } else {
                 
                 output = 0;
